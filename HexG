@@ -1,0 +1,2639 @@
+local script = game:GetObjects("rbxassetid://6132728923")[1].HEXOMIUM
+
+warn([[
+	
+	something loaded
+	
+	thanks aidenferr for setting up the color shift tweens
+	and doing gradient stuff
+	
+	i (ssyync) did pretty much everything except for the listed above
+	]])
+-- Labelling What is What. -- //
+
+Pl = game.Players.LocalPlayer
+Player = Pl
+C = Pl.Character
+Hum = C.Humanoid
+CFR = CFrame.new
+-- Humanoid Stuff, Mainly Defining the player and what a CFrame is. -- //
+
+rad = math.rad;
+cos = math.cos;
+sin = math.sin;
+tan = math.tan;
+pi = math.pi;
+cosh = math.cosh;
+sinh = math.sinh;
+local LerpFactor, Alpha = .1
+sine = 0
+change = 1
+attack = false
+attackanim = false
+local storewalkspeed
+local MainColor
+local SecondColor
+local ThirdColor
+local glitch = "ECCLESIASTIC"
+local auraeff = true
+WingStyle = "Wing"
+script.LocalScript.Disabled = false
+local mousepos = CFrame.new(0,0,0)
+local tweenserv = game:GetService("TweenService")
+-- Ceasing Animate -- //
+C:WaitForChild("Animate"):Destroy() -- Animate needs to C e a s e -- //
+C:FindFirstChildOfClass("Humanoid"):WaitForChild("Animator"):Destroy()  -- Just So animate doesn't cause any further problems. -- //
+-- Animate has now Ceased -- //
+--helth
+Hum.MaxHealth = math.huge
+Hum.Health = math.huge
+-- Limb Setup. --
+local char = C
+local Torso = char.Torso
+local rarm = char["Right Arm"]
+local larm = char["Left Arm"]
+local lleg = char["Left Leg"]
+local rleg = char["Right Leg"]
+ra = char["Right Arm"]
+la = char["Left Arm"]
+rl = char["Right Leg"]
+ll = char["Left Leg"]
+LS=Torso["Left Shoulder"] 
+LH=Torso["Left Hip"] 
+RS=Torso["Right Shoulder"] 
+RH=Torso["Right Hip"] 
+RW, LW=Instance.new("Weld"), Instance.new("Weld") 
+RW.Name="Right Shoulder" LW.Name="Left Shoulder"
+LH=Torso["Left Hip"]
+RH=Torso["Right Hip"]
+hed = char.Head
+
+local visualiserid = 481999016
+-- CFrame Functions
+--[[function QuaternionFromCFrame(cf) 
+	local mx, my, mz, m00, m01, m02, m10, m11, m12, m20, m21, m22 = cf:components() 
+	local trace = m00 + m11 + m22 
+	if trace > 0 then 
+		local s = math.sqrt(1 + trace) 
+		local recip = 0.5/s 
+		return (m21-m12)*recip, (m02-m20)*recip, (m10-m01)*recip, s*0.5 
+	else 
+		local i = 0 
+		if m11 > m00 then
+			i = 1
+		end
+		if m22 > (i == 0 and m00 or m11) then 
+			i = 2 
+		end 
+		if i == 0 then 
+			local s = math.sqrt(m00-m11-m22+1) 
+			local recip = 0.5/s 
+			return 0.5*s, (m10+m01)*recip, (m20+m02)*recip, (m21-m12)*recip 
+		elseif i == 1 then 
+			local s = math.sqrt(m11-m22-m00+1) 
+			local recip = 0.5/s 
+			return (m01+m10)*recip, 0.5*s, (m21+m12)*recip, (m02-m20)*recip 
+		elseif i == 2 then 
+			local s = math.sqrt(m22-m00-m11+1) 
+			local recip = 0.5/s return (m02+m20)*recip, (m12+m21)*recip, 0.5*s, (m10-m01)*recip 
+		end 
+	end 
+end
+
+function QuaternionToCFrame(px, py, pz, x, y, z, w) 
+	local xs, ys, zs = x + x, y + y, z + z 
+	local wx, wy, wz = w*xs, w*ys, w*zs 
+	local xx = x*xs 
+	local xy = x*ys 
+	local xz = x*zs 
+	local yy = y*ys 
+	local yz = y*zs 
+	local zz = z*zs 
+	return CFrame.new(px, py, pz,1-(yy+zz), xy - wz, xz + wy,xy + wz, 1-(xx+zz), yz - wx, xz - wy, yz + wx, 1-(xx+yy)) 
+end
+
+function QuaternionSlerp(a, b, t) 
+	local cosTheta = a[1]*b[1] + a[2]*b[2] + a[3]*b[3] + a[4]*b[4] 
+	local startInterp, finishInterp; 
+	if cosTheta >= 0.0001 then 
+		if (1 - cosTheta) > 0.0001 then 
+			local theta = math.acos(cosTheta) 
+			local invSinTheta = 1/math.sin(theta) 
+			startInterp = math.sin((1-t)*theta)*invSinTheta 
+			finishInterp = math.sin(t*theta)*invSinTheta  
+		else 
+			startInterp = 1-t 
+			finishInterp = t 
+		end 
+	else 
+		if (1+cosTheta) > 0.0001 then 
+			local theta = math.acos(-cosTheta) 
+			local invSinTheta = 1/math.sin(theta) 
+			startInterp = math.sin((t-1)*theta)*invSinTheta 
+			finishInterp = math.sin(t*theta)*invSinTheta 
+		else 
+			startInterp = t-1 
+			finishInterp = t 
+		end 
+	end 
+	return a[1]*startInterp + b[1]*finishInterp, a[2]*startInterp + b[2]*finishInterp, a[3]*startInterp + b[3]*finishInterp, a[4]*startInterp + b[4]*finishInterp 
+end
+]]
+
+function clerp(a,b,t) 
+	--[[local qa = {QuaternionFromCFrame(a)}
+	local qb = {QuaternionFromCFrame(b)} 
+	local ax, ay, az = a.x, a.y, a.z 
+	local bx, by, bz = b.x, b.y, b.z
+	local _t = 1-t
+	return QuaternionToCFrame(_t*ax + t*bx, _t*ay + t*by, _t*az + t*bz,QuaternionSlerp(qa, qb, t)) ]]
+	return a:Lerp(b,t)
+end 
+
+euler = CFrame.fromEulerAnglesXYZ
+cf = CFrame.new
+angles = CFrame.Angles
+necko=cf(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+necko2=cf(0, -0.5, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+LHC0=cf(-1,-1,0,-0,-0,-1,0,1,0,1,0,0)
+LHC1=cf(-0.5,1,0,-0,-0,-1,0,1,0,1,0,0)
+RHC0=cf(1,-1,0,0,0,1,0,1,0,-1,-0,-0)
+RHC1=cf(0.5,1,0,0,0,1,0,1,0,-1,-0,-0)
+RootPart=char.HumanoidRootPart
+RootJoint=RootPart.RootJoint
+RootCF=euler(-1.57,0,3.14)
+local root = char:FindFirstChild'HumanoidRootPart'
+player=Player 
+ch=char
+RSH=ch.Torso["Right Shoulder"] 
+LSH=ch.Torso["Left Shoulder"] 
+-- 
+RSH.Parent=nil 
+LSH.Parent=nil 
+-- 
+RW.Name="Right Shoulder"
+RW.Part0=ch.Torso 
+RW.C0=cf(1.5, 0.5, 0) --* CFrame.fromEulerAnglesXYZ(1.3, 0, -0.5) 
+RW.C1=cf(0, 0.5, 0) 
+RW.Part1=ch["Right Arm"] 
+RW.Parent=ch.Torso 
+-- 
+LW.Name="Left Shoulder"
+LW.Part0=ch.Torso 
+LW.C0=cf(-1.5, 0.5, 0) --* CFrame.fromEulerAnglesXYZ(1.7, 0, 0.8) 
+LW.C1=cf(0, 0.5, 0) 
+LW.Part1=ch["Left Arm"] 
+LW.Parent=ch.Torso 
+
+-- CFrame End --
+
+-- Tween Values. --
+function TweenAnimate(object,Aniim,time,easingstyle,easingdirection,repet,reverse,deelay)
+	local infos=TweenInfo.new(time,Enum.EasingStyle[easingstyle],Enum.EasingDirection[easingdirection],repet,reverse,deelay)
+	local tween=game:GetService("TweenService"):Create(object,infos,Aniim)
+	tween:Play()
+	return tween
+end
+-- Tween Values. --
+
+-- Artificial Heartbeat --
+local ArtificialHB = Instance.new("BindableEvent", script)
+ArtificialHB.Name = "Heartbeat"
+
+script:WaitForChild("Heartbeat")
+
+local tf = 0
+local allowframeloss = false
+local tossremainder = false
+local lastframe = tick()
+local frame = 1/60
+ArtificialHB:Fire()
+
+game:GetService("RunService").Heartbeat:connect(function(s, p)
+	tf = tf + s
+	if tf >= frame then
+		if allowframeloss then
+			script.Heartbeat:Fire()
+			lastframe = tick()
+		else
+			for i = 1, math.floor(tf / frame) do
+				ArtificialHB:Fire()
+			end
+			lastframe = tick()
+		end
+		if tossremainder then
+			tf = 0
+		else
+			tf = tf - frame * math.floor(tf / frame)
+		end
+	end
+end)
+
+function swait(num)
+	if num == 0 or num == nil then
+		ArtificialHB.Event:wait()
+	else
+		for i = 0, num do
+			ArtificialHB.Event:wait()
+		end
+	end
+end
+-- End of Artificial Heartbeat --
+local BGU = script.BGU:Clone()
+BGU.Parent = Torso
+BGU.Enabled = true
+--scren geui
+local SG = script.SG:Clone()
+SG.Parent = Player.PlayerGui
+
+--particles
+local partic = Instance.new("Part",char)
+partic.Transparency = 1
+partic.CFrame = root.CFrame*CFrame.new(0,-3,0)
+partic.Anchored = false
+partic.CanCollide = false
+partic.Massless = true
+partic.Name = "Partic"
+partic.Size = Vector3.new(50,1,50)
+local weld = Instance.new("WeldConstraint",partic)
+weld.Part0 = root
+weld.Part1 = partic
+local emit2 = Instance.new("ParticleEmitter",partic)
+emit2.LightEmission = 9999
+emit2.LightInfluence = 0
+emit2.EmissionDirection = "Top"
+emit2.Enabled = true
+emit2.Texture = "http://www.roblox.com/asset/?id=5122583722"
+emit2.Transparency = NumberSequence.new(0.3,1)
+emit2.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,0.75),NumberSequenceKeypoint.new(1,0)}
+emit2.Acceleration = Vector3.new(0,100,0)
+emit2.Lifetime = NumberRange.new(0.5)
+emit2.Rotation = NumberRange.new(-180,180)
+emit2.RotSpeed = NumberRange.new(5)
+emit2.Speed = NumberRange.new(3)
+emit2.SpreadAngle = Vector2.new(-30,30)
+emit2.Rate = 500
+emit2.Drag = 0
+--cool forcefield stuff
+for i,v in pairs({hed,rarm,larm,lleg,rleg,Torso}) do
+	local par = Instance.new("Part",char)
+	par.CanCollide = false
+	par.Anchored = false
+	par.Material = "ForceField"
+	par.Size = v.Size*Vector3.new(0.2,0.2,0.2)
+	par.CFrame = v.CFrame
+	par.Transparency = 0.75
+	par.Name = "Armour"
+	local smesh = Instance.new("SpecialMesh",par)
+	smesh.TextureId = "rbxassetid://2930247814"
+	smesh.MeshType = Enum.MeshType.FileMesh
+	if v == hed then
+		smesh.MeshId = "rbxassetid://3642740708"
+		smesh.Scale = Vector3.new(0.025,0.025,0.025)
+	elseif v ~= Torso then
+		smesh.MeshId = "rbxassetid://430080282"
+		smesh.Scale = Vector3.new(1.1,1.1,1.1)
+	else
+		smesh.MeshId = "rbxassetid://430080282"
+		smesh.Scale = Vector3.new(2.1, 1.1, 1.1)
+	end
+	local wc = Instance.new("WeldConstraint",par)
+	wc.Part0 = v
+	wc.Part1 = par
+end
+--effec replication
+function tweeneff(shape,pos,color,size,welded,material,trans,prop,tweenlength,tweenstyle,tweendirection,tweenrep,tweenrev)
+	for i,v in pairs(game:GetService("Players"):GetChildren()) do
+		if v.PlayerGui then
+			local a = v.PlayerGui
+			if a:FindFirstChild(char.Name.."'s stuff") then
+				a:FindFirstChild(char.Name.."'s stuff").effec:FireClient(v,shape,pos,color,size,welded,material,trans,prop,tweenlength,tweenstyle,tweendirection,tweenrep,tweenrev,"tweeneff")
+			end
+		end
+	end
+end
+function tweenmesh(shape,pos,color,size,hinged,material,trans,prop,tweenlength,tweenstyle,tweendirection,tweenrep,tweenrev)
+	for i,v in pairs(game:GetService("Players"):GetChildren()) do
+		if v.PlayerGui then
+			local a = v.PlayerGui
+			if a:FindFirstChild(char.Name.."'s stuff") then
+				a:FindFirstChild(char.Name.."'s stuff").effec:FireClient(v,shape,pos,color,size,hinged,material,trans,prop,tweenlength,tweenstyle,tweendirection,tweenrep,tweenrev,"tweenmesh")
+			end
+		end
+	end
+end
+function specialeff(shape,pos,color,size,hinged,material,trans,prop,tweenlength,tweenstyle,tweendirection,tweenrep,tweenrev)
+	for i,v in pairs(game:GetService("Players"):GetChildren()) do
+		if v.PlayerGui then
+			local a = v.PlayerGui
+			if a:FindFirstChild(char.Name.."'s stuff") then
+				a:FindFirstChild(char.Name.."'s stuff").effec:FireClient(v,shape,pos,color,size,hinged,material,trans,prop,tweenlength,tweenstyle,tweendirection,tweenrep,tweenrev,"specialeff")
+			end
+		end
+	end
+end
+-- Main Damage Function --
+function DamageFunc(Humanoid,MinDmg,MaxDmg,Type)
+	local Damage = math.random(MinDmg,MaxDmg)
+	-- Failsafe --
+	if Humanoid == nil then
+		return
+	end
+	
+	--some compatability with my script--
+	local defenseboost = false
+	local defenseboosted = Humanoid.Parent:findFirstChild("defenseboost")
+	if defenseboosted ~= nil and defenseboosted.className == "BoolValue" and defenseboosted.Value == true then
+		Damage = Damage/2
+		Sound("Sound",240429289,Humanoid.Parent.Torso,7,4,0)
+	end
+	
+	if Humanoid ~= nil then
+		--local dmggui = script.dmggui:Clone()
+		if Type == "Normal" then
+			Humanoid.Health = Humanoid.Health - Damage
+			--tex.Text = "-"..Damage
+			--tex.TextColor3 = Color3.fromRGB(255,0,0)
+		elseif Type == "Admin" then
+			local DoDamage = true
+			if DoDamage == true then
+				Humanoid.Health = Humanoid.Health - Damage
+				--tex.Text = "-"..Damage
+				--tex.TextColor3 = Color3.fromRGB(255,0,0)
+			end
+		elseif Type == "Neg" then
+			Humanoid.Health = Humanoid.Health + Damage
+			--tex.Text = "+"..Damage
+			--tex.TextColor3 = Color3.fromRGB(0,255,0)
+		elseif Type == "Divide" then
+			Humanoid.Health = Humanoid.Health / Damage
+		end
+		if Humanoid.Health == 0 and not Humanoid:FindFirstChild("Aliven't") then
+			Humanoid.DisplayDistanceType = "None"
+			local tag = Instance.new("BoolValue",Humanoid)
+			tag.Name = "Aliven't"
+			tag.Value = true
+			Sound("Sound",763716870,Humanoid.Parent,1,0.3,0)
+			
+			local humparts = {
+				Humanoid.Parent.Head,
+				Humanoid.Parent.Torso,
+				Humanoid.Parent["Right Arm"],
+				Humanoid.Parent["Left Arm"],
+				Humanoid.Parent["Right Leg"],
+				Humanoid.Parent["Left Leg"],
+			}
+			
+			
+			for i,v in pairs(humparts) do
+				coroutine.resume(coroutine.create(function()
+					local bp = Instance.new("BodyPosition", v)
+					bp.P = 3000
+					bp.D = 1500
+					bp.maxForce = Vector3.new(9999999999999, 9999999999999, 9999999999999)
+					bp.position = v.Position + Vector3.new(math.random(-4,4),10 + math.random(-4,4),math.random(-4,4))
+					v.Material = Enum.Material.Neon
+					v.Anchored = false
+					v.CanCollide = false
+					v.Color = MainColor
+					v.Transparency = 1
+					local partecle = Instance.new("ParticleEmitter",v)
+					partecle.LightEmission = 9999
+					partecle.LightInfluence = 0
+					partecle.EmissionDirection = "Top"
+					partecle.Enabled = true
+					partecle.Texture = "http://www.roblox.com/asset/?id=5122583722"
+					partecle.Color = ColorSequence.new(MainColor)
+					partecle.Transparency = NumberSequence.new(0,1)
+					partecle.Size = NumberSequence.new(3,0)
+					partecle.Acceleration = Vector3.new(0,1,0)
+					partecle.Lifetime = NumberRange.new(0.3,0.7)
+					partecle.Rotation = NumberRange.new(-180,180)
+					partecle.RotSpeed = NumberRange.new(-100,100)
+					partecle.Speed = NumberRange.new(30,50)
+					partecle.SpreadAngle = Vector2.new(-180, 180)
+					partecle.Rate = 10000000
+					partecle.Drag = 1
+					swait(10)
+					partecle.Enabled = false
+					swait(50)
+					v:BreakJoints()
+				end))
+			end
+		end
+	end
+end
+-- Magic Damage --
+function magidmg(Pos,Range,MinDmg,MaxDmg,Type)
+	for i,v in pairs(game.Workspace:GetDescendants()) do
+		if v.ClassName == "Humanoid" then
+			if v.Parent:FindFirstChild("Torso") and v.Parent ~= script.Parent then
+				local dist = (Pos - v.Parent.Torso.Position).Magnitude
+				if dist <= Range then
+					DamageFunc(v,MinDmg,MaxDmg,Type)	
+				end
+			end
+		end
+	end
+end
+
+--weng
+local lwing1,lwing1weld = nil
+local lwing2,lwing2weld = nil
+local lwing3,lwing3weld = nil
+local rwing1,rwing1weld = nil
+local rwing2,rwing2weld = nil
+local rwing3,rwing3weld = nil
+local core,coreweld = nil
+local wings = {}
+local motorfolder = Instance.new("Folder",char)
+function reloadwing(newwing)
+	pcall(function()
+		lwing1:Destroy()
+		lwing2:Destroy()
+		lwing3:Destroy()
+		rwing1:Destroy()
+		rwing2:Destroy()
+		rwing3:Destroy()
+		lwing1weld:Destroy()
+		lwing2weld:Destroy()
+		lwing3weld:Destroy()
+		rwing1weld:Destroy()
+		rwing2weld:Destroy()
+		rwing3weld:Destroy()
+		coreweld:Destroy()
+		core:Destroy()
+	end)
+	WingStyle = newwing
+	local function createwing(wingtype)
+		local wing = script[newwing]:Clone()
+		wing.Parent = char
+		wing.Handle.Anchored = false
+		local wingweld = Instance.new("Motor6D",wing.Handle)
+		wingweld.Part0 = Torso
+		wingweld.Part1 = wing.Handle
+		wing.Name = wingtype
+		return wing,wingweld
+	end
+	core = script.Core:Clone()
+	core.Handle.Anchored = false
+	core.Parent = char
+	core.Name = "Color"
+	coreweld = Instance.new("Motor6D",motorfolder)
+	coreweld.Part0 = Torso
+	coreweld.Part1 = core.Handle
+	lwing1,lwing1weld = createwing("Frame")
+	lwing2,lwing2weld = createwing("Color")
+	lwing3,lwing3weld = createwing("Color")
+	rwing1,rwing1weld = createwing("Frame")
+	rwing2,rwing2weld = createwing("Color")
+	rwing3,rwing3weld = createwing("Color")
+	wings = {
+		lwing1,
+		lwing2,
+		lwing3,
+		rwing1,
+		rwing2,
+		rwing3,
+		core
+	}
+end
+reloadwing("Wing")
+--recolor functions
+local groovy = Instance.new("Sound",Torso)
+groovy.Name = "Groovy"
+groovy.EmitterSize = 1
+groovy.Volume = 10
+groovy.Looped = true
+groovy:Play()
+local TweenModeColor = {}
+function tweenrecolor(InfoTable)
+	--aidenferr fixed the tweens
+	--for i,v in pairs(TweenModeColor)do v:Cancel()end TweenModeColor = {}
+	local tweeninfo = InfoTable.tweeninfo
+	local maincolor = InfoTable.maincolor
+	local secondcolor = InfoTable.secondcolor
+	local tweenserv = game:GetService("TweenService")
+	local mode = InfoTable.mode
+	
+	local tweens = {{tweenserv:Create(BGU.main.Flare,tweeninfo,{ImageColor3 = maincolor}),
+	tweenserv:Create(BGU.main.biggerhex,tweeninfo,{ImageColor3 = secondcolor}),
+	tweenserv:Create(BGU.main.hex,tweeninfo,{ImageColor3 = maincolor}),
+	tweenserv:Create(BGU.main.biggerleftline,tweeninfo,{ImageColor3 = secondcolor}),
+	tweenserv:Create(BGU.main.biggerrightline,tweeninfo,{ImageColor3 = secondcolor}),
+	tweenserv:Create(BGU.main.leftline,tweeninfo,{ImageColor3 = maincolor}),
+	tweenserv:Create(BGU.main.rightline,tweeninfo,{ImageColor3 = maincolor}),
+	tweenserv:Create(BGU.main.textthing,tweeninfo,{TextColor3 = maincolor, TextStrokeColor3 = secondcolor})}}
+	for _,obj in pairs(wings) do
+		table.insert(tweens,#tweens+1,{
+			tweenserv:Create(obj.Color,tweeninfo,{Color = maincolor}),
+			tweenserv:Create(obj.Frame,tweeninfo,{Color = secondcolor})})
+	end
+	for i,v in pairs(BGU.main.visbars:GetChildren()) do
+		table.insert(tweens,#tweens+1,{
+			tweenserv:Create(v,tweeninfo,{BackgroundColor3 = maincolor, BorderColor3 = secondcolor})})
+	end
+	local guimain = SG.main
+	table.insert(tweens,#tweens+1,{
+		tweenserv:Create(guimain.hexagonthing,tweeninfo,{ImageColor3 = maincolor}),
+		tweenserv:Create(guimain.anotherhexagonthing,tweeninfo,{ImageColor3 = secondcolor}),
+		tweenserv:Create(guimain.slidething,tweeninfo,{ImageColor3 = maincolor}),
+		tweenserv:Create(guimain.anotherslidething,tweeninfo,{ImageColor3 = secondcolor}),
+		tweenserv:Create(guimain.glow,tweeninfo,{ImageColor3 = maincolor}),
+		tweenserv:Create(guimain.name,tweeninfo,{TextColor3 = maincolor}),
+		tweenserv:Create(guimain.name,tweeninfo,{TextStrokeColor3 = secondcolor}),
+		tweenserv:Create(guimain.textinfo,tweeninfo,{TextColor3 = maincolor}),
+		tweenserv:Create(guimain.textinfo,tweeninfo,{TextStrokeColor3 = secondcolor}),
+		tweenserv:Create(guimain["credit text thing"],tweeninfo,{BackgroundColor3 = maincolor}),
+		tweenserv:Create(guimain["credit text thing"],tweeninfo,{BorderColor3 = secondcolor}),
+		tweenserv:Create(guimain["credit text thing"].text,tweeninfo,{TextColor3 = maincolor}),
+		tweenserv:Create(guimain["credit text thing"].text,tweeninfo,{TextStrokeColor3 = secondcolor}),
+		tweenserv:Create(guimain.visbars,tweeninfo,{BackgroundColor3 = maincolor}),
+		tweenserv:Create(guimain.visbars,tweeninfo,{BorderColor3 = secondcolor})})
+	for _,v in pairs(guimain.visbars:GetChildren()) do
+		if not v:IsA("UIGradient") then
+			table.insert(tweens,#tweens+1,{
+				tweenserv:Create(v,tweeninfo,{BackgroundColor3 = maincolor}),
+				tweenserv:Create(v,tweeninfo,{BorderColor3 = secondcolor})})
+		end
+	end
+	table.foreach(tweens,function(_,b)table.foreach(b,function(_,v)table.insert(TweenModeColor,#TweenModeColor+1,v)v:Play()end)end)
+end
+function modechange(InfoTable)
+	for i,v in pairs(TweenModeColor)do v:Cancel()end TweenModeColor = {}
+	local maincolor = InfoTable.maincolor
+	local secondcolor = InfoTable.secondcolor
+	local wingmat = InfoTable.wingmat
+	local secondwingmat = InfoTable.secondwingmat
+	local name = InfoTable.name
+	local sped = InfoTable.speed
+	local jemp = InfoTable.jumppower
+	local font = InfoTable.font
+	local ID = InfoTable.theme
+	local songinfo = InfoTable.songinfo
+	local PITCH = InfoTable.pitch
+	local function recolor(obj)
+		for i,v in pairs(obj:GetChildren()) do
+			if v:IsA("MeshPart") then
+				if v.Name == "Color" then
+					if glitch == "DISORIENTATION" then
+						local rnd = math.random(1,3)
+						if rnd == 1 then
+							v.Color = Color3.new(1,0,0)
+						elseif rnd == 2 then
+							v.Color = Color3.new(0,1,0)
+						elseif rnd == 3 then
+							v.Color = Color3.new(0,0,1)
+						end
+					else
+						v.Color = maincolor
+					end
+					v.Material = wingmat
+				elseif v.Name == "Frame" then
+					if glitch == "DISORIENTATION" then
+						local rnd = math.random(1,3)
+						if rnd == 1 then
+							v.Color = Color3.new(1,0,0)
+						elseif rnd == 2 then
+							v.Color = Color3.new(0,1,0)
+						elseif rnd == 3 then
+							v.Color = Color3.new(0,0,1)
+						end
+					else
+						v.Color = secondcolor
+					end
+					v.Material = secondwingmat
+				end
+			end
+		end
+	end
+	for i,v in pairs(wings) do
+		recolor(v)
+	end
+	BGU.main.Flare.ImageColor3 = maincolor
+	BGU.main.biggerhex.ImageColor3 = secondcolor
+	BGU.main.hex.ImageColor3 = maincolor
+	BGU.main.biggerleftline.ImageColor3 = secondcolor
+	BGU.main.biggerrightline.ImageColor3 = secondcolor
+	BGU.main.leftline.ImageColor3 = maincolor
+	BGU.main.rightline.ImageColor3 = maincolor
+	BGU.main.textthing.TextColor3 = maincolor
+	BGU.main.textthing.TextStrokeColor3 = secondcolor
+	BGU.main.textthing.Font = font
+	BGU.main.textthing.Text = name
+	for _,v in pairs(BGU.main.visbars:GetChildren()) do
+		v.BackgroundColor3 = maincolor
+		v.BorderColor3 = secondcolor
+	end
+	Hum.WalkSpeed = sped
+	Hum.JumpPower = jemp
+	storewalkspeed = sped
+	groovy.SoundId = "rbxassetid://"..ID
+	groovy.Pitch = PITCH
+	local guimain = SG.main
+	guimain.hexagonthing.ImageColor3 = maincolor
+	guimain.anotherhexagonthing.ImageColor3 = secondcolor
+	guimain.slidething.ImageColor3 = maincolor
+	guimain.anotherslidething.ImageColor3 = secondcolor
+	guimain.glow.ImageColor3 = maincolor
+	guimain.name.Text = name
+	guimain.name.TextColor3 = maincolor
+	guimain.name.TextStrokeColor3 = secondcolor
+	guimain.name.Font = font
+	guimain.textinfo.Text = songinfo
+	guimain.textinfo.TextColor3 = maincolor
+	guimain.textinfo.TextStrokeColor3 = secondcolor
+	guimain.textinfo.Font = font
+	guimain["credit text thing"].BackgroundColor3 = maincolor
+	guimain["credit text thing"].BorderColor3 = secondcolor
+	guimain["credit text thing"].text.TextColor3 = maincolor
+	guimain["credit text thing"].text.TextStrokeColor3 = secondcolor
+	guimain["credit text thing"].text.Font = font
+	guimain.visbars.BackgroundColor3 = maincolor
+	guimain.visbars.BorderColor3 = secondcolor
+	for _,v in pairs(guimain.visbars:GetChildren()) do
+		if not v:IsA("UIGradient") then
+			v.BackgroundColor3 = maincolor
+			v.BorderColor3 = secondcolor
+		end
+	end
+		--[[pcall(function()
+		twen1:Cancel()
+		twen2:Cancel()
+		twen3:Cancel()
+		twen4:Cancel()
+		twen5:Cancel()
+		twen6:Cancel()
+		twen7:Cancel()
+		twen8:Cancel()
+		twen9:Cancel()
+		twen10:Cancel()
+		twen11:Cancel()
+		twen12:Cancel()
+		twen13:Cancel()
+		end)]]
+end
+
+MainColor = Color3.fromRGB(120,0,255)
+SecondColor = Color3.fromRGB(0,0,0)
+modechange({
+	maincolor = MainColor,
+	secondcolor = SecondColor,
+	wingmat = "Neon",
+	secondwingmat = "Neon",
+	name = "ECCLESIASTIC",
+	speed = 50,
+	jumppower = 50,
+	font = "Gotham",
+	theme = 2606277947,
+	songinfo = "Kurokotei - Chronostatis",
+	pitch = 1
+})
+tweenrecolor({
+	tweeninfo = TweenInfo.new(2,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,math.huge,true,0),
+	maincolor = Color3.fromRGB(0,255,120),
+	secondcolor = Color3.fromRGB(0,0,0)
+})
+
+glitch = "ECCLESIASTIC"
+
+--sound function by GunsForGunsKidd
+function Sound(Type,SoundId,parent,vol,pitch,timepos,SCFrame)
+	coroutine.resume(coroutine.create(function()
+		if Type == "Sound" then
+			local sound = Instance.new("Sound",parent)
+			--[[nice]]--
+			sound.SoundId = "rbxassetid://" .. SoundId
+			sound.Volume = vol
+			sound.PlaybackSpeed = pitch
+			sound.TimePosition = timepos
+			sound:Play()
+			wait(5 + sound.TimeLength)
+			if sound.Parent ~= nil then
+				sound:Destroy()
+			end
+		elseif Type == "LongSound" then
+			local SoundPart = Instance.new("Part",char)
+			SoundPart.Anchored = true
+			SoundPart.CanCollide = false
+			SoundPart.Size = Vector3.new(0.05,0.05,0.05)
+			SoundPart.Transparency = 1
+			SoundPart.CFrame = parent.CFrame
+			local sound = Instance.new("Sound",SoundPart)
+			sound.SoundId = "rbxassetid://" .. SoundId
+			sound.Volume = vol
+			sound.PlaybackSpeed = pitch
+			sound.TimePosition = timepos
+			sound:Play()
+			coroutine.resume(coroutine.create(function()
+				repeat  
+					swait(5)
+					SoundPart.CFrame = parent.CFrame
+				until parent.parent == nil or SoundPart.Parent == nil
+			end))
+			wait(30 + sound.TimeLength)
+			if SoundPart.Parent ~= nil then
+				SoundPart:Destroy()
+			end
+		elseif Type == "CFrameSound" then
+			local SoundPart = Instance.new("Part",char)
+			SoundPart.Anchored = true
+			SoundPart.CanCollide = false
+			SoundPart.Size = Vector3.new(0.05,0.05,0.05)
+			SoundPart.Transparency = 1
+			SoundPart.CFrame = SCFrame
+			local sound = Instance.new("Sound",SoundPart)
+			sound.SoundId = "rbxassetid://" .. SoundId
+			sound.Volume = vol
+			sound.PlaybackSpeed = pitch
+			sound.TimePosition = timepos
+			sound:Play()
+			wait(30 + sound.TimeLength)
+			if SoundPart.Parent ~= nil then
+				SoundPart:Destroy()
+			end
+		elseif Type == "per" then
+			local sound = Instance.new("Sound",parent)
+			sound.SoundId = "rbxassetid://" .. SoundId
+			sound.Volume = 1
+			sound.PlaybackSpeed = volume/10
+			sound.TimePosition = timepos
+			sound:Play()
+			wait(volume/100)
+			if sound.Parent ~= nil then
+				sound:Destroy()
+			end
+		end
+	end))
+end
+--the
+function FindTorso(Pos,Range)
+	for i,v in pairs(game.Workspace:GetDescendants()) do
+		if v.ClassName == "Humanoid" then
+			if v.Parent:FindFirstChild("Torso") and v.Parent ~= script.Parent then
+				local dist = (Pos - v.Parent.Torso.Position).Magnitude
+				if dist <= Range then
+					return v.Parent:FindFirstChild("Torso")
+				end
+			end
+		end
+	end
+end
+--switching effect uwu
+function boom()
+	attack = true
+	glitch = 0
+	local sparkgui = Instance.new("BillboardGui",Torso)
+	sparkgui.Size = UDim2.new(50,0,50,0)
+	sparkgui.LightInfluence = 0
+	sparkgui.AlwaysOnTop = true
+	local spark = Instance.new("ImageLabel",sparkgui)
+	spark.Image = "rbxassetid://2092248396"	
+	spark.Size = UDim2.new(1,0,1,0)
+	spark.BackgroundTransparency = 1
+	spark.ImageColor3 = MainColor
+	spark.BackgroundTransparency = 1
+	Sound("Sound",847061203,Torso,10,1,0)
+	Sound("Sound",4196111215,Torso,10,1,0)
+	Sound("Sound",3582192677,Torso,10,2,0)
+	
+	local partic2 = Instance.new("ParticleEmitter",Torso)
+	partic2.Texture = "rbxassetid://1053548563"
+	partic2.LightEmission = 1
+	partic2.LightInfluence = 0
+	partic2.Color = ColorSequence.new(MainColor,SecondColor)
+	partic2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,1)}local partic = Instance.new("ParticleEmitter",Torso)
+	partic.Texture = "rbxassetid://1084969997"
+	partic.LightEmission = 1
+	partic.LightInfluence = 0
+	partic.Color = ColorSequence.new(MainColor,SecondColor)
+	partic.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(0.3,0.5),NumberSequenceKeypoint.new(1,1)}
+	partic.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,30),NumberSequenceKeypoint.new(1,0)}
+	partic.LockedToPart = true
+	partic.Lifetime = NumberRange.new(4)
+	partic.Rate = 3
+	partic.Rotation = NumberRange.new(-180,180)
+	partic.RotSpeed = NumberRange.new(360)
+	partic.Speed = NumberRange.new(0)
+	partic.SpreadAngle = Vector2.new(0,0)
+	partic2.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,30)}
+	partic2.LockedToPart = true
+	partic2.Lifetime = NumberRange.new(1,1.5)
+	partic2.Rate = 50
+	partic2.Rotation = NumberRange.new(-180,180)
+	partic2.RotSpeed = NumberRange.new(0)
+	partic2.Speed = NumberRange.new(0)
+	partic2.SpreadAngle = Vector2.new(0,0)
+	coroutine.resume(coroutine.create(function()
+		for i=1,100 do
+			sparkgui.Size = UDim2.new(50-i,0,50-i,0)
+			spark.ImageTransparency = i/100
+			spark.Rotation = spark.Rotation + 5
+			swait()
+		end
+		sparkgui:Destroy()
+	end))
+	for i=1,50 do
+		LH.C0 = clerp(LH.C0,cf(-1,-1,0)*angles(math.rad(-35.6),math.rad(0),math.rad(-6.4))*angles(math.rad(0),math.rad(-90),math.rad(0)),.05)
+		RH.C0 = clerp(RH.C0,cf(1,-1,0)*angles(math.rad(-31.1),math.rad(0),math.rad(7.7))*angles(math.rad(0),math.rad(90),math.rad(0)),.05)
+		LW.C0 = clerp(LW.C0,cf(-1.4,0.7,-0.3)*angles(math.rad(124.8),math.rad(0),math.rad(43.9)),.05)
+		RW.C0 = clerp(RW.C0,cf(1.3,0.7,-0.4)*angles(math.rad(113.3),math.rad(0),math.rad(-53.6)),.05)
+		Torso.Neck.C0 = clerp(Torso.Neck.C0,cf(0,0.6,0.9)*angles(math.rad(-67.6),math.rad(0),math.rad(0))*necko,.05)
+		swait()
+	end
+	Sound("Sound",824687369,Torso,10,1,0)
+	Sound("Sound",782353443,Torso,10,1,0)
+	Sound("Sound",782353443,Torso,10,1,0)
+	Sound("Sound",4575286747,Torso,10,1,0)
+	partic.Enabled = false
+	partic2.Enabled = false
+	local ray = Instance.new("ParticleEmitter",Torso)
+	ray.Texture = "rbxassetid://1053548563"
+	ray.LightEmission = 1
+	ray.LightInfluence = 0
+	ray.Color = ColorSequence.new(MainColor,SecondColor)
+	ray.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,1)}
+	ray.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,100)}
+	ray.LockedToPart = false
+	ray.Lifetime = NumberRange.new(0.5,1)
+	ray.Rate = 400
+	ray.Rotation = NumberRange.new(-180,180)
+	ray.RotSpeed = NumberRange.new(0)
+	ray.Speed = NumberRange.new(0)
+	ray.SpreadAngle = Vector2.new(0,0)
+	ray.Drag = 5
+	local partecle = Instance.new("ParticleEmitter",Torso)
+	partecle.LightEmission = 9999
+	partecle.LightInfluence = 0
+	partecle.EmissionDirection = "Top"
+	partecle.Enabled = true
+	partecle.Texture = "http://www.roblox.com/asset/?id=1084970835"
+	partecle.Color = ColorSequence.new(MainColor)
+	partecle.Transparency = NumberSequence.new(0,1)
+	partecle.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,15),NumberSequenceKeypoint.new(1,0)}
+	partecle.Acceleration = Vector3.new(0,1,0)
+	partecle.Lifetime = NumberRange.new(4)
+	partecle.Rotation = NumberRange.new(-180,180)
+	partecle.RotSpeed = NumberRange.new(-100,100)
+	partecle.Speed = NumberRange.new(30,70)
+	partecle.SpreadAngle = Vector2.new(-180, 180)
+	partecle.Rate = 1000000
+	partecle.Drag = 1
+	tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(100,100,100)},0.5,"Quint","Out",0,false)
+	tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(1,1,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(101,101,101)},0.5,"Quint","Out",0,false)
+	tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(50,50,50)},2,"Quint","Out",0,false)
+	tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(1,1,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(51,51,51)},2,"Quint","Out",0,false)
+	for i= 1,10 do
+		local a = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+		local b = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+		local speen = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+		tweenmesh("Slash",a,MainColor,Vector3.new(0,0.1,0),0,"Neon",0,{Transparency = 1, CFrame = a*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))), Size = Vector3.new(75,0.1,75)},3,"Quint","Out",0,false)
+		tweenmesh("Slash",a,SecondColor,Vector3.new(0,0.1,0),0,"ForceField",0,{Transparency = 1, CFrame = a*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))), Size = Vector3.new(76,0.1,76)},3,"Quint","Out",0,false)
+		tweeneff("blo k",b,MainColor,Vector3.new(0.5,0.5,0.5),0,"Neon",0,{Transparency = 1, CFrame = b*CFrame.new(math.random(5,20),0,0), Size = Vector3.new(0,0,0)},2,"Linear","Out",0,false)
+		tweenmesh("Wind",speen,MainColor,Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(10000),0), Size = Vector3.new(150,0,150)},3,"Linear","Out",0,false)
+	end
+	attack = false
+	coroutine.resume(coroutine.create(function()
+		swait(25)
+		partecle.Enabled = false
+		ray.Enabled = false
+		swait(300)
+		ray:Destroy()
+		partic:Destroy()
+		partic2:Destroy()
+		partecle:Destroy()
+	end))
+end
+function salvate()
+	if FindTorso(mousepos.p,5) ~= nil then
+		attack = true
+		local attacked = FindTorso(mousepos.p,5)
+		local part = Instance.new("Part",char)
+		part.Transparency = 1
+		part.Anchored = true
+		part.CanCollide = false
+		part.CFrame = attacked.CFrame
+		part.Size = Vector3.new(5,5,5)
+		Instance.new("WeldConstraint",part,{Part0 = attacked, Part1 = part})
+		local partic = Instance.new("ParticleEmitter",part)
+		partic.Texture = "rbxassetid://1084969997"
+		partic.LightEmission = 1
+		partic.LightInfluence = 0
+		partic.Color = ColorSequence.new(MainColor,SecondColor)
+		partic.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(0.3,0.5),NumberSequenceKeypoint.new(1,1)}
+		partic.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,30),NumberSequenceKeypoint.new(1,0)}
+		partic.LockedToPart = true
+		partic.Lifetime = NumberRange.new(0.3)
+		partic.Rate = 100
+		partic.Rotation = NumberRange.new(-180,180)
+		partic.RotSpeed = NumberRange.new(360)
+		partic.Speed = NumberRange.new(0)
+		partic.SpreadAngle = Vector2.new(0,0)
+		local partic2 = Instance.new("ParticleEmitter",part)
+		partic2.Texture = "rbxassetid://243728104"
+		partic2.LightEmission = 1
+		partic2.LightInfluence = 0
+		partic2.Color = ColorSequence.new(MainColor,SecondColor)
+		partic2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(0.3,0.5),NumberSequenceKeypoint.new(1,1)}
+		partic2.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,30),NumberSequenceKeypoint.new(1,0)}
+		partic2.LockedToPart = true
+		partic2.Lifetime = NumberRange.new(0.3)
+		partic2.Rate = 100
+		partic2.Rotation = NumberRange.new(-180,180)
+		partic2.RotSpeed = NumberRange.new(360)
+		partic2.Speed = NumberRange.new(0)
+		partic2.SpreadAngle = Vector2.new(0,0)
+		Sound("Sound",3582130077,attacked,10,1,0)
+		coroutine.resume(coroutine.create(function()
+			attackanim = true
+			for i=0,75 do
+				RootJoint.C0 = clerp(RootJoint.C0,cf(-0.5,3.7,0.2)*angles(math.rad(14),math.rad(38.5),math.rad(-0.3))*RootCF,.1)
+				LH.C0 = clerp(LH.C0,cf(-1,-1,0)*angles(math.rad(-17.7),math.rad(0.3),math.rad(-5.1))*angles(math.rad(0),math.rad(-90),math.rad(0)),.1)
+				RH.C0 = clerp(RH.C0,cf(1,-0.8,-0.4)*angles(math.rad(-10.5),math.rad(2.7),math.rad(7.2))*angles(math.rad(0),math.rad(90),math.rad(0)),.1)
+				LW.C0 = clerp(LW.C0,cf(-1.4,0.8,0.2)*angles(math.rad(2.9),math.rad(27.9),math.rad(-33.3)),.1)
+				RW.C0 = clerp(RW.C0,cf(1.3,0.6,-0.3)*angles(math.rad(-18.9),math.rad(48.9),math.rad(98.2)),.1)
+				Torso.Neck.C0 = clerp(Torso.Neck.C0,cf(0.1,0.1,0.5)*angles(math.rad(-28.2),math.rad(-24.3),math.rad(5))*necko,.1)
+				swait()
+			end
+			attackanim = false
+		end))
+		swait(50)
+		Sound("CFrameSound",221920821,char,10,1,0,attacked.CFrame)
+		Sound("CFrameSound",163680447,char,10,1,0,attacked.CFrame)
+		Sound("CFrameSound",824687369,char,10,1,0,attacked.CFrame)
+		Sound("CFrameSound",847061203,char,10,1,0,attacked.CFrame)
+		pcall(function()
+			attacked.Parent:BreakJoints()
+		end)
+		tweeneff("Sphere",attacked.CFrame,MainColor,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(100,100,100)},0.5,"Quint","Out",0,false)
+		tweeneff("Sphere",attacked.CFrame,MainColor,Vector3.new(1,1,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(101,101,101)},0.5,"Quint","Out",0,false)
+		for i= 1,10 do
+			for i,v in pairs({MainColor,SecondColor}) do
+				local speen = attacked.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+				local speen2 = attacked.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+				tweenmesh("Wind",speen,v,Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(10000),0), Size = Vector3.new(math.random(70,200),0,math.random(70,200))},math.random(3,4),"Quint","Out",0,false)
+				tweeneff("Sphere",speen2,v,Vector3.new(4,0,4),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,999,0)},1,"Linear","Out",0,false)
+			end
+		end
+		attack = false
+		swait(50)
+		partic.Enabled = false
+		partic2.Enabled = false
+		swait(50)
+		part:Destroy()
+	end
+end
+function errorboom()
+	attack = true
+	glitch = 0
+	for i=1,5 do
+		swait()
+		Sound("Sound",824687369,Torso,10,1,0)
+		Sound("Sound",782353443,Torso,10,1,0)
+		Sound("Sound",782353443,Torso,10,1,0)
+		Sound("Sound",4575286747,Torso,10,1,0)
+	end
+	local partecle = Instance.new("ParticleEmitter",Torso)
+	partecle.LightEmission = 9999
+	partecle.LightInfluence = 0
+	partecle.EmissionDirection = "Top"
+	partecle.Enabled = true
+	partecle.Texture = "http://www.roblox.com/asset/?id=680206155"
+	partecle.Color = ColorSequence.new(Color3.new(1,1,1))
+	partecle.Transparency = NumberSequence.new(0,1)
+	partecle.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,15),NumberSequenceKeypoint.new(1,0)}
+	partecle.Acceleration = Vector3.new(0,1,0)
+	partecle.Lifetime = NumberRange.new(4)
+	partecle.Rotation = NumberRange.new(-180,180)
+	partecle.RotSpeed = NumberRange.new(-100,100)
+	partecle.Speed = NumberRange.new(30,70)
+	partecle.SpreadAngle = Vector2.new(-180, 180)
+	partecle.Rate = 1000000
+	partecle.Drag = 1
+	for i=1,10 do
+		tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(math.random(100,500),math.random(100,500),math.random(100,500))},0.5,"Quint","Out",0,false)
+		tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(1,1,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(math.random(100,500),math.random(100,500),math.random(100,500))},0.5,"Quint","Out",0,false)
+		tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(math.random(100,500),math.random(100,500),math.random(100,500))},2,"Quint","Out",0,false)
+		tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(1,1,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(math.random(100,500),math.random(100,500),math.random(100,500))},2,"Quint","Out",0,false)
+	end
+	local particles = {}
+	for i=1,3 do
+		local partecle = Instance.new("ParticleEmitter",Torso)
+		partecle.LightEmission = 9999
+		partecle.LightInfluence = 0
+		partecle.EmissionDirection = "Top"
+		partecle.Enabled = true
+		partecle.Texture = "http://www.roblox.com/asset/?id=5122583722"
+		partecle.Color = ColorSequence.new(Color3.new(1,1,1))
+		partecle.Transparency = NumberSequence.new(0,1)
+		partecle.Size = NumberSequence.new(15,0)
+		partecle.Acceleration = Vector3.new(0,1,0)
+		partecle.Lifetime = NumberRange.new(0.3,0.7)
+		partecle.Rotation = NumberRange.new(-180,180)
+		partecle.RotSpeed = NumberRange.new(-100,100)
+		partecle.Speed = NumberRange.new(400,500)
+		partecle.SpreadAngle = Vector2.new(-180, 180)
+		partecle.Rate = 10000000
+		partecle.Drag = 1
+		table.insert(particles,#particles+1,partecle)
+	end
+	for i= 1,20 do
+		local a = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+		tweenmesh("Slash",a,MainColor,Vector3.new(0,0.1,0),0,"Neon",0,{Transparency = 1, CFrame = a*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))), Size = Vector3.new(math.random(100,500),0.1,math.random(100,500))},3,"Quint","Out",0,false)
+		tweenmesh("Slash",a,SecondColor,Vector3.new(0,0.1,0),0,"ForceField",0,{Transparency = 1, CFrame = a*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))), Size = Vector3.new(math.random(100,500),0.1,math.random(100,500))},3,"Quint","Out",0,false)
+	end
+	attack = false
+	coroutine.resume(coroutine.create(function()
+		swait(25)
+		partecle.Enabled = false
+		for i,v in pairs(particles) do v.Enabled = false end
+		swait(200)
+		for i,v in pairs(particles) do v:Destroy() end
+		partecle:Destroy()
+	end))
+end
+--shake
+function CamShake(intensity,length,style)
+	if style == "global" then
+		for i,v in pairs(workspace:GetChildren()) do
+			if v:FindFirstChildWhichIsA("Humanoid") then
+				local foreach = script.Shakescript:Clone()
+				foreach.Parent = v
+				foreach.Disabled = false
+				foreach.Camshake:FireAllClients(intensity,length)
+				game:GetService("Debris"):AddItem(foreach,5)
+			end
+		end
+	elseif style == "local" then	
+		local foreach = script.Shakescript:Clone()
+		foreach.Parent = char
+		foreach.Disabled = false
+		foreach.Camshake:FireAllClients(intensity,length)
+		game:GetService("Debris"):AddItem(foreach,5)
+	end
+end
+--attacs
+function ecboom()
+	Hum.WalkSpeed = 0
+	local sparkgui = Instance.new("BillboardGui",Torso)
+	sparkgui.Size = UDim2.new(50,0,50,0)
+	sparkgui.LightInfluence = 0
+	sparkgui.AlwaysOnTop = true
+	local spark = Instance.new("ImageLabel",sparkgui)
+	spark.Image = "rbxassetid://5369718523"	
+	spark.Size = UDim2.new(1,0,1,0)
+	spark.BackgroundTransparency = 1
+	spark.ImageColor3 = MainColor
+	spark.BackgroundTransparency = 1
+	coroutine.resume(coroutine.create(function()
+		for i=1,100 do
+			sparkgui.Size = UDim2.new(50-i,0,50-i,0)
+			spark.ImageTransparency = i/100
+			spark.Rotation = spark.Rotation + 5
+			swait()
+		end
+		sparkgui:Destroy()
+	end))
+	attackanim = true
+	for i=1,100 do
+		swait()
+		RootJoint.C0=clerp(RootJoint.C0,cf(0,0,0)*angles(math.rad(0.2),math.rad(-4.2),math.rad(-0.8))*RootCF,0.1)
+		Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(-10),math.rad(4.2),math.rad(2.8)),0.1)
+		RW.C0=clerp(RW.C0,cf(1.3,0.6,-0.4)*angles(math.rad(126),math.rad(-23.6),math.rad(-48.6)),0.1)
+		LW.C0=clerp(LW.C0,cf(-1.3,0.8,-0.3)*angles(math.rad(149.9),math.rad(-2),math.rad(61.2)),0.1)
+	end
+	for i=1,250 do
+		swait()
+		RootJoint.C0=clerp(RootJoint.C0,cf(0,0,0)*angles(math.rad(0.2),math.rad(-4.2),math.rad(-0.8))*RootCF,0.1)
+		Torso.Neck.C0=clerp(Torso.Neck.C0,cf(0,0,-0.3)*angles(math.rad(10.9),math.rad(4.7),math.rad(1.7))*necko,0.1)
+		RW.C0=clerp(RW.C0,cf(1,0.8,0.4)*angles(math.rad(50.9),math.rad(-21.8),math.rad(89.2)),0.1)
+		LW.C0=clerp(LW.C0,cf(-1.2,1,0)*angles(math.rad(-27.4),math.rad(26.2),math.rad(-49.7)),0.1)
+	end
+	attackanim = false
+	Hum.WalkSpeed = storewalkspeed
+end
+function zap()
+	attack = true
+	attackanim = true
+	Hum.WalkSpeed = 10
+	local bodypos = Instance.new("BodyPosition",Torso)
+	bodypos.MaxForce = Vector3.new(10000000,10000000,10000000)
+	bodypos.Position = (root.CFrame * CFrame.new(0,50,0)).p
+	Sound("Sound",1295446488,Torso,5,1,0)
+	Sound("Sound",289315275,Torso,10,1,0)
+	for i=20,1000,20 do
+		RootJoint.C0 = clerp(RootJoint.C0,cf(0,0,0)*angles(math.rad(-i),math.rad(0.8),math.rad(0.6))*RootCF,1)
+		LH.C0 = clerp(LH.C0,cf(-0.9,-0.5,-0.5)*angles(math.rad(-17.7),math.rad(0.3),math.rad(-5.1))*angles(math.rad(0),math.rad(-90),math.rad(0)),.1)
+		RH.C0 = clerp(RH.C0,cf(0.9,-0.5,-0.5)*angles(math.rad(-10.5),math.rad(2.7),math.rad(7.2))*angles(math.rad(0),math.rad(90),math.rad(0)),.1)
+		LW.C0 = clerp(LW.C0,cf(-1.4,0.5,-0.4)*angles(math.rad(106.3),math.rad(12.2),math.rad(44)),.1)
+		RW.C0 = clerp(RW.C0,cf(1.2,0.5,-0.4)*angles(math.rad(102.7),math.rad(-22.5),math.rad(-58)),.1)
+		Torso.Neck.C0 = clerp(Torso.Neck.C0,cf(0.1,0.4,0.8)*angles(math.rad(-55.5),math.rad(-2),math.rad(4))*necko,.1)
+		swait()
+	end
+	local place = CFrame.new(0,2,0)*rarm.CFrame
+	local ray = Ray.new(place.p,(mousepos.p-place.p).unit*1000)
+	local hit,pos,normal,material = workspace:FindPartOnRay(ray,char,false,true)
+	local gap = (place.p - pos).magnitude
+	local Distance = (root.CFrame.p - mousepos.p).magnitude
+	local Difference = root.CFrame.Y - mousepos.p.Y
+	local beam = Instance.new("Part",char)
+	beam.Shape = "Cylinder"
+	beam.Size = Vector3.new(gap, 20 + 3 * math.cos(sine/2),20 + 3 * math.cos(sine/2))
+	beam.Color = wings[1].Color.Color
+	beam.CFrame = CFrame.new(place.p, pos) * CFrame.new(0, 0, -gap/2) * CFrame.Angles(0,math.rad(90),0)
+	beam.Material = "Neon"
+	beam.Transparency = 0
+	beam.Anchored = true
+	beam.CanCollide = false
+	local beam2 = Instance.new("Part",char)
+	beam2.Shape = "Cylinder"
+	beam2.Size = Vector3.new(gap, 25 + 3 * math.cos(sine/2),25 + 3 * math.cos(sine/2))
+	beam2.Color = Color3.new(1,1,1)
+	beam2.CFrame = CFrame.new(place.p, pos) * CFrame.new(0, 0, -gap/2) * CFrame.Angles(0,math.rad(90),0)
+	beam2.Material = "Neon"
+	beam2.Transparency = 0.5
+	beam2.Anchored = true
+	beam2.CanCollide = false
+	local hitpart = Instance.new("Part",char)
+	hitpart.Shape = "Ball"
+	hitpart.Size = Vector3.new(5,5,5)
+	hitpart.CFrame = CFrame.new(pos)
+	hitpart.Transparency = 1
+	hitpart.Anchored = true
+	hitpart.CanCollide = false
+	local particles = {}
+	for i=1,3 do
+		local partecle = Instance.new("ParticleEmitter",hitpart)
+		partecle.LightEmission = 9999
+		partecle.LightInfluence = 0
+		partecle.EmissionDirection = "Top"
+		partecle.Enabled = true
+		partecle.Texture = "http://www.roblox.com/asset/?id=1084970835"
+		partecle.Color = ColorSequence.new(MainColor)
+		partecle.Transparency = NumberSequence.new(0,1)
+		partecle.Size = NumberSequence.new(15,0)
+		partecle.Acceleration = Vector3.new(0,1,0)
+		partecle.Lifetime = NumberRange.new(0.3,0.7)
+		partecle.Rotation = NumberRange.new(-180,180)
+		partecle.RotSpeed = NumberRange.new(-100,100)
+		partecle.Speed = NumberRange.new(400,500)
+		partecle.SpreadAngle = Vector2.new(-180, 180)
+		partecle.Rate = 10000000
+		partecle.Drag = 1
+		table.insert(particles,#particles+1,partecle)
+	end
+	Sound("Sound",1208650519,Torso,10,1,0)
+	Sound("Sound",164881093,Torso,10,1,0)
+	Sound("Sound",429123896,Torso,10,1,0)
+	for i=1,300 do
+		place = CFrame.new(0,2,0)*rarm.CFrame
+		ray = Ray.new(place.p,(mousepos.p-place.p).unit*1000)
+		hit,pos,normal,material = workspace:FindPartOnRay(ray,char,false,true)
+		gap = (place.p - pos).magnitude
+		Distance = (root.CFrame.p - mousepos.p).magnitude
+		Difference = root.CFrame.Y - mousepos.p.Y
+		RootJoint.C0 = clerp(RootJoint.C0,cf(0,0,0)*angles(math.rad(0),math.rad(79),math.rad(0))*RootCF*CFrame.Angles((math.atan(Difference / Distance) * 0.5), 0, (((hed.Position - mousepos.p).Unit):Cross(hed.CFrame.LookVector)).Y * 5),.1)
+		LH.C0 = clerp(LH.C0,cf(-1,-0.9,-0.1)*angles(math.rad(-17.7),math.rad(0.3),math.rad(-5.1))*angles(math.rad(0),math.rad(-90),math.rad(0)),.1)
+		RH.C0 = clerp(RH.C0,cf(1,-1,0)*angles(math.rad(-10.5),math.rad(2.7),math.rad(7.2))*angles(math.rad(0),math.rad(90),math.rad(0)),.1)
+		LW.C0 = clerp(LW.C0,cf(-1.5,0.5,0.1)*angles(math.rad(11.8),math.rad(5.9),math.rad(-4.5)),.1)
+		RW.C0 = clerp(RW.C0,cf(1.1,0.5,0.5)*angles(math.rad(87.6),math.rad(-8.9),math.rad(82.2)),.1)
+		Torso.Neck.C0 = clerp(Torso.Neck.C0,cf(0,0,-0.1)*angles(math.rad(3.7),math.rad(-76.8),math.rad(0))*necko,.1)
+		--tweeneff("Cylinder",CFrame.new(place.p, pos) * CFrame.new(0, 0, -gap/2) * CFrame.Angles(0,math.rad(90),0),wings[1].Color.Color,Vector3.new(gap, 20 + 1 * math.cos(sine/2),20 + 1 * math.cos(sine/2)),0,"Neon",0,{Transparency = 1, Size = Vector3.new(gap,0,0)},0.1,"Linear","Out",0,false)
+		--tweeneff("Cylinder",CFrame.new(place.p, pos) * CFrame.new(0, 0, -gap/2) * CFrame.Angles(0,math.rad(90),0),wings[2].Color.Color,Vector3.new(gap, 22 + 1 * math.cos(sine/2),22 + 1 * math.cos(sine/2)),0,"Neon",0.5,{Transparency = 1, Size = Vector3.new(gap,0,0)},0.1,"Linear","Out",0,false)
+		for i,v in pairs(particles) do
+			v.Color = ColorSequence.new(wings[1].Color.Color)
+		end
+		beam.Color = wings[1].Color.Color
+		beam2.Color = Color3.new(1,1,1)
+		beam2.Size = Vector3.new(gap, 25 + 3 * math.cos(sine/2),25 + 3 * math.cos(sine/2))
+		beam2.CFrame = CFrame.new(place.p, pos) * CFrame.new(0, 0, -gap/2) * CFrame.Angles(0,math.rad(90),0)
+		beam.Size = Vector3.new(gap, 20 + 3 * math.cos(sine/2),20 + 3 * math.cos(sine/2))
+		beam.CFrame = CFrame.new(place.p, pos) * CFrame.new(0, 0, -gap/2) * CFrame.Angles(0,math.rad(90),0)
+		tweeneff("Sphere",CFrame.new(pos),wings[1].Color.Color,Vector3.new(45,45,45),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0)},0.25,"Linear","Out",0,false)
+		tweeneff("Sphere",CFrame.new(pos),Color3.new(1,1,1),Vector3.new(47,47,47),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0)},0.25,"Linear","Out",0,false)
+		hitpart.CFrame = CFrame.new(pos)
+		for i=1,5 do
+			local a = CFrame.new(pos)*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+			tweeneff("Sphere",a,wings[1].Color.Color,Vector3.new(6,20,6),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,30,0), CFrame = a*CFrame.new(0,math.random(160,200),0)},0.25,"Linear","Out",0,false)
+		end
+		magidmg(pos,20,1000,2000,"Normal")
+		swait()
+	end
+	for i,v in pairs(particles) do v:Destroy() end
+	beam:Destroy()
+	beam2:Destroy()
+	bodypos:Destroy()
+	attackanim = false
+	attack = false
+end
+function bosschat(texttable)
+	for i,v in pairs(game.Players:GetPlayers()) do
+		local plrgui = v.PlayerGui
+		local bosgui = Instance.new("ScreenGui",plrgui)
+		local fram = Instance.new("Frame",{Parent = bosgui, Size = UDim2.new(0, 0,0.1), BackgroundTransparency = 0, BackgroundColor3 = MainColor, BorderColor3 = SecondColor})
+		
+	end
+end
+function serene()
+	attack,attackanim = true,true
+	for i=1,20 do
+		--LH.C0 = clerp(LH.C0,cf(-1,-1,0)*angles(math.rad(-35.6),math.rad(0),math.rad(-6.4))*angles(math.rad(0),math.rad(-90),math.rad(0)),.2)
+		--RH.C0 = clerp(RH.C0,cf(1,-1,0)*angles(math.rad(-31.1),math.rad(0),math.rad(7.7))*angles(math.rad(0),math.rad(90),math.rad(0)),.2)
+		LW.C0 = clerp(LW.C0,cf(-1.4,0.7,-0.3)*angles(math.rad(124.8),math.rad(0),math.rad(43.9)),.2)
+		RW.C0 = clerp(RW.C0,cf(1.3,0.7,-0.4)*angles(math.rad(113.3),math.rad(0),math.rad(-53.6)),.2)
+		Torso.Neck.C0 = clerp(Torso.Neck.C0,cf(0,0.6,0.9)*angles(math.rad(-67.6),math.rad(0),math.rad(0))*necko,.2)
+		swait()
+	end
+	coroutine.resume(coroutine.create(function()
+		for i=1,20 do
+			--RootJoint.C0 = clerp(RootJoint.C0,cf(0,0,0)*angles(math.rad(28.1),math.rad(0.9),math.rad(-0.5))*RootCF,.1)
+			--LH.C0 = clerp(LH.C0,cf(-1,-1,0)*angles(math.rad(-17.7),math.rad(0.3),math.rad(-5.1))*angles(math.rad(0),math.rad(-90),math.rad(0)),.1)
+			--RH.C0 = clerp(RH.C0,cf(1,-0.9,0)*angles(math.rad(-10.5),math.rad(2.7),math.rad(7.2))*angles(math.rad(0),math.rad(90),math.rad(0)),.1)
+			LW.C0 = clerp(LW.C0,cf(-1.3,0.3,0.4)*angles(math.rad(106.3),math.rad(12.2),math.rad(-54.9)),.1)
+			RW.C0 = clerp(RW.C0,cf(1.3,0.3,0.3)*angles(math.rad(102.7),math.rad(-22.5),math.rad(44.7)),.1)
+			Torso.Neck.C0 = clerp(Torso.Neck.C0,cf(0.1,0,-0.3)*angles(math.rad(17.7),math.rad(3.3),math.rad(3.1))*necko,.1)
+			swait()
+		end
+		attackanim = false
+	end))
+	local partecle = Instance.new("ParticleEmitter",Torso)
+	partecle.LightEmission = 9999
+	partecle.LightInfluence = 0
+	partecle.EmissionDirection = "Top"
+	partecle.Enabled = true
+	partecle.Texture = "http://www.roblox.com/asset/?id=1084970835"
+	partecle.Color = ColorSequence.new(MainColor)
+	partecle.Transparency = NumberSequence.new(0,1)
+	partecle.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,1),NumberSequenceKeypoint.new(1,0)}
+	partecle.Acceleration = Vector3.new(0,5,0)
+	partecle.Lifetime = NumberRange.new(4)
+	partecle.Rotation = NumberRange.new(0)
+	partecle.RotSpeed = NumberRange.new(-100,100)
+	partecle.Speed = NumberRange.new(150,200)
+	partecle.SpreadAngle = Vector2.new(-180, 180)
+	partecle.Rate = 1000000
+	partecle.Drag = 7	
+	local partecle2 = Instance.new("ParticleEmitter",Torso)
+	partecle2.LightEmission = 9999
+	partecle2.LightInfluence = 0
+	partecle2.EmissionDirection = "Top"
+	partecle2.Enabled = true
+	partecle2.Texture = "http://www.roblox.com/asset/?id=1084970835"
+	partecle2.Color = ColorSequence.new(MainColor)
+	partecle2.Transparency = NumberSequence.new(0,1)
+	partecle2.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,1),NumberSequenceKeypoint.new(1,0)}
+	partecle2.Acceleration = Vector3.new(0,5,0)
+	partecle2.Lifetime = NumberRange.new(4)
+	partecle2.Rotation = NumberRange.new(0)
+	partecle2.RotSpeed = NumberRange.new(-100,100)
+	partecle2.Speed = NumberRange.new(150,200)
+	partecle2.SpreadAngle = Vector2.new(-180, 180)
+	partecle2.Rate = 1000000
+	partecle2.Drag = 7
+	for i=1,10 do
+		tweenmesh("Slash",root.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),MainColor,Vector3.new(0,0.1,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(50,0.1,50), CFrame = root.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))},2,"Quint","Out",0,false)
+		tweeneff("Sphere",root.CFrame,MainColor,Vector3.new(0,0,0),0,"ForceField",-5,{Transparency = 1, Size = Vector3.new(40,40,40)},2,"Quint","Out",0,false)	
+	end
+	magidmg(root.Position,20,1000,1000,"Neg")
+	Sound("Sound",3226828061,Torso,5,1.1,0.2)
+	attack = false
+	swait(20)
+	partecle.Enabled = false
+	partecle2.Enabled = false
+	attack = false
+	swait(300)
+	partecle:Destroy()
+	partecle2:Destroy()
+end
+function APOTHEOSIS()
+	attack = true
+	attackanim = true
+	Hum.WalkSpeed = 10
+	local bodypos = Instance.new("BodyPosition",Torso)
+	bodypos.MaxForce = Vector3.new(10000000,10000000,10000000)
+	bodypos.Position = (root.CFrame * CFrame.new(0,200,0)).p
+	Sound("Sound",1295446488,Torso,5,1,0)
+	Sound("Sound",289315275,Torso,10,1,0)
+	for i=20,1000,20 do
+		RootJoint.C0 = clerp(RootJoint.C0,cf(0,0,0)*angles(math.rad(-i),math.rad(0.8),math.rad(0.6))*RootCF,1)
+		LH.C0 = clerp(LH.C0,cf(-0.9,-0.5,-0.5)*angles(math.rad(-17.7),math.rad(0.3),math.rad(-5.1))*angles(math.rad(0),math.rad(-90),math.rad(0)),.1)
+		RH.C0 = clerp(RH.C0,cf(0.9,-0.5,-0.5)*angles(math.rad(-10.5),math.rad(2.7),math.rad(7.2))*angles(math.rad(0),math.rad(90),math.rad(0)),.1)
+		LW.C0 = clerp(LW.C0,cf(-1.4,0.5,-0.4)*angles(math.rad(106.3),math.rad(12.2),math.rad(44)),.1)
+		RW.C0 = clerp(RW.C0,cf(1.2,0.5,-0.4)*angles(math.rad(102.7),math.rad(-22.5),math.rad(-58)),.1)
+		Torso.Neck.C0 = clerp(Torso.Neck.C0,cf(0.1,0.4,0.8)*angles(math.rad(-55.5),math.rad(-2),math.rad(4))*necko,.1)
+		swait()
+	end
+	modechange({
+		maincolor = Color3.new(0,0,0),
+		secondcolor = Color3.new(0.3,0.3,0.3),
+		wingmat = "Neon",
+		secondwingmat = "Neon",
+		name = "???",
+		speed = 50,
+		jumppower = 50,
+		font = "Gotham",
+		theme = 2606277947,
+		songinfo = "Something is happening?",
+		pitch = 1
+	})
+	groovy.TimePosition = 0
+	groovy.SoundId = "rbxassetid://3043964557"
+	local partecle2 = Instance.new("ParticleEmitter",Torso)
+	partecle2.LightEmission = 9999
+	partecle2.LightInfluence = 0
+	partecle2.EmissionDirection = "Top"
+	partecle2.Enabled = true
+	partecle2.Texture = "http://www.roblox.com/asset/?id=1084970835"
+	partecle2.Color = ColorSequence.new(MainColor)
+	partecle2.Transparency = NumberSequence.new(0,1)
+	partecle2.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,25),NumberSequenceKeypoint.new(1,0)}
+	partecle2.Acceleration = Vector3.new(0,5,0)
+	partecle2.Lifetime = NumberRange.new(2)
+	partecle2.Rotation = NumberRange.new(0)
+	partecle2.RotSpeed = NumberRange.new(-100,100)
+	partecle2.Speed = NumberRange.new(0,1700)
+	partecle2.SpreadAngle = Vector2.new(-180, 180)
+	partecle2.Rate = 1000
+	partecle2.Drag = 7
+	local ray = Instance.new("ParticleEmitter",Torso)
+	ray.ZOffset = -1
+	ray.Texture = "rbxassetid://1053548563"
+	ray.LightEmission = 1
+	ray.LightInfluence = 0
+	ray.Color = ColorSequence.new(MainColor,SecondColor)
+	ray.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,1)}
+	ray.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,300)}
+	ray.LockedToPart = false
+	ray.Lifetime = NumberRange.new(0.25,0.5)
+	ray.Rate = 1600
+	ray.Rotation = NumberRange.new(-180,180)
+	ray.RotSpeed = NumberRange.new(0)
+	ray.Speed = NumberRange.new(0)
+	ray.SpreadAngle = Vector2.new(0,0)
+	ray.Drag = 5
+	spawn(function()
+		for i=1,250/4,.75/2 do
+			Sound("Sound",1368583274,Torso,1,1,0)
+			Sound("Sound",1368637781,Torso,1,1,0)
+			Sound("Sound",1368605755,Torso,1,1,0)
+			Sound("Sound",763718160,Torso,1,1,0)
+			Sound("Sound",782353443,Torso,1,1,0)
+			swait(4)
+		end
+	end)
+	for i=1,250/4,.75 do
+		partecle2.Color = ColorSequence.new(Color3.fromHSV(sine/180-math.floor(sine/180),0.5,1))
+		ray.Color = ColorSequence.new(Color3.fromHSV(sine/180-math.floor(sine/180),0.5,1))
+		local a = Torso.CFrame*CFrame.Angles(math.rad(sine*1),math.rad(sine*2),math.rad(sine*3))
+		local b = Torso.CFrame*CFrame.Angles(math.rad(sine*2),math.rad(sine*4),math.rad(sine*6))
+		local c = Torso.CFrame*CFrame.Angles(math.rad(sine*4),math.rad(sine*8),math.rad(sine*12))
+		local d = Torso.CFrame*CFrame.Angles(math.rad(90 + math.random(-5,5)),math.rad(sine*5),0)
+		local e = Torso.CFrame*CFrame.Angles(math.rad(90 + math.random(-5,5)),math.rad(sine*10),0)
+		local f = Torso.CFrame*CFrame.Angles(math.rad(90 + math.random(-5,5)),math.rad(sine*15),0)
+		tweeneff("Sphere",Torso.CFrame,Color3.fromHSV(sine/180-math.floor(sine/180),0.5,1),Vector3.new(i,i,i),0,"Neon",0,{Transparency = 1, Size = Vector3.new(i*1.5,i*1.5,i*1.5)},0.1,"Linear","Out",0,false)
+		tweenmesh("ball",a,Color3.new(0,0,0),Vector3.new(i*1.5,i*1.5,i*1.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(i*1.75,i*1.75,i*1.75), CFrame = a*CFrame.Angles(math.rad(0),math.rad(360),math.rad(0))},0.1,"Linear","Out",0,false)
+		tweenmesh("moreball",b,Color3.fromHSV(sine/180-math.floor(sine/180),0.5,1),Vector3.new(i*1.75,i*1.75,i*1.75),0,"Neon",0,{Transparency = 1, Size = Vector3.new(i*2,i*2,i*2), CFrame = b*CFrame.Angles(0,math.rad(720),0)},0.1,"Linear","Out",0,false)
+		tweenmesh("evenmoreball",c,Color3.new(0,0,0),Vector3.new(i*2,i*2,i*2),0,"Neon",0,{Transparency = 1, Size = Vector3.new(i*2.25,i*2.25,i*2.25), CFrame = c*CFrame.Angles(0,math.rad(1080),0)},0.1,"Linear","Out",0,false)
+		tweenmesh("Swirl",d,Color3.fromHSV(sine/180-math.floor(sine/180),0.5,1),Vector3.new(i*3,20,i*3),0,"Neon",0,{Transparency = 1, Size = Vector3.new(i*3.25,20,i*3.25), CFrame = d*CFrame.Angles(0,math.rad(360),0)},0.1,"Linear","Out",0,false)
+		tweenmesh("Wind",e,Color3.new(0,0,0),Vector3.new(i*3.25,20,i*3.25),0,"Neon",0,{Transparency = 1, Size = Vector3.new(i*3.5,20,i*3.5),CFrame = e*CFrame.Angles(0,math.rad(720),0)},0.1,"Linear","Out",0,false)
+		tweenmesh("Wind2",f,Color3.new(0,0,0),Vector3.new(i*3.5,20,i*3.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(i*3.75,20,i*3.75), CFrame = f*CFrame.Angles(0,math.rad(1080),0)},0.1,"Linear","Out",0,false)
+		swait(2)
+	end
+	Sound("Sound",1368583274,Torso,10,1,0)
+	swait()
+	Sound("Sound",1368637781,Torso,10,1,0)
+	swait()
+	Sound("Sound",1368605755,Torso,10,1,0)
+	swait()
+	Sound("Sound",763718160,Torso,10,1,0)
+	swait()
+	Sound("Sound",782353443,Torso,10,1,0)
+	swait()
+	Sound("Sound",763717897,Torso,10,1,0)
+	swait()
+	Sound("Sound",1664711478,Torso,10,1,0)
+	swait()
+	Sound("Sound",824687369,Torso,10,1,0)
+	swait()
+	Sound("Sound",782353443,Torso,10,1,0)
+	swait()
+	Sound("Sound",782353443,Torso,10,1,0)
+	swait()
+	Sound("Sound",4575286747,Torso,10,1,0)
+	swait()
+	Sound("Sound",221920821,Torso,10,1,0)
+	swait()
+	Sound("Sound",163680447,Torso,10,1,0)
+	swait()
+	Sound("Sound",824687369,Torso,10,1,0)
+	swait()
+	Sound("Sound",847061203,Torso,10,1,0)
+	local yes = Instance.new("ColorCorrectionEffect",game:GetService("Lighting"))
+	yes.Brightness = 1
+	CamShake(10,20,"global")
+	tweenserv:Create(yes,TweenInfo.new(3,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,false),{Brightness = 0}):Play()
+	ray:Destroy()
+	partecle2:Destroy()
+	spawn(function()
+		for i=1,100 do
+			for i=1,3 do
+				local d = Torso.CFrame*CFrame.Angles(math.rad(90 + math.random(-5,5)),math.rad(sine*5),0)
+				local e = Torso.CFrame*CFrame.Angles(math.rad(90 + math.random(-5,5)),math.rad(sine*10),0)
+				local f = Torso.CFrame*CFrame.Angles(math.rad(90 + math.random(-5,5)),math.rad(sine*15),0)
+				local g = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+				tweeneff("Sphere",g,Color3.fromHSV(sine/180-math.floor(sine/180),0.5,1),Vector3.new(3,99999999999,3),0,"Neon",0,{Transparency = 1},0.25,"Linear","Out",0,false)
+				local a = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+				local b = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+				local speen = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+				tweenmesh("Slash",a,MainColor,Vector3.new(0,0.1,0),0,"Neon",0,{Transparency = 1, CFrame = a*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))), Size = Vector3.new(math.random(0,1000),0.1,math.random(0,1000))},0.25,"Quint","Out",0,false)
+				tweenmesh("Slash",a,SecondColor,Vector3.new(0,0.1,0),0,"ForceField",0,{Transparency = 1, CFrame = a*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))), Size = Vector3.new(math.random(0,1000),0.1,math.random(0,1000))},0.25,"Quint","Out",0,false)
+				tweeneff("blo k",b,MainColor,Vector3.new(0.5,0.5,0.5),0,"Neon",0,{Transparency = 1, CFrame = b*CFrame.new(math.random(5,20),0,0), Size = Vector3.new(0,0,0)},0.25,"Linear","Out",0,false)
+			end
+			swait()
+		end
+		bodypos:Destroy()
+	end)
+	apotheosisform()
+	attack = false
+	attackanim = false
+	wait(3)
+	yes:Destroy()
+end
+function apotheosisform()
+	MainColor = Color3.fromHSV(sine/180-math.floor(sine/180),0.5,1)
+	SecondColor = Color3.fromRGB(0,0,0)
+	modechange({
+		maincolor = MainColor,
+		secondcolor = SecondColor,
+		wingmat = "Neon",
+		secondwingmat = "Neon",
+		name = "APOTHEOSIS",
+		speed = 500,
+		jumppower = 100,
+		font = "Gotham",
+		theme = 3043964557,
+		songinfo = "LunaticSounds - Dement ~After Legend~",
+		pitch = 1
+	})
+	glitch = "APOTHEOSIS"
+end
+--Attacks apply
+local dumb = script.dumb
+local visualiser = 0
+script.playbackloudness.OnServerEvent:Connect(function(the,meme)
+	visualiser = meme
+end)
+local Side = 1
+dumb.OnServerEvent:connect(function(e,k)
+	local key = string.lower(k)
+	if Side == 1 then
+		if key == "q" and glitch ~= "ECCLESIASTIC" and attack == false then
+			MainColor = Color3.fromRGB(120,0,255)
+			SecondColor = Color3.fromRGB(0,0,0)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "ECCLESIASTIC",
+				speed = 50,
+				jumppower = 50,
+				font = "Gotham",
+				theme = 2606277947,
+				songinfo = "Kurokotei - Chronostatis",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(2,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(0,255,120),
+				secondcolor = Color3.fromRGB(0,0,0)
+			})
+			glitch = "ECCLESIASTIC"
+		elseif key == "q" and glitch == "ECCLESIASTIC" and glitch ~= "EXTERMINATION" then
+			MainColor = Color3.fromRGB(161, 69, 71)
+			SecondColor = Color3.fromRGB(50,50,50)
+			boom()
+			Side = 2
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "EXTERMINATION",
+				speed = 100,
+				jumppower = 50,
+				font = "Garamond",
+				theme = 3352602056,
+				songinfo = "Ikaruga_nex - RevixXy",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(2,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(180,0,0),
+				secondcolor = Color3.fromRGB(70, 70, 70)
+			})
+			glitch = "EXTERMINATION"
+		elseif key == "e" and glitch ~= "LUCID" and attack == false then
+			MainColor = Color3.fromRGB(255,120,255)
+			SecondColor = Color3.fromRGB(255,255,255)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "LUCID",
+				speed = 100,
+				jumppower = 50,
+				font = "Garamond",
+				theme = 2942561321,
+				songinfo = "cYsmix - Peer Gynt",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(2,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(100,50,255),
+				secondcolor = Color3.fromRGB(255,255,255)
+			})
+			glitch = "LUCID"
+		elseif key == "r" and glitch ~= "SALVATION" and attack == false then
+			MainColor = Color3.fromRGB(255,140,140)
+			SecondColor = Color3.fromRGB(30,30,50)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "SALVATION",
+				speed = 200,
+				jumppower = 50,
+				font = "Antique",
+				theme = 4550748038,
+				songinfo = "Team Grimoire - OuroVoros",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(2,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(255,0,120),
+				secondcolor = Color3.fromRGB(30,30,50)
+			})
+			glitch = "SALVATION"
+		elseif key == "m" and glitch == "SALVATION" and glitch ~= "VINDICTIVE" and attack == false then
+			MainColor = Color3.fromRGB(196, 40, 28)
+			SecondColor = Color3.fromRGB(150, 150, 150)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "VINDICTIVE",
+				speed = 250,
+				jumppower = 50,
+				font = "Garamond",
+				theme = 4521541755,
+				songinfo = "The Requiem - Sigmund (TPZ Overheat Remix)",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(0.5,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(170,40,28),
+				secondcolor = Color3.fromRGB(150, 150, 150)
+			})
+			glitch = "VINDICTIVE"
+		elseif key == "t" and glitch ~= "CHROMATIC" and attack == false then
+			MainColor = Color3.fromHSV(sine/60-math.floor(sine/60),0.5,1)
+			SecondColor = Color3.fromHSV(sine/60-math.floor(sine/60),1,1)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "CHROMATIC",
+				speed = 500,
+				jumppower = 50,
+				font = "GothamBold",
+				theme = 4926087847,
+				songinfo = "Ebimayo - Goodfortune",
+				pitch = 1
+			})
+			glitch = "CHROMATIC"
+		elseif key == "y" and glitch ~= "MIRAGE" and attack == false then
+			MainColor = Color3.fromRGB(110, 153, 202)
+			SecondColor = Color3.fromRGB(255,255,255)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "MIRAGE",
+				speed = 300,
+				jumppower = 50,
+				font = "SciFi",
+				theme = 5638859973,
+				songinfo = "Kurokotei - Into the void",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(148, 190, 129),
+				secondcolor = Color3.fromRGB(255, 255, 255)
+			})
+			glitch = "MIRAGE"
+		elseif key == "u" and glitch ~= "EXPONENTIAL" and attack == false then
+			MainColor = Color3.fromRGB(100,255,100)
+			SecondColor = Color3.fromRGB(255, 255, 255)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "EXPONENTIAL",
+				speed = 200,
+				jumppower = 50,
+				font = "SciFi",
+				theme = 5010544613,
+				songinfo = "No Man Zone - Vacuum Track",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(3,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(150,255,150),
+				secondcolor = Color3.fromRGB(255, 255, 255)
+			})
+			glitch = "EXPONENTIAL"
+		elseif key == "f" and glitch ~= "SERENITY" and attack == false then
+			MainColor = Color3.fromRGB(153, 255, 182)
+			SecondColor = Color3.fromRGB(120, 120, 120)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "SERENITY",
+				speed = 125,
+				jumppower = 75,
+				font = "SourceSansLight",
+				theme = 1095119170,
+				songinfo = "Bejeweled 2 - Final Destination",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(3,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(153, 255, 182),
+				secondcolor = Color3.fromRGB(120, 120, 120),
+			})
+			glitch = "SERENITY"
+		elseif key == "v" and glitch == "LUCID" then
+			--ecboom()
+			--CamShake(1,5)
+			--boom()
+		elseif key == "m" and glitch ~= "PERPETUITY" and glitch == "EXPONENTIAL" then 
+			MainColor = BrickColor.new("CGA brown").Color
+			SecondColor = BrickColor.new("Black").Color
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "PERPETUITY",
+				speed = 150,
+				jumppower = 50,
+				font = "SciFi",
+				theme = 5182605875,
+				songinfo = "Glass Cannon",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(3,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = BrickColor.new("Black").Color,
+				secondcolor = BrickColor.new("Beige").Color
+			})
+			glitch = "PERPETUITY"
+		elseif key == "g" and glitch ~= "SINISTROUS" and attack == false then
+			MainColor = Color3.fromRGB(91, 27, 163)
+			SecondColor = Color3.fromRGB(70, 0, 79)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "SINISTROUS",
+				speed = 75,
+				jumppower = 75,
+				font = "Fantasy",
+				theme = 586732256,
+				songinfo = "xi - Happy End of the World",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(3,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(100,0,255),
+				secondcolor = Color3.fromRGB(0,0,0),
+			})
+			glitch = "SINISTROUS"
+			local fireattach = Instance.new("Attachment",larm)
+			fireattach.CFrame = CFrame.new(0,-1,0)*CFrame.Angles(0,math.rad(-90),math.rad(-45))
+			local fireparticlething = Instance.new("Fire",fireattach)
+			fireparticlething.Size = 5
+			fireparticlething.Color = Color3.fromRGB(100,0,255)
+			fireparticlething.SecondaryColor = Color3.fromRGB(0,0,0)
+			spawn(function()
+				repeat
+					if glitch ~= "SINISTROUS" then
+						fireparticlething:Destroy()
+					end
+					swait()
+				until fireparticlething.Parent == nil
+			end)
+		elseif key == "h" and glitch ~= "DISORIENTATION" and attack == false then
+			MainColor = Color3.fromRGB(1, 1, 1)
+			SecondColor = Color3.fromRGB(0, 0, 0)
+			--errorboom() This sucks
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "DISORIENTATION",
+				speed = 1000,
+				jumppower = 75,
+				font = "Arcade",
+				theme = 2032024538,
+				songinfo = "Frums - Theyaremanycolors",
+				pitch = 1
+			})
+			glitch = "DISORIENTATION"
+		elseif key == "h" and glitch ~= "DISORIENTATION" and attack == false then
+			MainColor = Color3.fromRGB(1, 1, 1)
+			SecondColor = Color3.fromRGB(0, 0, 0)
+			--errorboom() This sucks
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "DISORIENTATION",
+				speed = 1000,
+				jumppower = 75,
+				font = "Arcade",
+				theme = 2032024538,
+				songinfo = "Frums - Theyaremanycolors",
+				pitch = 1
+			})
+			glitch = "DISORIENTATION"
+		elseif key == "j" and glitch ~= "COMPETENCE" and attack == false then
+			MainColor = Color3.fromRGB(253, 234, 141)
+			SecondColor = Color3.new(1,1,1)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "COMPETENCE",
+				speed = 600,
+				jumppower = 75,
+				font = "Highway",
+				theme = 4607682464,
+				songinfo = "Demetori - The Grimoire of Alice",
+				pitch = 1
+			})
+			glitch = "COMPETENCE"
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(3,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(254, 243, 187),
+				secondcolor = Color3.fromRGB(0, 0, 0)
+			})
+		elseif key == "k" and glitch ~= "SYMPHONIC" and attack == false then
+			MainColor = Color3.fromHSV(sine/visualiser-math.floor(sine/visualiser),1,visualiser/1000)
+			SecondColor = Color3.fromHSV(-sine/-visualiser-math.floor(sine/-visualiser),1,visualiser/1000)
+			boom()
+			glitch = "SYMPHONIC"
+		elseif key == "m" and glitch == "ECCLESIASTIC" and attack == false then --It's time to finish this
+			APOTHEOSIS()
+		elseif key == "b" and glitch == "ECCLESIASTIC" and attack == false then --It's time to finish this
+			apotheosisform()
+		elseif key == "one" then
+			if auraeff == false then
+				auraeff = true
+			elseif auraeff == true then
+				auraeff = false
+			end
+		elseif key == "two" then
+			if SG.Enabled == true then
+				SG.Enabled = false
+			elseif SG.Enabled == false then
+				SG.Enabled = true
+			end
+		elseif key == "three" then
+			if BGU.Enabled == true then
+				BGU.Enabled = false
+			elseif BGU.Enabled == false then
+				BGU.Enabled = true
+			end
+		elseif key == "z" and attack == false then
+			if glitch == "CHROMATIC" then
+				zap()
+			elseif glitch == "SERENITY" then
+				serene()
+			elseif glitch == "SALVATION" then
+				salvate()
+			end
+		elseif key == ";" then
+			if glitch == "LUCID" then
+			end
+		end
+	elseif Side == 2 then
+		if key == "q" and glitch ~= "EXTERMINATION" and attack == false then
+			MainColor = Color3.fromRGB(161, 69, 71)
+			SecondColor = Color3.fromRGB(0,0,0)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "EXTERMINATION",
+				speed = 100,
+				jumppower = 50,
+				font = "Garamond",
+				theme = 3352602056,
+				songinfo = "Ikaruga_nex - RevixXy",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(2,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(180,0,0),
+				secondcolor = Color3.fromRGB(56, 46, 71)
+			})
+			glitch = "EXTERMINATION"
+		elseif key == "q" and glitch == "EXTERMINATION" and attack == false then
+			MainColor = Color3.fromRGB(120,0,255)
+			SecondColor = Color3.fromRGB(0,0,0)
+			boom()
+			Side = 1
+			reloadwing("Wing")
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "ECCLESIASTIC",
+				speed = 50,
+				jumppower = 50,
+				font = "Gotham",
+				theme = 2606277947,
+				songinfo = "Kurokotei - Chronostatis",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(2,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(0,255,120),
+				secondcolor = Color3.fromRGB(0,0,0)
+			})
+			glitch = "ECCLESIASTIC"
+		elseif key == "e" and glitch ~= "DESIRE" and attack == false then
+			MainColor = Color3.fromRGB(255, 152, 220)
+			SecondColor = Color3.fromRGB(175, 221, 255)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "DESIRE",
+				speed = 50,
+				jumppower = 50,
+				font = "Cartoon",
+				theme = 4969887630,
+				songinfo = "Meramipop - Secret Desire (Dyes Remix)",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(0.5,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(232, 186, 200),
+				secondcolor = Color3.fromRGB(255, 255, 204)
+			})
+			glitch = "DESIRE"
+		elseif key == "r" and glitch ~= "DESPAIR" and attack == false then
+			MainColor = Color3.fromRGB(0, 0, 0)
+			SecondColor = Color3.fromRGB(50, 50, 50)
+			boom()
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "DESPAIR",
+				speed = 40,
+				jumppower = 50,
+				font = "Garamond",
+				theme = 4407184482,
+				songinfo = "Kurokotei - Fracture Temporelle",
+				pitch = 1
+			})
+			tweenrecolor({
+				tweeninfo = TweenInfo.new(0.25,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,math.huge,true,0),
+				maincolor = Color3.fromRGB(0, 0, 0),
+				secondcolor = Color3.fromRGB(255, 255, 255)
+			})
+			glitch = "DESPAIR"
+		end
+	end
+end)
+--deth effect
+Hum.Died:Connect(function()
+	Sound("Sound",763716870,Torso.Parent,10,0.3,0)
+	Sound("Sound",1208650519,Torso,10,1,0)
+	Sound("Sound",164881093,Torso,10,1,0)
+	Sound("Sound",429123896,Torso,10,1,0)
+	glitch = nil
+	coroutine.resume(coroutine.create(function()
+		modechange({
+			maincolor = Color3.new(1,1,1),
+			secondcolor = Color3.new(1,1,1),
+			wingmat = "Neon",
+			secondwingmat = "Neon",
+			name = "noob",
+			speed = 75,
+			jumppower = 75,
+			font = "Fantasy",
+			theme = 586732256,
+			songinfo = "lol you died",
+			pitch = 1
+		})
+		tweenrecolor({
+			tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,false),
+			maincolor = Color3.fromRGB(0,0,0),
+			secondcolor = Color3.fromRGB(0,0,0),
+		})
+		wait(1)
+		BGU:Destroy()
+	end))
+	coroutine.resume(coroutine.create(function()
+		tweenserv:Create(groovy,TweenInfo.new(0.5,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,false),{Pitch = 0})
+		wait(0.5)
+		groovy:Destroy()
+	end))
+	for i,v in pairs({rarm,larm,rleg,lleg,Torso,hed}) do
+		coroutine.resume(coroutine.create(function()
+			v.Transparency = 1
+			for i=1,5 do
+				local partecle = Instance.new("ParticleEmitter",v)
+				partecle.LightEmission = 9999
+				partecle.LightInfluence = 0
+				partecle.EmissionDirection = "Top"
+				partecle.Enabled = true
+				partecle.Texture = "http://www.roblox.com/asset/?id=5122583722"
+				partecle.Color = ColorSequence.new(MainColor)
+				partecle.Transparency = NumberSequence.new(0,1)
+				partecle.Size = NumberSequence.new(0.5,0)
+				partecle.Acceleration = Vector3.new(0,1,0)
+				partecle.Lifetime = NumberRange.new(0.3,0.7)
+				partecle.Rotation = NumberRange.new(-180,180)
+				partecle.RotSpeed = NumberRange.new(-100,100)
+				partecle.Speed = NumberRange.new(30,50)
+				partecle.SpreadAngle = Vector2.new(-180, 180)
+				partecle.Rate = 10000000
+				partecle.Drag = 1
+				swait(5)
+				partecle.Enabled = false
+			end
+		end))
+	end
+end)
+script.mos.OnServerEvent:Connect(function(plr,mos)
+	mousepos = mos
+end)
+--vis thing
+
+Player.Chatted:Connect(function(msg)
+	print("player said "..string.sub(msg,1,8))
+	if string.sub(msg,1,8) == "/e play " then
+		visualiserid = string.sub(msg,9)
+		print("player played "..string.sub(msg,9))
+	end
+end)
+-- Start of Loops --
+spawn(function()
+	while true do
+		swait()
+		sine = sine + change
+	end
+end)
+-- End of Loops --
+
+-- Final Functions and variables --
+function rayCast(Pos, Dir, Max, Ignore)  -- Origin Position , Direction, MaxDistance , IgnoreDescendants
+	return game:service("Workspace"):FindPartOnRay(Ray.new(Pos, Dir.unit * (Max or 999.999)), Ignore) 
+end 
+local Anim="Idle"
+
+-- Final Functions and variables end --
+local speen = 0
+local speed = 0
+local speed2 = 0
+--aura
+
+coroutine.resume(coroutine.create(function()
+	while true do
+		if auraeff == true and hitfloor ~= nil then
+			if glitch == "ECCLESIASTIC" then
+				speed2 = speed2+(visualiser/200)+1
+				local a = root.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(speed2*4),math.rad(-50))
+				local b = root.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(180+speed2*4),math.rad(-50))
+				local a2 = root.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(-speed2*4),math.rad(-50))
+				local b2 = root.CFrame*CFrame.new(0,5,0)*CFrame.Angles(0,math.rad(-180-speed2*4),math.rad(-50))
+				local c = root.CFrame*CFrame.new(math.random(-30,30),0,math.random(-30,30))
+				local d = root.CFrame*CFrame.new(math.random(-30,30),0,math.random(-30,30))
+				local e = root.CFrame*CFrame.new(math.random(-30,30),math.random(-3,30),math.random(-30,30))*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))
+				--tweeneff("Sphere",a*CFrame.new(10,0,0),wings[2].Color.Color,Vector3.new(0.5,10,0.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,12.5,0), CFrame = a*CFrame.new(20,40,0)},0.75,"Linear","Out",0,false)
+				--tweeneff("Sphere",b*CFrame.new(10,0,0),wings[2].Color.Color,Vector3.new(0.5,10,0.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,12.5,0), CFrame = b*CFrame.new(20,40,0)},0.75,"Linear","Out",0,false)
+				--tweeneff("Sphere",a2*CFrame.new(10,0,0),wings[2].Color.Color,Vector3.new(0.5,10,0.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,12.5,0), CFrame = a2*CFrame.new(20,40,0)},0.75,"Linear","Out",0,false)
+				--tweeneff("Sphere",b2*CFrame.new(10,0,0),wings[2].Color.Color,Vector3.new(0.5,10,0.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,12.5,0), CFrame = b2*CFrame.new(20,40,0)},0.75,"Linear","Out",0,false)
+				
+				tweeneff("Sphere",a*CFrame.new(10,(visualiser/20),(visualiser/20)),wings[2].Color.Color,Vector3.new(0.5,.5,0.5)*2,0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,1,0)*2, CFrame = a*CFrame.new(20-(visualiser/20),40,0)},0.75/((visualiser/200)+.5),"Linear","Out",0,false)
+				tweeneff("Sphere",b*CFrame.new(10,(visualiser/20),(visualiser/20)),wings[2].Color.Color,Vector3.new(0.5,.5,0.5)*2,0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,1,0)*2, CFrame = b*CFrame.new(20-(visualiser/20),40,0)},0.75/((visualiser/200)+.5),"Linear","Out",0,false)
+				tweeneff("Sphere",a2*CFrame.new(10,(visualiser/20),(visualiser/20)),wings[2].Color.Color,Vector3.new(0.5,.5,0.5)*2,0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,1,0)*2, CFrame = a2*CFrame.new(20-(visualiser/20),40,0)},0.75/((visualiser/200)+.5),"Linear","Out",0,false)
+				tweeneff("Sphere",b2*CFrame.new(10,(visualiser/20),(visualiser/20)),wings[2].Color.Color,Vector3.new(0.5,.5,0.5)*2,0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,1,0)*2, CFrame = b2*CFrame.new(20-(visualiser/20),40,0)},0.75/((visualiser/200)+.5),"Linear","Out",0,false)
+				tweeneff("Sphere",c,wings[2].Color.Color,Vector3.new(0.1,2,0.1),0,"Neon",0,{CFrame = c*CFrame.new(0,math.random(15,30),0), Transparency = 1},0.5,"Linear","Out",0,false)
+				tweeneff("Sphere",d,wings[2].Color.Color,Vector3.new(0.1,2,0.1),0,"Neon",0,{CFrame = d*CFrame.new(0,math.random(15,30),0), Transparency = 1},0.5,"Linear","Out",0,false)
+				tweeneff("Sphere",e,wings[2].Color.Color,Vector3.new(0.3,0.3,0.3),0,"Neon",0,{CFrame = e*CFrame.new(0,5,0), Transparency = 1},0.5,"Linear","Out",0,false)
+				local speen = root.CFrame*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wave",speen,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.9,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(70,0,70)},0.25,"Linear","Out",0,false)
+				--local speen2 = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				--specialeff("Shine",speen2,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.9,{Transparency = 1, CFrame = speen2*CFrame.new(0,3,0)*CFrame.Angles(0,math.rad(-100),0), Size = Vector3.new(150,3,150)},1,"Linear","Out",0,false)
+				swait()
+			elseif glitch == "LUCID" then
+				for i=1,5 do
+					local YEET = root.CFrame*CFrame.new(math.random(-30,30),0,math.random(-30,30))*CFrame.Angles(math.rad(math.random(-40,40)),math.rad(math.random(-40,40)),math.rad(math.random(-40,40)))
+					tweeneff("Sphere",YEET*CFrame.new(0,-3,0),SecondColor,Vector3.new(0.2,2,0.2),0,"Neon",0,{Transparency = 1, CFrame = YEET*CFrame.Angles(math.rad(math.random(-40,40)),math.rad(math.random(-40,40)),math.rad(math.random(-40,40)))*CFrame.new(0,30,0)},0.5,"Quad","Out",0,false)		
+					local a = root.CFrame*CFrame.new(math.random(-50,50),-3,math.random(-50,50))*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+					local b = a*CFrame.Angles(math.rad(170),0,0)
+					tweeneff("Sphere",a,wings[2].Color.Color,Vector3.new(0.1,7,0.1),0,"Neon",0,{Transparency = 1, CFrame = b*CFrame.new(0,math.random(-70,-50),0)},0.5,"Linear","Out",0,false)
+				end	
+				local speen = root.CFrame*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wave",speen,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.9,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(100,0,100)},0.5,"Linear","Out",0,false)
+				swait()
+			elseif glitch == "SALVATION" then
+				speed2 = speed2+(visualiser/200)+1
+				--local a = angles(0,math.rad((sine*5)+180),math.rad(-90))
+				--local b=angles(0,math.rad(sine*5),math.rad(-90))
+				local speen = root.CFrame*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				--tweeneff("Sphere",root.CFrame*angles(0,math.rad(sine*2),0)*CFrame.new(20+math.random(-5,5)+math.cos(sine/15)*20+10,-5,math.random(-5,5)),wings[2].Color.Color,Vector3.new(4,10/1.5,4)*(visualiser/200),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0), CFrame = root.CFrame*angles(0,math.rad(sine*2),0)*CFrame.new(10,30+math.random(-5,15),0)},0.5/(visualiser/200),"Linear","Out",0,false)
+				--tweeneff("Sphere",root.CFrame*angles(0,math.rad(sine*2+180),0)*CFrame.new(20+math.random(-5,5)+math.cos(sine/15)*20+10,-5,math.random(-5,5)),wings[2].Color.Color,Vector3.new(4,10/1.5,4)*(visualiser/200),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0), CFrame = root.CFrame*angles(0,math.rad(sine*2+180),0)*CFrame.new(10,30+math.random(-5,15),0)},0.5/(visualiser/200),"Linear","Out",0,false)
+				
+				--tweeneff("Sphere",root.CFrame*angles(0,math.rad(math.random(-180,180)),0)*CFrame.new(10+math.random(0,30),0,0),wings[2].Color.Color,Vector3.new(0.5,10/1.5,0.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,12.5/1.5,0), CFrame = root.CFrame*CFrame.new(math.random(-15,15),40+math.random(-5,15),0)},0.75,"Linear","Out",0,false)
+				--tweeneff("Sphere",root.CFrame*a*CFrame.new(5,5,0),wings[2].Color.Color,Vector3.new(1,10/1.5,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,5,0), CFrame = root.CFrame*a*angles(0,0,math.rad(90))*CFrame.new(50,25,0)},0.75,"Linear","Out",0,false)
+				--tweeneff("Sphere",root.CFrame*b*CFrame.new(5,5,0),wings[2].Color.Color,Vector3.new(1,10/1.5,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,5,0), CFrame = root.CFrame*b*angles(0,0,math.rad(90))*CFrame.new(50,25,0)},0.75,"Linear","Out",0,false)
+				for i=1,10 do
+					local c = root.CFrame*CFrame.new(math.random(-50,50),0,math.random(-50,50))
+					tweeneff("Block",c,wings[2].Color.Color,Vector3.new(math.random(0,1),math.random(0,1),math.random(0,1)),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0), CFrame = c*CFrame.new(0,math.random(10,50),0)*angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))},0.5,"Linear","Out",0,false)
+				end
+				tweenmesh("Wave",speen,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.9,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(100,0,100)},0.5,"Linear","Out",0,false)
+				swait()
+			elseif glitch == "CHROMATIC" then
+				local speen = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,sine*5,0)
+				local speen2 = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				for i=1,7 do
+					local a = root.CFrame*CFrame.new(math.random(-50,50),-5,math.random(-50,50))*CFrame.Angles(math.rad(math.random(-50,50)),math.rad(math.random(-50,50)),math.rad(math.random(-50,50)))
+					tweeneff("Sphere",a,Color3.new(1,1,1),Vector3.new(0.5,3,0.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,5,0), CFrame = a*(CFrame.Angles(math.rad(math.random(-50,50)),math.rad(math.random(-50,50)),math.rad(math.random(-50,50)))*CFrame.new(0,math.random(40,60),0))},0.25,"Linear","Out",0,false)
+				end
+				tweeneff("Sphere",root.CFrame*angles(0,math.rad(sine*2),0)*CFrame.new(20+math.random(-5,5)+(visualiser/10)-10,-10,math.random(-5,5)),wings[1].Color.Color,Vector3.new(1,10/1.5*(visualiser/150),1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0), CFrame = root.CFrame*angles(0,math.rad(sine*2),0)*CFrame.new(10,10+math.random(-5,15),0),Color = wings[2].Color.Color},0.5/(visualiser/200),"Linear","Out",0,false)
+				tweeneff("Sphere",root.CFrame*angles(0,math.rad(sine*2+(360/3)),0)*CFrame.new(20+math.random(-5,5)+(visualiser/10)-10,-10,math.random(-5,5)),wings[1].Color.Color,Vector3.new(1,10/1.5*(visualiser/150),1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0), CFrame = root.CFrame*angles(0,math.rad(sine*2+180),0)*CFrame.new(10,10+math.random(-5,15),0),Color = wings[2].Color.Color},0.5/(visualiser/200),"Linear","Out",0,false)
+				tweeneff("Sphere",root.CFrame*angles(0,math.rad(sine*2+(360/1.5)),0)*CFrame.new(20+math.random(-5,5)+(visualiser/10)-10,-10,math.random(-5,5)),wings[1].Color.Color,Vector3.new(1,10/1.5*(visualiser/150),1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0), CFrame = root.CFrame*angles(0,math.rad(sine*2+90),0)*CFrame.new(10,10+math.random(-5,15),0),Color = wings[2].Color.Color},0.5/(visualiser/200),"Linear","Out",0,false)
+				
+				tweeneff("Block",speen,Color3.fromHSV(sine/60-math.floor(sine/60),1,1),Vector3.new(0,0.1,0),0,"Neon",0.9,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(75,0,75)},0.5,"Linear","Out",0,false)
+				tweenmesh("Wave",speen2,Color3.fromHSV(sine/60-math.floor(sine/60),1,1),Vector3.new(0,0.1,0),0,"Neon",0.9,{Transparency = 1, CFrame = speen2*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(75,0,75)},0.5,"Linear","Out",0,false)
+				swait()
+			elseif glitch == "VINDICTIVE" then
+				local speen = root.CFrame*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wave",speen,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.9,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(75,0,75)},0.5,"Linear","Out",0,false)
+				for i=1,3 do
+					local a = root.CFrame*CFrame.new(math.random(-50,50),-5,math.random(-50,50))
+					tweeneff("Sphere",a,SecondColor,Vector3.new(0.5,5,0.5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,5,0), CFrame = a*(CFrame.Angles(math.rad(math.random(-50,50)),math.rad(math.random(-50,50)),math.rad(math.random(-50,50)))*CFrame.new(0,math.random(40,60),0))},0.25,"Linear","Out",0,false)
+				end
+			elseif glitch == "MIRAGE" then
+				local speen = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				for i=1,2 do
+					if math.random(1,2) == 1 then
+						specialeff("Bloom",speen,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.8,{Transparency = 1, CFrame = speen*CFrame.new(0,3,0)*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(100,0,100)},1,"Linear","Out",0,false)
+					else
+						specialeff("Bloom",speen,wings[1].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.8,{Transparency = 1, CFrame = speen*CFrame.new(0,3,0)*CFrame.Angles(0,math.rad(-100),0), Size = Vector3.new(100,0,100)},1,"Linear","Out",0,false)
+					end
+				end
+				for i=1,5 do
+					local a = root.CFrame*CFrame.new(math.random(-50,50),-3,math.random(-50,50))*CFrame.Angles(0,math.random(-180,180),0)
+					local b = root.CFrame*CFrame.new(math.random(-50,50),-3,math.random(-50,50))
+					tweeneff("Sphere",b,wings[2].Color.Color,Vector3.new(0.1,0.1,0.1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0), CFrame = b*CFrame.new(0,math.random(10,20),0)},0.5,"Quint","Out",0,false)
+					tweeneff("Block",a,wings[2].Color.Color,Vector3.new(math.random(0.1,3),0.01,math.random(0.1,3)),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,15,0), CFrame = a*CFrame.new(0,math.random(10,20),0)},0.5,"Linear","Out",0,false)
+				end
+				swait()
+			elseif glitch == "PERPETUITY" then
+				for i=1,2 do
+					tweeneff("Block",root.CFrame*cf(math.random(-50,50),math.random(-10,10),math.random(-50,50)),wings[2].Color.Color,Vector3.new(math.random(0.1,3),0.01,math.random(0.1,3)),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,15,0), CFrame = root.CFrame*cf(math.random(-50,50),math.random(-10,10),math.random(-50,50))*CFrame.new(0,math.random(10,20),0)},0.5,"Linear","Out",0,false)
+				end
+				tweeneff("Block",root.CFrame*angles(0,math.rad(0*5),0)*CFrame.new(20+math.random(-50,50)/2,1+math.random(-50,50)/2,1+math.random(-50,50)/2),wings[1].Color.Color,Vector3.new(1,1,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(1,1,1)*(visualiser/100),CFrame =root.CFrame*angles(0,math.rad(0*5),0)*CFrame.new(20,0,0),Color = wings[2].Color.Color},0.25,"Linear","Out",0,false)
+				tweeneff("Block",root.CFrame*angles(0,math.rad(0*5+(360/3)),0)*CFrame.new(20+math.random(-50,50)/2,1+math.random(-50,50)/2,1+math.random(-50,50)/2),wings[1].Color.Color,Vector3.new(1,1,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(1,1,1)*(visualiser/100),CFrame =root.CFrame*angles(0,math.rad(0*5+(360/3)),0)*CFrame.new(20,0,0),Color = wings[2].Color.Color},0.25,"Linear","Out",0,false)
+				tweeneff("Block",root.CFrame*angles(0,math.rad(0*5+(360/1.5)),0)*CFrame.new(20+math.random(-50,50)/2,1+math.random(-50,50)/2,1+math.random(-50,50)/2),wings[1].Color.Color,Vector3.new(1,1,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(1,1,1)*(visualiser/100),CFrame =root.CFrame*angles(0,math.rad(0*5+(360/1.5)),0)*CFrame.new(20,0,0),Color = wings[2].Color.Color},0.25,"Linear","Out",0,false)
+				
+				tweeneff("Block",larm.CFrame*CFrame.new(0,-1,0)*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),wings[1].Color.Color,Vector3.new(1,1,1),0,"Neon",0,{Transparency=1,Size=Vector3.new(),CFrame = larm.CFrame*CFrame.new(0,-3,0),Color = wings[2].Color.Color},0.25,"Linear","Out",0,false)
+				local speen = root.CFrame*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wave",speen,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.9,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(70,0,70)},0.25,"Linear","Out",0,false)
+				swait(5)
+			elseif glitch == "EXPONENTIAL" then
+				local speen = root.CFrame*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wave",speen,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.95,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(50,0,50)},0.5,"Linear","Out",0,false)
+				local speen2 = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				local rnd = math.random(75,120)
+				specialeff("Shine",speen2,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.8,{Transparency = 1, CFrame = speen2*CFrame.new(0,3,0), Size = Vector3.new(rnd,3,rnd)},1,"Quint","Out",0,false)
+				local a = root.CFrame*CFrame.new(math.random(-50,50),math.random(-3,50),math.random(-50,50))
+				tweeneff("Sphere",a,wings[2].Color.Color,Vector3.new(0,0,0),0,"Neon",0,{Size = Vector3.new(1,1,1)},0.25,"Quad","Out",0,true)
+				tweeneff("Sphere",a,wings[1].Color.Color,Vector3.new(0.1,0.1,0.1),0,"ForceField",0,{Size = Vector3.new(3,3,3), Transparency = 1},0.25,"Quad","Out",0,false)
+			elseif glitch == "SINISTROUS" then
+				local speen = root.CFrame*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wave",speen,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.95,{Transparency = 1, CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(50,0,50)},0.5,"Linear","Out",0,false)
+				local speen2 = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				specialeff("Shine",speen2,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.8,{Transparency = 1, CFrame = speen2*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(-100),0), Size = Vector3.new(50,3,50)},1,"Quint","Out",0,false)
+				--tweeneff("Sphere",CFrame.new(root.Position)*CFrame.new(0 + (20 + 5 * math.cos(sine/60) * math.cos(sine/50)),-3,0 + (20 + 5 * math.sin(sine/60)) * math.sin(sine/50))*CFrame.Angles(0,math.rad(math.random(-180,180)),0),wings[2].Color.Color,Vector3.new(5,0.1,5),0,"Neon",0,{Size = Vector3.new(0,0,0), Transparency = 1, Color = wings[1].Color.Color},1,"Linear","Out",0,false)
+				--tweeneff("Sphere",CFrame.new(root.Position)*CFrame.new(0 - (20 - 5 * math.cos(sine/60) * math.cos(sine/50)),-3,0 - (20 - 5 * math.sin(sine/60)) * math.sin(sine/50))*CFrame.Angles(0,math.rad(math.random(-180,180)),0),wings[1].Color.Color,Vector3.new(5,0.1,5),0,"Neon",0,{Size = Vector3.new(0,0,0), Transparency = 1, Color = wings[2].Color.Color},1,"Linear","Out",0,false)
+				swait()
+			elseif glitch == "DISORIENTATION" then
+				local speen = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(sine*6),0)
+				tweenmesh("HollowSquare",speen,wings[2].Color.Color,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(150,0.1,150)},0.25,"Linear","Out",0,false)
+				local speen2 = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(-sine*6),0)
+				tweenmesh("HollowSquare",speen2,wings[2].Color.Color,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(150,0.1,150)},0.25,"Linear","Out",0,false)
+				swait()
+			elseif glitch == "EXTERMINATION" then
+				local speen = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wind",speen,wings[2].Color.Color,Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1 , CFrame = speen*CFrame.Angles(0,math.rad(100),0), Size = Vector3.new(50,0,50)},.25,"Linear","Out",0,false)
+			elseif glitch == "COMPETENCE" then
+				local speen = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wind",speen,wings[2].Color.Color,Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1 , CFrame = speen*CFrame.Angles(0,math.rad(100),0)*CFrame.new(0,5,0), Size = Vector3.new(50,0,50)},.5,"Linear","Out",0,false)
+				tweenmesh("Wind",speen,Color3.new(0,0,0),Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1 , CFrame = speen*CFrame.Angles(0,math.rad(100),0)*CFrame.new(0,5,0), Size = Vector3.new(100,0,100)},.5,"Linear","Out",0,false)
+				tweenmesh("Wind",speen,Color3.new(0.5,0.5,0.5),Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1 , CFrame = speen*CFrame.Angles(0,math.rad(100),0)*CFrame.new(0,5,0), Size = Vector3.new(75,0,75)},.5,"Linear","Out",0,false)
+			elseif glitch == "APOTHEOSIS" then
+				for i=1,5 do
+					local c = root.CFrame*CFrame.new(math.random(-50,50),0,math.random(-50,50))
+					tweeneff("Block",c,wings[2].Color.Color,Vector3.new(math.random(0,1),math.random(0,1),math.random(0,1)),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0), CFrame = c*CFrame.new(0,math.random(10,50),0)*angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))},0.5,"Linear","Out",0,false)
+				end
+				local speen2 = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				local rnd = math.random(0,300)
+				specialeff("Shine",speen2,wings[2].Color.Color,Vector3.new(0,0.1,0),0,"Neon",0.8,{Transparency = 1, CFrame = speen2*CFrame.new(0,3,0), Size = Vector3.new(rnd,3,rnd)},1,"Quint","Out",0,false)
+				local speen = root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0)
+				tweenmesh("Wind",speen,wings[2].Color.Color,Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1 , CFrame = speen*CFrame.Angles(0,math.rad(100),0)*CFrame.new(0,5,0), Size = Vector3.new(50,0,50)},.5,"Linear","Out",0,false)
+				tweenmesh("Wind",speen,Color3.new(0,0,0),Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1 , CFrame = speen*CFrame.Angles(0,math.rad(100),0)*CFrame.new(0,5,0), Size = Vector3.new(100,0,100)},.5,"Linear","Out",0,false)
+				tweenmesh("Wind",speen,Color3.new(0.5,0.5,0.5),Vector3.new(0,.1,0),0,"Neon",0,{Transparency = 1 , CFrame = speen*CFrame.Angles(0,math.rad(100),0)*CFrame.new(0,5,0), Size = Vector3.new(75,0,75)},.5,"Linear","Out",0,false)
+			end
+			swait()
+		else
+			swait()	
+		end	
+	end
+end))
+--heavily delayed loop so no lag lol
+coroutine.resume(coroutine.create(function()
+	while true do
+		swait(2)
+		if glitch == "CHROMATIC" then
+			MainColor = Color3.fromHSV(sine/60-math.floor(sine/60),0.5,1)
+			SecondColor = Color3.fromHSV(sine/60-math.floor(sine/60),1,1)
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "CHROMATIC",
+				speed = 500,
+				jumppower = 50,
+				font = "GothamBold",
+				theme = 4926087847,
+				songinfo = "Ebimayo - Goodfortune",
+				pitch = 1
+			})
+		elseif glitch == "SERENITY" then
+			MainColor = Color3.fromHSV(0.25+0.25*math.sin(math.tan(math.cos(sine/56))),0.45,1)
+			SecondColor = Color3.fromRGB(255, 255, 255)
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "SERENITY",
+				speed = 125,
+				jumppower = 75,
+				font = "SourceSansLight",
+				theme = 1095119170,
+				songinfo = "Bejeweled 2 - Final Destination",
+				pitch = 1
+			})
+		elseif glitch == "DISORIENTATION" then
+			local rnd = math.random(1,3)
+			if rnd == 1 then
+				MainColor = Color3.new(1, 0, 0)
+			elseif rnd == 2 then
+				MainColor = Color3.new(0, 1, 0)
+			elseif rnd == 3 then
+				MainColor = Color3.new(0, 0, 1)
+			end
+			SecondColor = Color3.new(0, 0, 0)
+			local fonts = {"Legacy","Arial","ArialBold","SourceSans","SourceSansBold","SourceSansSemibold","SourceSansLight","SourceSansItalic","Bodoni","Garamond","Cartoon","Code","Highway","SciFi","Arcade","Fantasy","Antique","Gotham","GothamSemibold","GothamBold","GothamBlack"}
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "DISORIENTATION",
+				speed = 1000,
+				jumppower = 75,
+				font = fonts[math.random(1,#fonts)],
+				theme = 2032024538,
+				songinfo = "Frums - Theyaremanycolors",
+				pitch = 1
+			})
+			glitch = "DISORIENTATION"
+		elseif glitch == "SYMPHONIC" then
+			local visualisercolor = visualiser/500
+			--print(visualiser/750)
+			if visualisercolor > 1 then
+				MainColor = Color3.fromHSV(sine/360-math.floor(sine/360),0.5,1)
+				SecondColor = Color3.new(1,1,1)
+			else
+				MainColor = Color3.fromHSV(sine/360-math.floor(sine/360),0.5,visualisercolor)
+				SecondColor = Color3.new(visualisercolor,visualisercolor,visualisercolor)
+			end
+			modechange({
+				maincolor = MainColor,
+				secondcolor = SecondColor,
+				wingmat = "Neon",
+				secondwingmat = "Neon",
+				name = "SYMPHONIC",
+				speed = 1000,
+				jumppower = 75,
+				font = "Arial",
+				theme = visualiserid,
+				songinfo = game:GetService("MarketplaceService"):GetProductInfo(visualiserid).Name,
+				pitch = 1
+			})
+			glitch = "SYMPHONIC"
+		elseif glitch == "APOTHEOSIS" then
+			apotheosisform()
+		end
+		local function recolor(obj)
+			for i,v in pairs(obj:GetDescendants()) do
+				if v:IsA("ParticleEmitter") or v:IsA("Trail") then 
+					if obj.Name == "Color" then
+						v.Color = ColorSequence.new(wings[2].Color.Color)
+					elseif obj.Name == "Frame" then
+						v.Color = ColorSequence.new(wings[1].Color.Color)
+					end
+				end
+			end
+		end
+		for i,v in pairs(wings) do
+			recolor(v)
+		end
+		--[[for i,v in pairs(BGU.main:GetDescendants()) do
+			if v:IsA("UIGradient") then
+				v.Color = ColorSequence.new(BGU.main.hex.ImageColor3,BGU.main.biggerhex.ImageColor3)
+			end
+		end]]
+	end
+end))
+-- Final Loop
+while true do
+	swait()
+	for i,v in pairs(char:GetChildren()) do
+		if v.Name == "Armour" then
+			v.Color = wings[2].Color.Color
+		end
+	end
+	--replication
+	for i,v in pairs(game:GetService("Players"):GetChildren()) do
+		if v.Character then
+			local a = v.PlayerGui
+			if a:FindFirstChild(char.Name.."'s stuff") then
+				if a:FindFirstChild(char.Name.."'s stuff").mode.Value ~= glitch then
+					a:FindFirstChild(char.Name.."'s stuff").mode.Value = glitch
+				end	
+				if a:FindFirstChild(char.Name.."'s stuff").lwing1.Value ~= lwing1weld then
+					a:FindFirstChild(char.Name.."'s stuff").lwing1.Value = lwing1weld
+				end	
+				if a:FindFirstChild(char.Name.."'s stuff").lwing2.Value ~= lwing2weld then
+					a:FindFirstChild(char.Name.."'s stuff").lwing2.Value = lwing2weld
+				end	
+				if a:FindFirstChild(char.Name.."'s stuff").lwing3.Value ~= lwing3weld then
+					a:FindFirstChild(char.Name.."'s stuff").lwing3.Value = lwing3weld
+				end			
+				if a:FindFirstChild(char.Name.."'s stuff").rwing1.Value ~= rwing1weld then
+					a:FindFirstChild(char.Name.."'s stuff").rwing1.Value = rwing1weld
+				end			
+				if a:FindFirstChild(char.Name.."'s stuff").rwing2.Value ~= rwing2weld then
+					a:FindFirstChild(char.Name.."'s stuff").rwing2.Value = rwing2weld
+				end			
+				if a:FindFirstChild(char.Name.."'s stuff").rwing3.Value ~= rwing3weld then
+					a:FindFirstChild(char.Name.."'s stuff").rwing3.Value = rwing3weld
+				end
+				if a:FindFirstChild(char.Name.."'s stuff").core.Value ~= coreweld then
+					a:FindFirstChild(char.Name.."'s stuff").core.Value = coreweld
+				end					
+				a:FindFirstChild(char.Name.."'s stuff").vis.Value = visualiser
+			end
+		end
+	end
+	for i,v in pairs(game:GetService("Players"):GetChildren()) do
+		if v.Character then
+			local a = v.PlayerGui
+			if not a:FindFirstChild(char.Name.."'s stuff") then
+				local wengrep = script.Replication.yes:Clone()
+				wengrep.Parent = a
+				wengrep.Disabled = false
+				wengrep.Name = char.Name.."'s stuff"
+			end
+		end	
+	end
+	--feetplanting code
+	local ForwardDirection = Hum.MoveDirection*root.CFrame.lookVector
+	local SideDirection = Hum.MoveDirection*root.CFrame.rightVector
+	
+	local Vec = {
+		X=SideDirection.X+SideDirection.Z,
+		Z=ForwardDirection.X+ForwardDirection.Z
+	};
+	local Divide = 1
+	if(Vec.Z<0)then
+		Divide=math.clamp(-(1.25*Vec.Z),1,2)
+	end
+	Vec.Z = Vec.Z/Divide
+	Vec.X = Vec.X/Divide
+	
+	--particle color
+	emit2.Color = ColorSequence.new(MainColor)
+	
+	speen = speen + speed
+	local torvel=(RootPart.Velocity*Vector3.new(1,0,1)).magnitude
+	local velderp=RootPart.Velocity.y
+	hitfloor,posfloor=rayCast(RootPart.Position,(CFrame.new(RootPart.Position,RootPart.Position - Vector3.new(0,1,0))).lookVector,4,char)
+	--billboard stuf
+	if glitch == "DISORIENTATION" then
+		BGU.main.Rotation = math.random(-10,10)
+		for i,v in pairs(BGU.main.visbars:GetChildren()) do
+			if v.Name == "bottomleft" or v.Name == "bottomright" then
+				v.Size = UDim2.fromScale(0.02,visualiser/math.random(2000,3000))
+			else
+				v.Size = UDim2.fromScale(0.02,-visualiser/math.random(2000,3000))
+			end
+		end
+	else
+		for i,v in pairs(BGU.main.visbars:GetChildren()) do
+			if v.Name == "bottomleft" or v.Name == "bottomright" then
+				v:TweenSize(UDim2.fromScale(0.02,visualiser/math.random(2000,3000)),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.05,true)
+			else
+				v:TweenSize(UDim2.fromScale(0.02,-visualiser/math.random(2000,3000)),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.05,true)
+			end
+		end
+		BGU.main.Rotation = 0 + 2 * math.cos(sine/60)
+	end
+--[[
+if glitch == 10 then
+BGU.Text.Rotation = (math.random(-1,1)) + 1 * math.cos(sine/10)
+BGU.v.Rotation = (math.random(-1,1)) + 1 * math.cos(sine/10)
+BGU.Parrallex["1"].Rotation = (math.random(-1,1)) + 1 * math.cos(sine/10)
+BGU.Parrallex["2"].Rotation = (math.random(-1,1)) + 1 * math.cos(sine/10)
+BGU.Parrallex["3"].Rotation = (math.random(-1,1)) + 1 * math.cos(sine/10)
+BGU.Parrallex["4"].Rotation = (math.random(-1,1)) + 1 * math.cos(sine/10)
+BGU.Text.Position = UDim2.new(0.25 + 0.025 * math.cos(sine/25), 0,0.25 - 0.025 * math.sin(sine/30), 0)
+BGU.mys.Position = UDim2.new(0.375 + 0.025 * math.cos(sine/25), 0,0.6 - 0.025 * math.sin(sine/30), 0)
+BGU.v.Position = UDim2.new(0.002 + 0.025 * math.cos(sine/25), 0,-0.2 - 0.025 * math.sin(sine/30), 0)
+BGU.Parrallex["1"].Position = UDim2.new(0.25 + 0.03 * math.cos(sine/25), 0,0.25 - 0.03 * math.sin(sine/30), 0)
+BGU.Parrallex["2"].Position = UDim2.new(0.25 + 0.035 * math.cos(sine/25), 0,0.25 - 0.035 * math.sin(sine/30), 0)
+BGU.Parrallex["3"].Position = UDim2.new(0.25 + 0.04 * math.cos(sine/25), 0,0.25 - 0.04 * math.sin(sine/30), 0)
+BGU.Parrallex["4"].Position = UDim2.new(0.25 + 0.045 * math.cos(sine/25), 0,0.25 - 0.045 * math.sin(sine/30), 0)		
+else
+BGU.Text.Rotation = 0 + 1 * math.cos(sine/23)
+BGU.v.Rotation = 0 + 1 * math.cos(sine/23)
+BGU.Parrallex["1"].Rotation = 0 + 1 * math.cos(sine/23)
+BGU.Parrallex["2"].Rotation = 0 + 1 * math.cos(sine/23)
+BGU.Parrallex["3"].Rotation = 0 + 1 * math.cos(sine/23)
+BGU.Parrallex["4"].Rotation = 0 + 1 * math.cos(sine/23)
+BGU.Text.Position = UDim2.new(0.25 + 0.025 * math.cos(sine/50), 0,0.25 - 0.025 * math.sin(sine/60), 0)
+BGU.mys.Position = UDim2.new(0.375 + 0.025 * math.cos(sine/50), 0,0.6 - 0.025 * math.sin(sine/60), 0)
+BGU.v.Position = UDim2.new(0.002 + 0.025 * math.cos(sine/50), 0,-0.2 - 0.025 * math.sin(sine/60), 0)
+BGU.Parrallex["1"].Position = UDim2.new(0.25 + 0.03 * math.cos(sine/50), 0,0.25 - 0.03 * math.sin(sine/60), 0)
+BGU.Parrallex["2"].Position = UDim2.new(0.25 + 0.035 * math.cos(sine/50), 0,0.25 - 0.035 * math.sin(sine/60), 0)
+BGU.Parrallex["3"].Position = UDim2.new(0.25 + 0.04 * math.cos(sine/50), 0,0.25 - 0.04 * math.sin(sine/60), 0)
+BGU.Parrallex["4"].Position = UDim2.new(0.25 + 0.045 * math.cos(sine/50), 0,0.25 - 0.045 * math.sin(sine/60), 0)
+end		
+]]
+	if attackanim == false then
+		if RootPart.Velocity.y > 1 and hitfloor==nil then
+			Anim="Jump"
+			swait()
+			local Alpha = .3
+			RootJoint.C0 = RootJoint.C0:lerp(cf(0,0,0)*angles(math.rad(20),math.rad(0),math.rad(0))*RootCF,Alpha)
+			LH.C0 = LH.C0:lerp(cf(-1,-1,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(-90),math.rad(30)),Alpha)
+			RH.C0 = RH.C0:lerp(cf(1,-.5,-.35)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(90),math.rad(-30)),Alpha)
+			LW.C0 = LW.C0:lerp(cf(-1.5,0.7,.5)*angles(math.rad(-15),math.rad(30),math.rad(0)),Alpha)
+			RW.C0 = RW.C0:lerp(cf(1.5,0.7,.5)*angles(math.rad(-15),math.rad(-30),math.rad(0)),Alpha)
+			Torso.Neck.C0 = Torso.Neck.C0:lerp(cf(0,0,0)*angles(math.rad(10),math.rad(0),math.rad(0))*necko,Alpha)
+			
+		elseif RootPart.Velocity.y < -1 and hitfloor==nil then 
+			Anim="Fall"
+			coroutine.resume(coroutine.create(function()  
+				for i = 0, 1, 0.1 do
+					swait()
+					local Alpha = .3
+					RootJoint.C0 = RootJoint.C0:lerp(cf(0,0,0)*angles(math.rad(-5),math.rad(0),math.rad(0))*RootCF,Alpha)
+					LH.C0 = LH.C0:lerp(cf(-1,-.5,-.55)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(-90),math.rad(50)),Alpha)
+					RH.C0 = RH.C0:lerp(cf(1,-1,-.35)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(90),math.rad(30)),Alpha)
+					LW.C0 = LW.C0:lerp(cf(-1.5,0.7,.5)*angles(math.rad(10),math.rad(0),math.rad(-40)),Alpha)
+					RW.C0 = RW.C0:lerp(cf(1.5,0.7,.5)*angles(math.rad(10),math.rad(0),math.rad(40)),Alpha)
+					Torso.Neck.C0 = Torso.Neck.C0:lerp(cf(0,0,.4)*angles(math.rad(-20),math.rad(0),math.rad(0))*necko,Alpha)
+				end
+			end))
+		elseif torvel<1 and hitfloor~=nil and attackanim == false then
+			Anim="Idle"
+			if glitch == "ECCLESIASTIC" then
+				RH.C0=clerp(RH.C0,cf(1,-1,0)*angles(math.rad(-25.4),math.rad(2.4 + 5 * math.cos(sine/50)),math.rad(7.2 + 5 * math.cos(sine/40)))*angles(math.rad(0),math.rad(90),math.rad(0)),0.1)
+				LH.C0=clerp(LH.C0,cf(-0.9,-0.8,-0.4)*angles(math.rad(-31.3),math.rad(4 + 5 * math.cos(sine/50)),math.rad(-3.6 + 5 * math.cos(sine/40)))*angles(math.rad(0),math.rad(-90),math.rad(0)),0.1)
+				RootJoint.C0=clerp(RootJoint.C0,cf(0.1 + 0.5 * math.cos(sine/60),6.8 + 1 * math.cos(sine/40),0.2 + 0.5 * math.cos(sine/50))*angles(math.rad(24.5 + 5 * math.cos(sine/60)),math.rad(-4.2 + 5 * math.cos(sine/50)),math.rad(1 + 5 * math.cos(sine/40)))*RootCF,0.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(39.8 - 5 * math.cos(sine/60)),math.rad(6.4 - 5 * math.cos(sine/50)),math.rad(3.4 - 5 * math.cos(sine/40))),0.1)		
+				RW.C0=clerp(RW.C0,cf(1.3,0.6 + 0.1 * math.cos(sine/30),-0.1)*angles(math.rad(35.9 + 5 * math.cos(sine/40)),math.rad(-17.8 + 5 * math.cos(sine/50)),math.rad(36.1 + 5 * math.cos(sine/60))),0.1)
+				LW.C0=clerp(LW.C0,cf(-1.2,0 + 0.1 * math.cos(sine/30),-0.4)*angles(math.rad(118.7 + 5 * math.cos(sine/40)),math.rad(7.6 + 5 * math.cos(sine/50)),math.rad(51.1 + 5 * math.cos(sine/60))),0.1)
+			elseif glitch == "LUCID" then
+				RH.C0=clerp(RH.C0,cf(1,-1,0)*angles(math.rad(-22),math.rad(-23.3 + 5 * math.cos(sine/60)),math.rad(13.1 + 5 * math.cos(sine/50)))*angles(math.rad(0),math.rad(90),math.rad(0)),0.1)
+				LH.C0=clerp(LH.C0,cf(-0.8,-0.9,-0.4)*angles(math.rad(-31.3),math.rad(4 + 5 * math.cos(sine/60)),math.rad(-9.9 + 5 * math.cos(sine/50)))*angles(math.rad(0),math.rad(-90),math.rad(0)),0.1)
+				RootJoint.C0=clerp(RootJoint.C0,cf(0.3 + 1 * math.cos(sine/60),7.2 + 2 * math.cos(sine/40),0.6 + 1 * math.cos(sine/50))*angles(math.rad(-22.4 + 5 * math.cos(sine/40)),math.rad(37.9 + 5 * math.cos(sine/60)),math.rad(-3.2 + 5 * math.cos(sine/50)))*RootCF,0.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(19.3 - 5 * math.cos(sine/40)),math.rad(0 - 5 * math.cos(sine/60)),math.rad(-27.7 - 5 * math.cos(sine/50))),0.1)
+				RW.C0=clerp(RW.C0,cf(1.1,0.8 + 0.1 * math.cos(sine/30),0.2)*angles(math.rad(-165.7),math.rad(42.5),math.rad(-46.7)),0.1)
+				LW.C0=clerp(LW.C0,cf(-1.3,0.6 + 0.1 * math.cos(sine/30),0.1)*angles(math.rad(29.9 + 5 * math.cos(sine/60)),math.rad(-1.6 + 5 * math.cos(sine/50)),math.rad(-41.3 + 5 * math.cos(sine/40))),0.1)	
+			elseif glitch == "SALVATION" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+2*math.cos(sine/60)),math.rad(90+0*math.cos(sine/32)),math.rad(-10+2*math.cos(sine/50))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+2*math.cos(sine/60)),math.rad(-90+0*math.cos(sine/32)),math.rad(10+2*math.cos(sine/50))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.5*math.cos(sine/60),0+0.5*math.cos(sine/50),5+1*math.cos(sine/40))*angles(math.rad(-10+2*math.cos(sine/50)),math.rad(0+2*math.cos(sine/60)),math.rad(30+2*math.cos(sine/40))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(10+-2*math.cos(sine/50)),math.rad(0+-2*math.cos(sine/60)),math.rad(-30+-2*math.cos(sine/40))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+-0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(0+2*math.cos(sine/40)),math.rad(0+2*math.cos(sine/50)),math.rad(30+2*math.cos(sine/60))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+-0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(0+2*math.cos(sine/40)),math.rad(0+2*math.cos(sine/50)),math.rad(-30+2*math.cos(sine/60))),.1)
+			elseif glitch == "CHROMATIC" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+-0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-5+0*math.cos(sine/32))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+-0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-60+0*math.cos(sine/32)),math.rad(-30+0*math.cos(sine/32))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0*math.cos(sine/32),0+-0.05*math.cos(sine/30),-0.3+0.1*math.cos(sine/30))*angles(math.rad(30+0*math.cos(sine/32)),math.rad(0+0*math.cos(sine/30)),math.rad(-30+0*math.cos(sine/32))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+5*math.cos(sine/50)),math.rad(0+5*math.cos(sine/40)),math.rad(30+5*math.cos(sine/30))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/20),0+0*math.cos(sine/32))*angles(math.rad(0+5*math.cos(sine/30)),math.rad(0+5*math.cos(sine/50)),math.rad(30+5*math.cos(sine/40))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/20),0+0*math.cos(sine/32))*angles(math.rad(0+5*math.cos(sine/30)),math.rad(-30+5*math.cos(sine/50)),math.rad(-60+-5*math.cos(sine/40))),.1)
+			elseif glitch == "VINDICTIVE" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+5*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-20+5*math.cos(sine/60))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(10+5*math.cos(sine/60))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.2*math.cos(sine/60),0+0.2*math.cos(sine/50),5+1*math.cos(sine/40))*angles(math.rad(10+2*math.cos(sine/40)),math.rad(0+2*math.cos(sine/60)),math.rad(0+2*math.cos(sine/50))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(30+-2*math.cos(sine/40)),math.rad(0+-2*math.cos(sine/60)),math.rad(0+-2*math.cos(sine/50))),.1)
+				RW.C0=clerp(RW.C0,cf(1+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0.5+0*math.cos(sine/32))*angles(math.rad(-30+5*math.cos(sine/40)),math.rad(0+5*math.cos(sine/50)),math.rad(-30+5*math.cos(sine/60))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),1+0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(150+5*math.cos(sine/40)),math.rad(0+5*math.cos(sine/50)),math.rad(40+5*math.cos(sine/60))),.1)
+			elseif glitch == "MIRAGE" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-30+5*math.cos(sine/50))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(30+5*math.cos(sine/50))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),3+1*math.cos(sine/40))*angles(math.rad(-10+5*math.cos(sine/50)),math.rad(0+2*math.cos(sine/60)),math.rad(0+2*math.cos(sine/40))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(10+-2*math.cos(sine/40)),math.rad(0+-2*math.cos(sine/60)),math.rad(0+-2*math.cos(sine/50))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(-30+5*math.cos(sine/60)),math.rad(0+5*math.cos(sine/40)),math.rad(30+-5*math.cos(sine/50))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(-30-5*math.cos(sine/60)),math.rad(0+5*math.cos(sine/40)),math.rad(-30+-5*math.cos(sine/50))),.1)
+			elseif glitch == "PERPETUITY" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.3+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(0+15*math.cos(sine/32))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(15+-10*math.cos(sine/32))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),2+0.5*math.cos(sine/32))*angles(math.rad(-15+2*math.cos(sine/32)),math.rad(0+2*math.cos(sine/32)),math.rad(-15+0*math.cos(sine/32))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(20+0*math.cos(sine/32)),math.rad(0+0*math.cos(sine/32)),math.rad(0+-15*math.cos(sine/15))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(160+0*math.cos(sine/32)),math.rad(0+0*math.cos(sine/32)),math.rad(-30+0*math.cos(sine/32))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(60+5*math.cos(sine/32)),math.rad(0+0*math.cos(sine/32)),math.rad(0+45*math.cos(sine/15))),.1)
+			elseif glitch == "EXPONENTIAL" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-30+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(30+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.1*math.cos(sine/40),0+0.1*math.cos(sine/60),5+1*math.cos(sine/50))*angles(math.rad(-10+-5*math.cos(sine/50)),math.rad(0+2*math.cos(sine/40)),math.rad(0+2*math.cos(sine/60))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(40+5*math.cos(sine/40)),math.rad(0+-2*math.cos(sine/50)),math.rad(0+-2*math.cos(sine/60))),.1)
+				RW.C0=clerp(RW.C0,cf(1+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0.5+0*math.cos(sine/32))*angles(math.rad(-20+-5*math.cos(sine/50)),math.rad(0+-5*math.cos(sine/60)),math.rad(-40+-5*math.cos(sine/50))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),1+0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(140+5*math.cos(sine/50)),math.rad(0+5*math.cos(sine/60)),math.rad(30+5*math.cos(sine/50))),.1)
+			elseif glitch == "SERENITY" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+-0.1*math.cos(sine/40),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-5+-2*math.cos(sine/60))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-1+-0.1*math.cos(sine/40),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-80+0*math.cos(sine/32)),math.rad(0+2*math.cos(sine/60))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0*math.cos(sine/32),0+-0.04*math.cos(sine/60),0+0.1*math.cos(sine/40))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(0+0*math.cos(sine/32)),math.rad(-30+0*math.cos(sine/32))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(10+2*math.cos(sine/30)),math.rad(0+2*math.cos(sine/40)),math.rad(30+2*math.cos(sine/50))),.1)
+				RW.C0=clerp(RW.C0,cf(1+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0.5+0*math.cos(sine/32))*angles(math.rad(-20+-2*math.cos(sine/60)),math.rad(0+-2*math.cos(sine/50)),math.rad(-30+-2*math.cos(sine/40))),.1)
+				LW.C0=clerp(LW.C0,cf(-1+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0.5+0*math.cos(sine/32))*angles(math.rad(-20+2*math.cos(sine/60)),math.rad(0+2*math.cos(sine/50)),math.rad(30+2*math.cos(sine/40))),.1)
+			elseif glitch == "SINISTROUS" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(80+0*math.cos(sine/32)),math.rad(-30+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-80+0*math.cos(sine/32)),math.rad(30+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.1*math.cos(sine/50),0+0.1*math.cos(sine/60),5+1*math.cos(sine/40))*angles(math.rad(-20+2*math.cos(sine/40)),math.rad(0+2*math.cos(sine/60)),math.rad(-20+2*math.cos(sine/50))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(20+-2*math.cos(sine/40)),math.rad(20+-2*math.cos(sine/60)),math.rad(20+-2*math.cos(sine/50))),.1)
+				RW.C0=clerp(RW.C0,cf(1+0*math.cos(sine/32),0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(90+5*math.cos(sine/50)),math.rad(-10+5*math.cos(sine/40)),math.rad(-70+5*math.cos(sine/60))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+-5*math.cos(sine/50)),math.rad(0+-5*math.cos(sine/40)),math.rad(-30+-5*math.cos(sine/60))),.1)
+			elseif glitch == "DISORIENTATION" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-10+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(10+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.1*math.cos(sine/50),0+0.1*math.cos(sine/60),5+1*math.cos(sine/40))*angles(math.rad(10+0*math.cos(sine/32)),math.rad(0+0*math.cos(sine/32)),math.rad(0+0*math.cos(sine/32))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(20+-5*math.cos(sine/40)),math.rad(0+6*math.cos(sine/50)),math.rad(0+5*math.cos(sine/2))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0.2*math.cos(sine/20),0+0*math.cos(sine/32))*angles(math.rad(0+5*math.cos(sine/60)),math.rad(0+5*math.cos(sine/50)),math.rad(20+-10*math.cos(sine/40))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0.2*math.cos(sine/20),0+0*math.cos(sine/32))*angles(math.rad(0+-5*math.cos(sine/60)),math.rad(0+-5*math.cos(sine/50)),math.rad(-20+10*math.cos(sine/40))),.1)
+			elseif glitch == "DESIRE" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-20+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(30+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.1*math.cos(sine/50),0+0.1*math.cos(sine/60),3+1*math.cos(sine/40))*angles(math.rad(-10+2*math.cos(sine/60)),math.rad(0+2*math.cos(sine/50)),math.rad(0+2*math.cos(sine/40))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(30+5*math.cos(sine/-60)),math.rad(5+5*math.cos(sine/-50)),math.rad(0+5*math.cos(sine/-40))),.1)
+				RW.C0=clerp(RW.C0,cf(1+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0.5+0*math.cos(sine/32))*angles(math.rad(-30+6*math.cos(sine/40)),math.rad(0+6*math.cos(sine/50)),math.rad(-30+6*math.cos(sine/60))),.1)
+				LW.C0=clerp(LW.C0,cf(-0.8+0*math.cos(sine/32),0.25+0.1*math.cos(sine/30),-0.5+0*math.cos(sine/32))*angles(math.rad(0+-5*math.cos(sine/40)),math.rad(0+-5*math.cos(sine/50)),math.rad(120+-5*math.cos(sine/60))),.1)
+			elseif glitch == "EXTERMINATION" then
+				--[[RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-30+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(10+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.1*math.cos(sine/50),0+0.1*math.cos(sine/60),3+1*math.cos(sine/40))*angles(math.rad(0+2*math.cos(sine/60)),math.rad(0+2*math.cos(sine/50)),math.rad(30+2*math.cos(sine/40))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(10+-4*math.cos(sine/60)),math.rad(0+-4*math.cos(sine/50)),math.rad(-30+-4*math.cos(sine/40))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(0+5*math.cos(sine/40)),math.rad(-30+5*math.cos(sine/50)),math.rad(30+5*math.cos(sine/60))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),1+0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(170+-5*math.cos(sine/40)),math.rad(0+-5*math.cos(sine/50)),math.rad(40+-5*math.cos(sine/60))),.1)]]
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-10+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(-20+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.1*math.cos(sine/50),0+0.1*math.cos(sine/60),3+1*math.cos(sine/40))*angles(math.rad(40+2*math.cos(sine/60)),math.rad(0+2*math.cos(sine/50)),math.rad(0+2*math.cos(sine/40))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(30+-4*math.cos(sine/60)),math.rad(0+-4*math.cos(sine/50)),math.rad(0+-4*math.cos(sine/40))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/20),0+0*math.cos(sine/32))*angles(math.rad(10+5*math.cos(sine/40)),math.rad(0+5*math.cos(sine/60)),math.rad(10+5*math.cos(sine/50))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/20),0+0*math.cos(sine/32))*angles(math.rad(20+-5*math.cos(sine/40)),math.rad(0+-5*math.cos(sine/60)),math.rad(-10+-5*math.cos(sine/50))),.1)
+			elseif glitch == "SYMPHONIC" then
+				--[[RootJoint.C0 = clerp(RootJoint.C0,cf(0,3.7 + visualiser/800,0.1)*angles(math.rad(13.8),math.rad(0.9),math.rad(-0.2))*RootCF,.1)
+				LH.C0 = clerp(LH.C0,cf(-1,-1,0)*angles(math.rad(-17.7),math.rad(0.3),math.rad(-5.1))*angles(math.rad(0),math.rad(-90),math.rad(0)),.1)
+				RH.C0 = clerp(RH.C0,cf(1,-0.8,-0.4)*angles(math.rad(-10.5),math.rad(2.7),math.rad(7.2))*angles(math.rad(0),math.rad(90),math.rad(0)),.1)
+				LW.C0 = clerp(LW.C0,cf(-1.4,0.8,0.2)*angles(math.rad(-151),math.rad(-8.5),math.rad(41.7)),.1)
+				RW.C0 = clerp(RW.C0,cf(1.3,0.6,-0.3)*angles(math.rad(-90+visualiser/4),math.rad(48.9),math.rad(98.2)),.1)
+				Torso.Neck.C0 = clerp(Torso.Neck.C0,cf(0.1,0.1,0.5)*angles(math.rad(-28.2),math.rad(-24.3),math.rad(5))*necko,.1)]]
+				--this is bad
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1-(visualiser/2000),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),0)*angles(math.rad(-5+1*math.cos(sine/40)),0,0),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-1-(visualiser/2000),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-70+0*math.cos(sine/32)),0)*angles(math.rad(-10+0*math.cos(sine/40)),0,0),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0*math.cos(sine/32),0+(visualiser/2000),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(0+0*math.cos(sine/32)),math.rad(-30+0*math.cos(sine/32))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(20+5*math.cos(sine/40)),math.rad(0+5*math.cos(sine/60)),math.rad(30+5*math.cos(sine/50))),.1)
+				RW.C0=clerp(RW.C0,cf(1+0*math.cos(sine/32),0.5+0*math.cos(sine/32),0.5+0*math.cos(sine/32))*angles(math.rad(0+-5*math.cos(sine/60)),math.rad(0+-5*math.cos(sine/50)),math.rad(-30+-5*math.cos(sine/40))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+-5*math.cos(sine/60)),math.rad(-30+-5*math.cos(sine/50)),math.rad(-visualiser/4)),.1)
+			elseif glitch == "COMPETENCE" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-20+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(10+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),5+1*math.cos(sine/40))*angles(math.rad(-10+2*math.cos(sine/40)),math.rad(-10+2*math.cos(sine/60)),math.rad(-30+2*math.cos(sine/50))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(10+-4*math.cos(sine/40)),math.rad(10+-4*math.cos(sine/60)),math.rad(30+-4*math.cos(sine/59))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0.2*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(0+5*math.cos(sine/60)),math.rad(0+5*math.cos(sine/50)),math.rad(30+5*math.cos(sine/40))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0.2*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(170+-5*math.cos(sine/60)),math.rad(0+-5*math.cos(sine/50)),math.rad(-20+-5*math.cos(sine/40))),.1)
+			elseif glitch == "APOTHEOSIS" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-30+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(10+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.1*math.cos(sine/40),0+0.1*math.cos(sine/50),5+1*math.cos(sine/40))*angles(math.rad(10+-10*math.cos(sine/40)),math.rad(0+5*math.cos(sine/40)),math.rad(-50+5*math.cos(sine/50))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(20+-4*math.cos(sine/30)),math.rad(0+-4*math.cos(sine/40)),math.rad(50+-4*math.cos(sine/50))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+5*math.cos(sine/50)),math.rad(10+5*math.cos(sine/40)),math.rad(60+5*math.cos(sine/30))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+-5*math.cos(sine/50)),math.rad(30+-5*math.cos(sine/40)),math.rad(-50+-5*math.cos(sine/30))),.1)
+			elseif glitch == "DESPAIR" then
+				RH.C0=clerp(RH.C0,cf(1+0*math.cos(sine/32),-1+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(90+0*math.cos(sine/32)),math.rad(-40+5*math.cos(sine/40))),.1)
+				LH.C0=clerp(LH.C0,cf(-1+0*math.cos(sine/32),-0.5+0*math.cos(sine/32),-0.5+0*math.cos(sine/32))*angles(math.rad(0+0*math.cos(sine/32)),math.rad(-90+0*math.cos(sine/32)),math.rad(30+5*math.cos(sine/40))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0+0.1*math.cos(sine/50),0+0.1*math.cos(sine/60),5+1*math.cos(sine/40))*angles(math.rad(40+5*math.cos(sine/40)),math.rad(0+5*math.cos(sine/50)),math.rad(0+5*math.cos(sine/60))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*cf(0+0*math.cos(sine/32),0+0*math.cos(sine/32),0+0*math.cos(sine/32))*angles(math.rad(20+5*math.cos(sine/50)),math.rad(0+0*math.cos(sine/50)),math.rad(0+0*math.cos(sine/60))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5+0*math.cos(sine/32),0.5+0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(20+5*math.cos(sine/60)),math.rad(0+5*math.cos(sine/40)),math.rad(30+5*math.cos(sine/50))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5+0*math.cos(sine/32),1+0.1*math.cos(sine/30),0+0*math.cos(sine/32))*angles(math.rad(170+-5*math.cos(sine/60)),math.rad(0+-5*math.cos(sine/40)),math.rad(30+-5*math.cos(sine/50))),.1)
+			end
+		elseif torvel>2 and torvel<22 and hitfloor~=nil and Hum.WalkSpeed <= 16 then
+			Anim="Walk"	
+			if glitch == 10 then 
+				RH.C0=clerp(RH.C0,cf(1,-1 + 0.05 * math.cos(sine / 4),0)*angles(math.rad(0),math.rad(90),math.rad(0))*angles(math.rad(0),math.rad(0 + 5 * math.cos(sine / 8)),math.rad(0 + 35 * math.cos(sine / 8))),.1)
+				LH.C0=clerp(LH.C0,cf(-1,-1 + 0.05 * math.cos(sine / 4),0)*angles(math.rad(0),math.rad(-90),math.rad(0))*angles(math.rad(0),math.rad(0 + 5 * math.cos(sine / 8)),math.rad(0 + 35 * math.cos(sine / 8))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,-0.05,-0.05 - 0.05 * math.cos(sine / 4))*angles(math.rad(5 + 3 * math.cos(sine / 4)),math.rad(0 + root.RotVelocity.Y/1.5),math.rad(0 - root.RotVelocity.Y - 5 * math.cos(sine / 8))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(10 - 3 * math.cos(sine / 4)),math.rad(0 + root.RotVelocity.Y/1.5),math.rad(0 - hed.RotVelocity.Y*1.5 + 5 * math.cos(sine / 8))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5,0.5,0 + 0.25 * math.cos(sine / 8))*angles(math.rad(0 - 50 * math.cos(sine / 8)),math.rad(0),math.rad(5 - 10 * math.cos(sine / 4))),.1)		
+				LW.C0=clerp(LW.C0,cf(-1.5,0.5,-0.3)*angles(math.rad(145.5+2*math.cos(sine/48)),math.rad(21.8+1*math.cos(sine/47)),math.rad(47.3+1*math.cos(sine/56))),0.1)		
+			else
+				RH.C0=clerp(RH.C0,cf(1,-1 - 0.2 * math.sin(sine / 3),-0.1 - 0.25 * math.cos(sine/3))*angles(math.rad(0),math.rad(90),math.rad(0))*angles(math.rad(-Vec.X*25 * math.cos(sine / 6)),math.rad(0-(Vec.X)*5 * math.cos(sine / 6)),math.rad((Vec.Z)*45 * math.cos(sine / 6))),.1)
+				LH.C0=clerp(LH.C0,cf(-1,-1 + 0.2 * math.sin(sine / 3),-0.1 + 0.25 * math.cos(sine/3))*angles(math.rad(0),math.rad(-90),math.rad(0))*angles(math.rad(-Vec.X*25 * math.cos(sine / 6)),math.rad(0-(Vec.X)*5 * math.cos(sine / 6)),math.rad((Vec.Z)*45 * math.cos(sine / 6))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,-0.05,-0.05 - 0.05 * math.cos(sine / 3))*angles(math.rad((Vec.Z)*10 + 3 * math.cos(sine / 3.5)),math.rad((-Vec.X)*5 + root.RotVelocity.Y/1.5),math.rad(0 - root.RotVelocity.Y - 5 * math.cos(sine / 3))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(5+(-Vec.Z)*10 - 3 * math.cos(sine / 3)),math.rad((-Vec.X)*1 + root.RotVelocity.Y/1.5),math.rad((Vec.X)*15 - hed.RotVelocity.Y*1.5 + 5 * math.cos(sine / 3))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5,0.5,0)*angles(math.rad((-Vec.Z)*34 * math.cos(sine / 3)),math.rad(0),math.rad((-Vec.X)*10 * math.cos(sine / 3))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5,0.5,0)*angles(math.rad((Vec.Z)*34 * math.cos(sine / 3)),math.rad(0),math.rad((Vec.X)*10 * math.cos(sine / 3))),.1)
+			end
+		elseif torvel>=22 and hitfloor~=nil and Hum.WalkSpeed > 16 then
+			--fly go yeet
+			--if glitch == "ECCLESIASTIC" or glitch == "LUCID" or glitch == "SALVATION" or glitch == "VINDICTIVE" or glitch == "PERPETUITY" or glitch == "SINISTROUS" or glitch == "MIRAGE" then
+			if RootJoint.C0.Y >= 1.2 then
+				Anim="Run"
+				RH.C0=clerp(RH.C0,cf(1,-0.5 - 0.05 * math.cos(sine / 32),-0.5)*angles(math.rad(-15),math.rad(90),0)*angles(math.rad(-5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 - 2 * math.cos(sine / 32))),.1)
+				LH.C0=clerp(LH.C0,cf(-1,-1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(-15),math.rad(-90),0)*angles(math.rad(-2),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 + 2 * math.cos(sine / 32))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0 + 0.02 * math.cos(sine / 32),1.5)*angles(math.rad((Vec.Z)*40 - 2 * math.cos(sine / 32)),math.rad((-Vec.X)*20),math.rad(0 + 0 * math.cos(sine / 42))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad((-Vec.Z)*30 - 2 * math.cos(sine / 37)),math.rad((-Vec.X)*1 + 2 * math.cos(sine / 58)),math.rad((Vec.X)*30 + 1 * math.cos(sine / 53))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(0),math.rad(0 - 2 * math.cos(sine / 58)),math.rad(20)),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(0),math.rad(0 - 3 * math.cos(sine / 59)),math.rad(-20)),.1)
+			else		
+				Anim="Run"
+				RH.C0=clerp(RH.C0,cf(1,-1 - 0.4 * math.sin(sine / 6),-0.1 - 0.5 * math.cos(sine/6))*angles(math.rad(0),math.rad(90),math.rad(0))*angles(math.rad(-Vec.X*25 * math.cos(sine / 6)),math.rad(0-(Vec.X)*5 * math.cos(sine / 6)),math.rad((Vec.Z)*60 * math.cos(sine / 6))),.1)
+				LH.C0=clerp(LH.C0,cf(-1,-1 + 0.4 * math.sin(sine / 6),-0.1 + 0.5 * math.cos(sine/6))*angles(math.rad(0),math.rad(-90),math.rad(0))*angles(math.rad(-Vec.X*25 * math.cos(sine / 6)),math.rad(0-(Vec.X)*5 * math.cos(sine / 6)),math.rad((Vec.Z)*60 * math.cos(sine / 6))),.1)
+				RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,-0.05,-0.05 - 0.05 * math.cos(sine / 3))*angles(math.rad((Vec.Z)*20 + 6 * math.cos(sine / 3)),math.rad((-Vec.X)*5 + root.RotVelocity.Y/1.5),math.rad(0 - root.RotVelocity.Y - 5 * math.cos(sine / 3))),.1)
+				Torso.Neck.C0=clerp(Torso.Neck.C0,necko*angles(math.rad(5+(-Vec.Z)*10 - 3 * math.cos(sine / 3)),math.rad((-Vec.X)*1 + root.RotVelocity.Y/1.5),math.rad((Vec.X)*15 - hed.RotVelocity.Y*1.5 + 5 * math.cos(sine / 8))),.1)
+				RW.C0=clerp(RW.C0,cf(1.5,0.5,0 + 0.25 * math.cos(sine / 6))*angles(math.rad((-Vec.Z)*80 * math.cos(sine / 6)),math.rad(0),math.rad((-Vec.X)*10 * math.cos(sine / 3))),.1)
+				LW.C0=clerp(LW.C0,cf(-1.5,0.5,0 - 0.25 * math.cos(sine / 6))*angles(math.rad((Vec.Z)*80 * math.cos(sine / 6)),math.rad(0),math.rad((-Vec.X)*10 * math.cos(sine / 3))),.1)	
+			end		
+		end
+	end
+end

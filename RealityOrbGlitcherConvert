@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://gist.githubusercontent.com/pepfre12/7b5475365b63c2876b9e6ec4022936c3/raw/3732520a19666eb3fd3f7d52cd3f6d2b33a0480a/RealityOrbGlitcherConvert",true))()
