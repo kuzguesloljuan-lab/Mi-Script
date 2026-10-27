@@ -1,0 +1,2497 @@
+--[[
+HATS - FREE
+https://www.roblox.com/catalog/3409612660/International-Fedora-USA
+https://www.roblox.com/catalog/3398308134/International-Fedora-Canada
+https://www.roblox.com/catalog/4324158403/International-Fedora-Japan
+https://www.roblox.com/catalog/3443038622/International-Fedora-Peru
+https://www.roblox.com/catalog/4819740796/Robox
+
+HATS - PAID
+https://www.roblox.com/catalog/11159410305/Rectangle-Head-For-Headless
+https://www.roblox.com/catalog/11263254795/Dummy-Head-For-Headless
+https://www.roblox.com/catalog/14255556501/Extra-Left-White-Arm
+https://www.roblox.com/catalog/14255554762/Extra-Right-White-Arm
+https://www.roblox.com/catalog/12344545199/Extra-Left-hand-moving-Blocky-white
+https://www.roblox.com/catalog/12344591101/Extra-Right-hand-moving-Blocky-white
+https://www.roblox.com/catalog/13839976999/Held-Dagger
+https://www.roblox.com/catalog/13831200263/Casual-Stud-Soda
+
+https://www.roblox.com/catalog/17374846953/Extra-Right-Black-Arm
+https://www.roblox.com/catalog/17374851733/Extra-Left-Black-Arm
+https://www.roblox.com/catalog/14768693948/White-Extended-Right-Arm
+https://www.roblox.com/catalog/14768701869/White-Extended-Left-Arm
+https://www.roblox.com/catalog/11159483910/Rectangle-Head-For-Headless
+https://www.roblox.com/catalog/12652786974/Building-Brick
+
+https://www.roblox.com/catalog/14255528083/Torso-Extension
+https://www.roblox.com/catalog/13421786478/Extra-Torso-Blocky
+https://www.roblox.com/catalog/14768678294/Torso-Extension
+https://www.roblox.com/catalog/14532301415/1x1x1x1s-Torso
+https://www.roblox.com/catalog/13423624885/Super-Track-Star-Torso
+https://www.roblox.com/catalog/11502853991/Glitched-Body
+https://www.roblox.com/catalog/14053485259/BLACK-ROCKSTAR-SPIDER-PUFFER-VEST
+https://www.roblox.com/catalog/13779879140/Black-Fluffy-Fur-Body
+https://www.roblox.com/catalog/14443132226/Sponge
+https://www.roblox.com/catalog/17163407577/Glitching-Red-Torso
+https://www.roblox.com/catalog/16297156693/Transparent-Inverted-Black-Torso
+]]
+
+local reanimation = loadstring(game:HttpGet("https://gist.githubusercontent.com/pepfre12/a6804484c857aaa92a673d0db68d4ec8/raw/6efa0f57bfd6ab503d99ee8cc26e30c804446009/oblopa"))()
+local FDless = reanimation.start({
+revokeownerships=true,
+simulationradius={
+enabled=true,
+value=9e9
+},
+accessorylimbs={
+
+{meshid="11263221350",textureid="11263219250",C0=CFrame.Angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm"},
+{meshid="11159370334",textureid="11159284657",C0=CFrame.Angles(-1.5707963267948966,0,1.5707963267948966),Name="Right Arm"},
+
+{meshid="14255522247",textureid="",C0=CFrame.Angles(1.5707963267948966,0,1.5707963267948966),Name="Left Arm"},
+{meshid="14255522247",textureid="",C0=CFrame.Angles(-1.5707963267948966,0,1.5707963267948966),Name="Right Arm"},
+
+{meshid="12344207333",textureid="",C0=CFrame.Angles(2,0,0),Name="Left Arm"},
+{meshid="12344206657",textureid="",C0=CFrame.Angles(2,0,0),Name="Right Arm"},
+
+{meshid="13831073174",textureid="",C0=CFrame.new(0.017,0,-0.23),CFrame.Angles(-1.4835298641951802,-0.15707963267948966,2.199114857512855),Name="Left Arm"},
+{meshid="13839903766",textureid="",C0=CFrame.new(0,-0.62,-0.01),CFrame.Angles(1.6580627893946132,0.15707963267948966,-2.199114857512855),Name="Right Arm"},
+
+{meshid="11159370334",textureid="11159285454",C0=CFrame.Angles(1.5707963267948966,0,1.5707963267948966),Name="Left Leg"},
+{meshid="12652772399",textureid="12652775021",C0=CFrame.new(0,-0.125,0),Name="Right Leg"},
+
+{meshid="14768684979",textureid="",C0=CFrame.Angles(0,0,1.5707963267948966),Name="Left Leg"},
+{meshid="14768684979",textureid="",C0=CFrame.Angles(0,0,1.5707963267948966),Name="Right Leg"},
+
+{meshid="14768666349",textureid="",C0=CFrame.identity,Name="Torso"},
+{meshid="14241018198",textureid="",C0=CFrame.identity,Name="Torso"},
+{meshid="13421774668",textureid="",C0=CFrame.identity,Name="Torso"},
+
+{meshid="4324138105",textureid="4324138210",C0=CFrame.Angles(-1.6144295580947547,1.5707963267948966,0)*CFrame.new(-0.125,0.3,0),Name="Left Arm"},
+{meshid="3030546036",textureid="3443321249",C0=CFrame.Angles(-1.6144295580947547,-1.5707963267948966,0)*CFrame.new(0.125,0.3,0),Name="Right Arm"},
+{meshid="3030546036",textureid="3360978739",C0=CFrame.Angles(-1.6144295580947547,-1.5707963267948966,3.14)*CFrame.new(0,0.3,0),Name="Left Leg"},
+{meshid="3030546036",textureid="3409604993",C0=CFrame.Angles(-1.6144295580947547,1.5707963267948966,3.14)*CFrame.new(0,0.3,0),Name="Right Leg"},
+
+{meshid="17374767929",textureid="17374768001",C0=CFrame.Angles(1.57,0,1.57),Name="Right Leg"},
+{meshid="17374767929",textureid="17374768001",C0=CFrame.Angles(1.57,0,1.57),Name="Left Leg"},
+{meshid="14768684979",textureid="14768683674",C0=CFrame.Angles(1.57,0,1.57),Name="Right Leg"},
+{meshid="14768684979",textureid="14768683674",C0=CFrame.Angles(1.57,0,1.57),Name="Left Leg"},
+{meshid="4819720316",textureid="4819722776",C0=CFrame.Angles(0,0,0.2617993877991494),Name="Torso"},
+
+},
+camerasensitivity=1.25,
+allowshiftlock=true,
+ctrltp=false,
+placeholders=true,
+clickfling=false,
+allowfling=true,
+highlightflingtargets=true,
+discharscripts=true,
+flingchangestate=true,
+respawntp=true,
+breakjointsmethod=1,
+setcharacter=false,
+charactertransparency=1,
+charactersize=1,
+hipheight=0,
+defaultanimations=false,
+r15=false,
+debug = {
+shownownerships=false,
+shownregions=false,
+addaccessories={}
+}
+})
+
+local Module = game:GetObjects("rbxassetid://6132728923")[1]
+local script = Module:FindFirstChild("EXCEL")
+
+-- Labelling What is What. -- //
+
+Pl =  game.Players.LocalPlayer
+Player = Pl
+C = FDless.character
+Hum = C.Humanoid
+CFR = CFrame.new
+mouse = Player:GetMouse()
+
+-- Humanoid Stuff, Mainly Defining the player and what a CFrame is. -- //
+rad = math.rad;
+cos = math.cos;
+sin = math.sin;
+tan = math.tan; 
+pi = math.pi;
+cosh = math.cosh;
+sinh = math.sinh;
+local LerpFactor, Alpha = .1
+sine = 0
+change = 1
+glitch = nil
+local volume = 0
+attack = false
+local wingrot = 0
+local wingrot2 = 0
+local wingrot3 = 0
+local wingrot4 = 0
+local wingrot5 = 0
+local wingrot6 = 0
+attackanim = false
+Hum.WalkSpeed = 0 
+local colorshift = true
+startup = true
+local SpinSpeed
+-- Ceasing Animate -- //
+if C:FindFirstChild("Animate") then
+	C:WaitForChild("Animate"):Destroy() -- Animate needs to C e a s e -- //
+end
+if C.Humanoid:FindFirstChild("Animator") then
+	C:FindFirstChildOfClass("Humanoid"):WaitForChild("Animator"):Destroy()  -- Just So animate doesn't cause any further problems. -- //
+end
+wait(0.5)
+Hum.WalkSpeed = 50
+-- Animate has now Ceased -- //
+--yeet time
+local startgui = script.GUIs:WaitForChild("StartingGui"):Clone()
+FDless.keepGui(startgui)
+startgui.Parent = Player.PlayerGui
+startgui.main.Position = UDim2.new(-0.4,0,0.375,0)
+startgui.main:TweenPosition(UDim2.new(0.325,0,0.375,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,1,true)
+startgui.main.shiftbutton.MouseButton1Click:Connect(function()
+	if startgui.main.shiftbutton.Text == "ON" then
+		startgui.main.shiftbutton.Text = "OFF"
+		colorshift = false
+	elseif startgui.main.shiftbutton.Text == "OFF" then
+		startgui.main.shiftbutton.Text = "ON"
+		colorshift = true
+	end
+end)
+startgui.main.startupbutton.MouseButton1Click:Connect(function()
+	if startgui.main.startupbutton.Text == "ON" then
+		startgui.main.startupbutton.Text = "OFF"
+		startup = false
+	elseif startgui.main.startupbutton.Text == "OFF" then
+		startgui.main.startupbutton.Text = "ON"
+		startup = true
+	end
+end)
+startgui.main.focusbutton.MouseButton1Click:Connect(function()
+	if startgui.main.focusbutton.Text == "ON" then
+		startgui.main.focusbutton.Text = "OFF"
+		script.CamFocusBool.Value = false
+	elseif startgui.main.focusbutton.Text == "OFF" then
+		startgui.main.focusbutton.Text = "ON"
+		script.CamFocusBool.Value = true
+	end
+end)
+startgui.main.Play.MouseButton1Click:Connect(function()
+startgui.main:TweenPosition(UDim2.new(1.1,0,0.375,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,1,true)
+wait(1)
+startgui:Destroy()
+-- Limb Setup. --
+local char = C
+local Torso = char.Torso
+local rarm = char["Right Arm"]
+
+local larm = char["Left Arm"]
+
+local lleg = char["Left Leg"]
+
+local rleg = char["Right Leg"]
+
+ra = char["Right Arm"]
+la = char["Left Arm"]
+rl = char["Right Leg"]
+ll = char["Left Leg"]
+LS=Torso["Left Shoulder"] 
+LH=Torso["Left Hip"] 
+RS=Torso["Right Shoulder"] 
+RH=Torso["Right Hip"] 
+RW, LW=Instance.new("Weld"), Instance.new("Weld") 
+RW.Name="Right Shoulder" LW.Name="Left Shoulder"
+LH=Torso["Left Hip"]
+RH=Torso["Right Hip"]
+Neck=Torso["Neck"]
+hed = char.Head
+
+
+
+
+-- script vars --
+local MainColor = Color3.new(1,1,1)
+local SecondColor = Color3.new(0.5,0.5,0.5)
+local ThirdColor = Color3.new(0,0,0)
+local HoverHight = 8
+-- CFrame Functions
+function QuaternionFromCFrame(cf) 
+local mx, my, mz, m00, m01, m02, m10, m11, m12, m20, m21, m22 = cf:components() 
+local trace = m00 + m11 + m22 
+if trace > 0 then 
+local s = math.sqrt(1 + trace) 
+local recip = 0.5/s 
+return (m21-m12)*recip, (m02-m20)*recip, (m10-m01)*recip, s*0.5 
+else 
+local i = 0 
+if m11 > m00 then
+i = 1
+end
+if m22 > (i == 0 and m00 or m11) then 
+i = 2 
+end 
+if i == 0 then 
+local s = math.sqrt(m00-m11-m22+1) 
+local recip = 0.5/s 
+return 0.5*s, (m10+m01)*recip, (m20+m02)*recip, (m21-m12)*recip 
+elseif i == 1 then 
+local s = math.sqrt(m11-m22-m00+1) 
+local recip = 0.5/s 
+return (m01+m10)*recip, 0.5*s, (m21+m12)*recip, (m02-m20)*recip 
+elseif i == 2 then 
+local s = math.sqrt(m22-m00-m11+1) 
+local recip = 0.5/s return (m02+m20)*recip, (m12+m21)*recip, 0.5*s, (m10-m01)*recip 
+end 
+end 
+end
+ 
+function QuaternionToCFrame(px, py, pz, x, y, z, w) 
+local xs, ys, zs = x + x, y + y, z + z 
+local wx, wy, wz = w*xs, w*ys, w*zs 
+local xx = x*xs 
+local xy = x*ys 
+local xz = x*zs 
+local yy = y*ys 
+local yz = y*zs 
+local zz = z*zs 
+return CFrame.new(px, py, pz,1-(yy+zz), xy - wz, xz + wy,xy + wz, 1-(xx+zz), yz - wx, xz - wy, yz + wx, 1-(xx+yy)) 
+end
+ 
+function QuaternionSlerp(a, b, t) 
+local cosTheta = a[1]*b[1] + a[2]*b[2] + a[3]*b[3] + a[4]*b[4] 
+local startInterp, finishInterp; 
+if cosTheta >= 0.0001 then 
+if (1 - cosTheta) > 0.0001 then 
+local theta = math.acos(cosTheta) 
+local invSinTheta = 1/math.sin(theta) 
+startInterp = math.sin((1-t)*theta)*invSinTheta 
+finishInterp = math.sin(t*theta)*invSinTheta  
+else 
+startInterp = 1-t 
+finishInterp = t 
+end 
+else 
+if (1+cosTheta) > 0.0001 then 
+local theta = math.acos(-cosTheta) 
+local invSinTheta = 1/math.sin(theta) 
+startInterp = math.sin((t-1)*theta)*invSinTheta 
+finishInterp = math.sin(t*theta)*invSinTheta 
+else 
+startInterp = t-1 
+finishInterp = t 
+end 
+end 
+return a[1]*startInterp + b[1]*finishInterp, a[2]*startInterp + b[2]*finishInterp, a[3]*startInterp + b[3]*finishInterp, a[4]*startInterp + b[4]*finishInterp 
+end
+
+
+function clerp(a,b,t) 
+local qa = {QuaternionFromCFrame(a)}
+local qb = {QuaternionFromCFrame(b)} 
+local ax, ay, az = a.x, a.y, a.z 
+local bx, by, bz = b.x, b.y, b.z
+local _t = 1-t
+return QuaternionToCFrame(_t*ax + t*bx, _t*ay + t*by, _t*az + t*bz,QuaternionSlerp(qa, qb, t)) 
+end 
+
+euler = CFrame.fromEulerAnglesXYZ
+cf = CFrame.new
+angles = CFrame.Angles
+necko=cf(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+necko2=cf(0, -0.5, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+LHC0=cf(-1,-1,0,-0,-0,-1,0,1,0,1,0,0)
+LHC1=cf(-0.5,1,0,-0,-0,-1,0,1,0,1,0,0)
+RHC0=cf(1,-1,0,0,0,1,0,1,0,-1,-0,-0)
+RHC1=cf(0.5,1,0,0,0,1,0,1,0,-1,-0,-0)
+RootPart=char.HumanoidRootPart
+RootJoint=RootPart.RootJoint
+RootCF=euler(-1.57,0,3.14)
+local root = char:FindFirstChild'HumanoidRootPart'
+player=Player 
+ch=char
+RSH=ch.Torso["Right Shoulder"] 
+LSH=ch.Torso["Left Shoulder"] 
+-- 
+RSH.Parent=nil 
+LSH.Parent=nil 
+-- 
+RW.Name="Right Shoulder"
+RW.Part0=ch.Torso 
+RW.C0=cf(1.5, 0.5, 0) --* CFrame.fromEulerAnglesXYZ(1.3, 0, -0.5) 
+RW.C1=cf(0, 0.5, 0) 
+RW.Part1=ch["Right Arm"] 
+RW.Parent=ch.Torso 
+-- 
+LW.Name="Left Shoulder"
+LW.Part0=ch.Torso 
+LW.C0=cf(-1.5, 0.5, 0) --* CFrame.fromEulerAnglesXYZ(1.7, 0, 0.8) 
+LW.C1=cf(0, 0.5, 0) 
+LW.Part1=ch["Left Arm"] 
+LW.Parent=ch.Torso 
+
+-- CFrame End --
+--recolor function
+
+--musique lol
+local groovy = Instance.new("Sound",Torso)
+groovy.Name = "groovy"
+groovy.Volume = 10
+groovy.MaxDistance = 10000
+groovy.Looped = true
+local musicchange = false
+--music funciton
+function newMusic(id,pitch)
+	musicchange = true
+	coroutine.resume(coroutine.create(function()
+	local oldpos = groovy.TimePosition
+	local songdisplay = Player.PlayerGui.SGU.main.musicframe:WaitForChild("musique")
+	groovy.SoundId = "rbxassetid://"..id
+	groovy.Pitch = pitch
+	groovy.TimePosition = oldpos
+	groovy:Play()
+	local songname = game:GetService("MarketplaceService"):GetProductInfo(id).Name
+	attack = true
+	musicchange = false
+	for i = 1,#songname do
+		songdisplay.Text = string.sub(songname,1,i)
+		swait(1)
+	end
+	attack = false
+	end))
+end
+
+--[[function newMusicStart(id,pitch,pos)
+	local songdisplay = Player.PlayerGui.SGU.mainframe:WaitForChild("songinfo")
+	groovy.SoundId = "rbxassetid://"..id
+	groovy.Pitch = pitch
+	groovy.TimePosition = pos
+	groovy:Play()
+	songdisplay:TweenPosition(UDim2.new(-1, 0,0.383, 0),Enum.EasingDirection.In,Enum.EasingStyle.Quint,0.5,true)
+	for i=1,25 do
+		songdisplay.TextTransparency = songdisplay.TextTransparency + 0.04
+		swait()
+	end
+	songdisplay.Text = game:GetService("MarketplaceService"):GetProductInfo(id).Name
+	songdisplay.Position = UDim2.new(-0.8,9,0.383,0)
+	songdisplay:TweenPosition(UDim2.new(-0.882, 0,0.383, 0),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,1,true)
+	for i=1,25 do
+		songdisplay.TextTransparency = songdisplay.TextTransparency - 0.04
+		swait()
+	end
+end]]
+-- Tween Values. --
+function TweenAnimate(object,Aniim,time,easingstyle,easingdirection,repet,reverse,deelay)
+local infos=TweenInfo.new(time,Enum.EasingStyle[easingstyle],Enum.EasingDirection[easingdirection],repet,reverse,deelay)
+local tween=game:GetService("TweenService"):Create(object,infos,Aniim)
+tween:Play()
+return tween
+end
+-- Tween Values. --
+--haha effec
+
+
+local partic = Instance.new("Part",char)
+partic.Transparency = 1
+partic.CFrame = root.CFrame*CFrame.new(0,-3,0)
+partic.Anchored = false
+partic.CanCollide = false
+partic.Massless = true
+partic.Name = "Partic"
+local weld = Instance.new("WeldConstraint",partic)
+weld.Part0 = root
+weld.Part1 = partic
+local emit = Instance.new("ParticleEmitter",partic)
+emit.LightEmission = 9999
+emit.LightInfluence = 0
+emit.EmissionDirection = "Top"
+emit.Enabled = true
+emit.Texture = "http://www.roblox.com/asset/?id=5194486985"
+emit.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(0.1,0),NumberSequenceKeypoint.new(1,1)}
+partic.Size = Vector3.new(75,1,75)
+emit.Size = NumberSequence.new(0,30)
+emit.Acceleration = Vector3.new(0,0,0)
+emit.Lifetime = NumberRange.new(0.7)
+emit.Rotation = NumberRange.new(-5,5)
+emit.RotSpeed = NumberRange.new(0)
+emit.Speed = NumberRange.new(5)
+emit.SpreadAngle = Vector2.new(0,0)
+emit.Rate = 75
+local emit2 = Instance.new("ParticleEmitter",partic)
+emit2.LightEmission = 9999
+emit2.LightInfluence = 0
+emit2.EmissionDirection = "Top"
+emit2.Enabled = true
+emit2.Texture = "http://www.roblox.com/asset/?id=5122583722"
+emit2.Transparency = NumberSequence.new(0.3,1)
+emit2.Size = NumberSequence.new(0.75)
+emit2.Acceleration = Vector3.new(0,10,0)
+emit2.Lifetime = NumberRange.new(1)
+emit2.Rotation = NumberRange.new(-5,5)
+emit2.RotSpeed = NumberRange.new(0)
+emit2.Speed = NumberRange.new(3)
+emit2.SpreadAngle = Vector2.new(-180,180)
+emit2.Rate = 100
+emit2.Drag = -5
+--2092248396
+local emit3 = Instance.new("ParticleEmitter",partic)
+emit3.LightEmission = 9999
+emit3.LightInfluence = 0
+emit3.EmissionDirection = "Top"
+emit3.Enabled = true
+emit3.Texture = "http://www.roblox.com/asset/?id=2092248396"
+emit3.Transparency = NumberSequence.new(0.3,1)
+emit3.Size = NumberSequence.new(1)
+emit3.Acceleration = Vector3.new(0,10,0)
+emit3.Lifetime = NumberRange.new(1)
+emit3.Rotation = NumberRange.new(-180,180)
+emit3.RotSpeed = NumberRange.new(50)
+emit3.Speed = NumberRange.new(3)
+emit3.SpreadAngle = Vector2.new(-180,180)
+emit3.Rate = 100
+emit2.Drag = -5
+function boschat(tex)
+	coroutine.resume(coroutine.create(function()
+	for i,v in pairs(game:GetService("Players"):GetChildren()) do
+		local bos = script.GUIs.bos:Clone()
+		bos.Parent = v.PlayerGui
+		bos.main.BackgroundTransparency = 0.5
+		Sound("Sound",3241329058,v.PlayerGui,10,1,0)
+		coroutine.resume(coroutine.create(function()
+			repeat
+			swait()
+				bos.main.modename.Text = string.upper(Player.Name)
+				bos.main.BackgroundColor3 = ThirdColor
+				bos.main.BorderColor3 = MainColor
+				bos.main.grad.Color = ColorSequence.new(MainColor,SecondColor)
+				bos.main.grad.Rotation = bos.main.grad.Rotation + 5
+				bos.main.chat.TextColor3 = ThirdColor
+				bos.main.chat.TextStrokeColor3 = MainColor
+				bos.main.chat.grad.Color = ColorSequence.new(MainColor,SecondColor)
+				--bos.main.chat.grad.Rotation = bos.main.chat.grad.Rotation + 30
+				bos.main.modename.TextColor3 = ThirdColor
+				bos.main.modename.TextStrokeColor3 = MainColor
+				bos.main.modename.grad.Color = ColorSequence.new(MainColor,SecondColor)
+				--bos.main.modename.grad.Rotation = bos.main.modename.grad.Rotation + 30
+				--motion
+				bos.main.Position = UDim2.new(-0.5,0,0 + 0.005 * math.cos(sine/56),0)
+				bos.main.chat.Position = UDim2.new(0.25 + 0.005 * math.cos(sine/45),0,0.245 + 0.005 * math.cos(sine/56),0)
+				bos.main.modename.Position = UDim2.new(0.456 + 0.005 * math.cos(sine/43),0,0.908 + 0.005 * math.cos(sine/53),0)
+				bos.main.Rotation = 0 + 0.5 * math.cos(sine/34)
+				bos.main.chat.Rotation = 0 + 0.5 * math.cos(sine/31)
+				bos.main.modename.Rotation = 0 + 0.5 * math.cos(sine/36)
+			until bos.Parent == nil
+		end))
+		bos.main.Position = UDim2.new(-0.5,0,-0.2,0)
+		bos.main:TweenPosition(UDim2.new(-0.5,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quint,1,true)
+		for i = 1,#tex do
+			bos.main.chat.Text = string.sub(tex,1,i)
+			swait()
+		end
+		swait(150)
+		bos.main:TweenPosition(UDim2.new(-0.5,0,0.2,0),Enum.EasingDirection.In,Enum.EasingStyle.Quad,1,true)
+		bos.main.chat:TweenPosition(UDim2.new(0.25,0,0.7,0),Enum.EasingDirection.In,Enum.EasingStyle.Quad,1,true)
+		bos.main.modename:TweenPosition(UDim2.new(0.456,0,1.5,0),Enum.EasingDirection.In,Enum.EasingStyle.Quad,1,true)
+		for i = 1,50 do
+			--bos.main.Rotation = bos.main.Rotation + 0.5
+			--bos.main.chat.Rotation = bos.main.chat.Rotation - 0.5
+			--bos.main.modename.Rotation = bos.main.modename.Rotation - 0.5
+			bos.main.BackgroundTransparency = bos.main.BackgroundTransparency + 0.01
+			bos.main.chat.grad.Transparency = NumberSequence.new(i/50)
+			bos.main.modename.grad.Transparency = NumberSequence.new(i/50)
+			swait(0.9)
+		end
+		swait(10)
+		bos:Destroy()
+	end
+	end))
+end
+function MagicCircle(ImageID,Color,cframe,SpinSpeed,FadeSpeed,Size,WaitTime)
+	local MagicCirclePart = Instance.new("Part",char)
+	MagicCirclePart.Anchored = true
+	MagicCirclePart.CanCollide = false
+	MagicCirclePart.Color = Color
+	MagicCirclePart.Material = "Neon"
+	MagicCirclePart.Transparency = 1
+	MagicCirclePart.Name = "Ring"
+	MagicCirclePart.Size = Vector3.new(Size,0.01,Size)
+	MagicCirclePart.CFrame = cframe
+	local MagicCircleSurfaceGui = Instance.new("SurfaceGui",MagicCirclePart)
+	MagicCircleSurfaceGui.Face = "Top"
+	MagicCircleSurfaceGui.SizingMode = "PixelsPerStud"
+	local MagicCircleImage = Instance.new("ImageLabel",MagicCircleSurfaceGui)
+	MagicCircleImage.ImageColor3 = Color
+	MagicCircleImage.Image = ImageID
+	MagicCircleImage.ImageTransparency = 1
+	MagicCircleImage.BackgroundTransparency = 1
+	MagicCircleImage.Rotation = 0
+	MagicCircleImage.Size = UDim2.fromScale(0.1,0.1)
+	MagicCircleImage.Position = UDim2.fromScale(0.45,0.45)
+	coroutine.resume(coroutine.create(function()
+	for i = 0,1,FadeSpeed*0.01 do
+		swait()
+		MagicCircleImage.ImageTransparency = 1-i
+		MagicCircleImage.Rotation = (i*360)
+		MagicCircleImage.Size = UDim2.fromScale(i,i)
+		MagicCircleImage.Position = UDim2.fromScale((((1-i)/2)),(((1-i)/2)))
+		MagicCircleImage.ImageColor3 = Color
+		MagicCircleImage.Image = ImageID
+	end
+	for i = 0,WaitTime,0.01 do
+		swait()
+		MagicCircleImage.Rotation = MagicCircleImage.Rotation - SpinSpeed
+		MagicCircleImage.ImageColor3 = Color
+		MagicCircleImage.Image = ImageID
+	end
+	for i = 0,1,FadeSpeed*0.01 do
+		swait()
+		MagicCircleImage.ImageTransparency = 0+i
+		MagicCircleImage.Rotation = (360-(i*360))
+		MagicCircleImage.Size = UDim2.fromScale(1-i,1-i)
+		MagicCircleImage.Position = UDim2.fromScale((((0+i)/2)),(((0+i)/2)))
+		MagicCircleImage.ImageColor3 = Color
+		MagicCircleImage.Image = ImageID
+	end
+	MagicCirclePart:Destroy()
+	end))
+end
+local spinpart = Instance.new("Part",char)
+spinpart.CanCollide = false
+spinpart.Anchored = false
+spinpart.Transparency = 1
+spinpart.Size = Vector3.new(1,1,1)
+function tweeneff(shape,pos,color,size,fadelength,material,trans,prop,tweenlength,tweenstyle,tweendirection,tweenrep,tweenrev)
+	coroutine.resume(coroutine.create(function()
+	local sphe = Instance.new("Part",char)
+	sphe.CFrame = pos
+	sphe.Color = color
+	sphe.Size = size
+	sphe.Anchored = true
+	sphe.CanCollide = false
+	sphe.Transparency = trans
+	sphe.CastShadow = false
+	if material == nil then
+		sphe.Material = "Neon"
+	else
+		sphe.Material = material
+	end
+	if shape == "Sphere" then
+	local sphemesh = Instance.new("SpecialMesh",sphe)
+	sphemesh.MeshType = Enum.MeshType.Sphere
+	sphemesh.Scale = Vector3.new(1,1,1)
+	elseif shape == "Cylinder" then
+	local sphemesh = Instance.new("SpecialMesh",sphe)
+	sphemesh.MeshType = Enum.MeshType.Cylinder
+	sphemesh.Scale = Vector3.new(1,1,1)
+	end
+	--tween stuff
+	local tweenserv = game:GetService("TweenService")
+	local tweeninf = TweenInfo.new(
+	 tweenlength,
+	 Enum.EasingStyle[tweenstyle],
+	 Enum.EasingDirection[tweendirection],
+	 tweenrep,
+	 tweenrev,
+	 0
+	)
+	local tweenprop = prop
+	local tween = tweenserv:Create(sphe,tweeninf,tweenprop)
+	tween:Play()
+	if tweenrev == true then
+	wait(tweenlength*2)
+	else
+	wait(tweenlength)
+	end
+	sphe:Destroy()
+	end))
+end
+function tweenmesh(shape,pos,color,size,fadelength,material,trans,prop,tweenlength,tweenstyle,tweendirection,tweenrep,tweenrev)
+	coroutine.resume(coroutine.create(function()
+	local sphe = script.SpecialEffects[shape]:Clone()
+	sphe.Parent = char
+	sphe.Transparency = trans
+	sphe.CFrame = pos
+	sphe.Color = color
+	for i,v in pairs(sphe:GetChildren()) do
+		v.Color3 = color
+	end
+	sphe.Size = size
+	sphe.Anchored = true
+	sphe.CanCollide = false
+	
+	if material == nil then
+		sphe.Material = "Neon"
+	else
+		sphe.Material = material
+	end
+	--tween stuff
+	local tweenserv = game:GetService("TweenService")
+	local tweeninf = TweenInfo.new(
+	 tweenlength,
+	 Enum.EasingStyle[tweenstyle],
+	 Enum.EasingDirection[tweendirection],
+	 tweenrep,
+	 tweenrev,
+	 0
+	)
+	local tweenprop = prop
+	local tween = tweenserv:Create(sphe,tweeninf,tweenprop)
+	tween:Play()
+	if tweenrev == true then
+	wait(tweenlength*2)
+	else
+	wait(tweenlength)
+	end
+	sphe:Destroy()
+	end))
+end
+function MagicCircle2(ImageID,Color,cframe,SpinSpeed,FadeSpeed,Size,WaitTime)
+	local MagicCirclePart = Instance.new("Part",char)
+	MagicCirclePart.Anchored = true
+	MagicCirclePart.CanCollide = false
+	MagicCirclePart.Color = Color
+	MagicCirclePart.Material = "Neon"
+	MagicCirclePart.Transparency = 1
+	MagicCirclePart.Name = "Ring"
+	MagicCirclePart.Size = Vector3.new(0.1,0.1,0.1)
+	MagicCirclePart.CFrame = cframe
+	local MagicCircleSurfaceGui = Instance.new("BillboardGui",MagicCirclePart)
+	MagicCircleSurfaceGui.Size = UDim2.new(Size,0,Size,0)
+	local MagicCircleImage = Instance.new("ImageLabel",MagicCircleSurfaceGui)
+	MagicCircleImage.ImageColor3 = Color
+	MagicCircleImage.Image = ImageID
+	MagicCircleImage.ImageTransparency = 1
+	MagicCircleImage.BackgroundTransparency = 1
+	MagicCircleImage.Rotation = 0
+	MagicCircleImage.Size = UDim2.fromScale(0.1,0.1)
+	MagicCircleImage.Position = UDim2.fromScale(0.45,0.45)
+	coroutine.resume(coroutine.create(function()
+	for i = 0,1,FadeSpeed*0.01 do
+		swait()
+		MagicCircleImage.ImageTransparency = 1-i
+		MagicCircleImage.Rotation = (i*360)
+		MagicCircleImage.Size = UDim2.fromScale(i,i)
+		MagicCircleImage.Position = UDim2.fromScale((((1-i)/2)),(((1-i)/2)))
+		MagicCircleImage.ImageColor3 = Color
+		MagicCircleImage.Image = ImageID
+	end
+	for i = 0,WaitTime,0.01 do
+		swait()
+		MagicCircleImage.Rotation = MagicCircleImage.Rotation - SpinSpeed
+		MagicCircleImage.ImageColor3 = Color
+		MagicCircleImage.Image = ImageID
+	end
+	for i = 0,1,FadeSpeed*0.01 do
+		swait()
+		MagicCircleImage.ImageTransparency = 0+i
+		MagicCircleImage.Rotation = (360-(i*360))
+		MagicCircleImage.Size = UDim2.fromScale(1-i,1-i)
+		MagicCircleImage.Position = UDim2.fromScale((((0+i)/2)),(((0+i)/2)))
+		MagicCircleImage.ImageColor3 = Color
+		MagicCircleImage.Image = ImageID
+	end
+	MagicCirclePart:Destroy()
+	end))
+end
+visualiser = 0
+script.PlaybackLoudness.OnServerEvent:Connect(function(plr,vis)
+	visualiser = vis
+end)
+-- Artificial Heartbeat --
+local ArtificialHB = Instance.new("BindableEvent", script)
+ArtificialHB.Name = "Heartbeat"
+
+script:WaitForChild("Heartbeat")
+
+local tf = 0
+local allowframeloss = false
+local tossremainder = false
+local lastframe = tick()
+local frame = 1/60
+ArtificialHB:Fire()
+
+game:GetService("RunService").Heartbeat:connect(function(s, p)
+	tf = tf + s
+	if tf >= frame then
+		if allowframeloss then
+			script.Heartbeat:Fire()
+			lastframe = tick()
+		else
+			for i = 1, math.floor(tf / frame) do
+				ArtificialHB:Fire()
+			end
+			lastframe = tick()
+		end
+		if tossremainder then
+			tf = 0
+		else
+			tf = tf - frame * math.floor(tf / frame)
+		end
+	end
+end)
+
+function swait(num)
+	if num == 0 or num == nil then
+		ArtificialHB.Event:wait()
+	else
+		for i = 0, num do
+			ArtificialHB.Event:wait()
+		end
+	end
+end
+
+-- [The Almighty Animation Editor] --
+local AnimationTestActive = false
+
+if not game.Workspace:FindFirstChild("AnimationTester") then
+	local AnimTestFolder = Instance.new("Folder",game.Workspace)
+	AnimTestFolder.Name = "AnimationTester"
+end
+
+local AnimTestValues = {
+AnimTest = game.Workspace.AnimationTester,
+RHNew = nil,
+LHNew = nil,
+RootJointNew = nil,
+TorsoNew = nil,
+RWNew = nil,
+LWNew = nil,
+CFNew = nil,
+outputRH = nil,
+outputLH = nil,
+outputRootJoint = nil,
+outputTorso = nil,
+outputRW = nil,
+outputLW = nil,
+Animtion = nil
+}
+
+function IntNewValXYZ(Location,ExtraName)
+	if ExtraName == nil then
+		ExtraName = ""
+	end
+	local X = Instance.new("IntValue",Location)
+	X.Name = "X" .. ExtraName
+	local Y = Instance.new("IntValue",Location)
+	Y.Name = "Y" .. ExtraName
+	local Z = Instance.new("IntValue",Location)
+	Z.Name = "Z" .. ExtraName
+end
+
+function IntNewValCF(Location,XVal,YVal,ZVal,ExtraName)
+	if ExtraName == nil then
+		ExtraName = ""
+	end
+	AnimTestValues.CFNew = Instance.new("Folder",Location)
+	AnimTestValues.CFNew.Name = "CF" .. ExtraName
+	local X = Instance.new("NumberValue",AnimTestValues.CFNew)
+	X.Name = "X"
+	X.Value = XVal
+	local Y = Instance.new("NumberValue",AnimTestValues.CFNew)
+	Y.Name = "Y"
+	Y.Value = YVal
+	local Z = Instance.new("NumberValue",AnimTestValues.CFNew)
+	Z.Name = "Z"
+	Z.Value = ZVal
+end
+
+function animationTest(Name,Breathing,val)
+	if not game.Workspace.AnimationTester:FindFirstChild(Name) then
+		local AnmiNew = Instance.new("Folder",AnimTestValues.AnimTest)
+		AnmiNew.Name = Name
+		local Output = Instance.new("Folder",AnmiNew)
+		Output.Name = "Output"
+		
+		AnimTestValues.RHNew = Instance.new("Folder",AnmiNew)
+		AnimTestValues.RHNew.Name = "RH"
+		IntNewValXYZ(AnimTestValues.RHNew,1)
+		IntNewValXYZ(AnimTestValues.RHNew,2)
+		IntNewValCF(AnimTestValues.RHNew,1,-1,0)
+		AnimTestValues.RHNew.Y1.Value = 90
+		
+		AnimTestValues.LHNew = Instance.new("Folder",AnmiNew)
+		AnimTestValues.LHNew.Name = "LH"
+		IntNewValXYZ(AnimTestValues.LHNew,1)
+		IntNewValXYZ(AnimTestValues.LHNew,2)
+		IntNewValCF(AnimTestValues.LHNew,-1,-1,0)
+		AnimTestValues.LHNew.Y1.Value = -90
+		
+		AnimTestValues.RootJointNew = Instance.new("Folder",AnmiNew)
+		AnimTestValues.RootJointNew.Name = "RootJoint"
+		IntNewValXYZ(AnimTestValues.RootJointNew)
+		IntNewValCF(AnimTestValues.RootJointNew,0,0,0)
+		
+		AnimTestValues.TorsoNew = Instance.new("Folder",AnmiNew)
+		AnimTestValues.TorsoNew.Name = "Torso"
+		IntNewValXYZ(AnimTestValues.TorsoNew)
+		
+		AnimTestValues.RWNew = Instance.new("Folder",AnmiNew)
+		AnimTestValues.RWNew.Name = "RW"
+		IntNewValXYZ(AnimTestValues.RWNew)
+		IntNewValCF(AnimTestValues.RWNew,1.5,0.5,0)
+		
+		AnimTestValues.LWNew = Instance.new("Folder",AnmiNew)
+		AnimTestValues.LWNew.Name = "LW"
+		IntNewValXYZ(AnimTestValues.LWNew)
+		IntNewValCF(AnimTestValues.LWNew,-1.5,0.5,0)
+		
+		AnimTestValues.outputRH = Instance.new("StringValue",Output)
+		AnimTestValues.outputRH.Name = "RH"
+		AnimTestValues.outputLH = Instance.new("StringValue",Output)
+		AnimTestValues.outputLH.Name = "LH"
+		AnimTestValues.outputRootJoint = Instance.new("StringValue",Output)
+		AnimTestValues.outputRootJoint.Name = "RootJoint"
+		AnimTestValues.outputTorso = Instance.new("StringValue",Output)
+		AnimTestValues.outputTorso.Name = "Torso"
+		AnimTestValues.outputRW = Instance.new("StringValue",Output)
+		AnimTestValues.outputRW.Name = "RW"
+		AnimTestValues.outputLW = Instance.new("StringValue",Output)
+		AnimTestValues.outputLW.Name = "LW"
+	else
+		AnimTestValues.Animtion = game.Workspace.AnimationTester:FindFirstChild(Name)
+		AnimTestValues.RHNew = AnimTestValues.Animtion.RH
+		
+		AnimTestValues.LHNew = AnimTestValues.Animtion.LH
+		
+		AnimTestValues.RootJointNew = AnimTestValues.Animtion.RootJoint
+		
+		AnimTestValues.TorsoNew = AnimTestValues.Animtion.Torso
+		
+		AnimTestValues.RWNew = AnimTestValues.Animtion.RW
+		
+		AnimTestValues.LWNew = AnimTestValues.Animtion.LW
+		
+		AnimTestValues.outputRH = AnimTestValues.Animtion.Output.RH
+		
+		AnimTestValues.outputLH = AnimTestValues.Animtion.Output.LH
+		
+		AnimTestValues.outputRootJoint = AnimTestValues.Animtion.Output.RootJoint
+		
+		AnimTestValues.outputTorso = AnimTestValues.Animtion.Output.Torso
+		
+		AnimTestValues.outputRW = AnimTestValues.Animtion.Output.RW
+		
+		AnimTestValues.outputLW = AnimTestValues.Animtion.Output.LW
+	end
+	if Breathing == true then
+		RH.C0=clerp(RH.C0,cf(AnimTestValues.RHNew.CF.X.Value,AnimTestValues.RHNew.CF.Y.Value - 0.05 * math.cos(sine / 32),AnimTestValues.RHNew.CF.Z.Value)*angles(math.rad(AnimTestValues.RHNew.X1.Value),math.rad(AnimTestValues.RHNew.Y1.Value),math.rad(AnimTestValues.RHNew.Z1.Value))*angles(math.rad(AnimTestValues.RHNew.X2.Value),math.rad(AnimTestValues.RHNew.Y2.Value - 1 * math.cos(sine / 56)),math.rad(AnimTestValues.RHNew.Z2.Value - 2 * math.cos(sine / 32))),val)
+		LH.C0=clerp(LH.C0,cf(AnimTestValues.LHNew.CF.X.Value,AnimTestValues.LHNew.CF.Y.Value - 0.05 * math.cos(sine / 32),AnimTestValues.LHNew.CF.Z.Value)*angles(math.rad(AnimTestValues.LHNew.X1.Value),math.rad(AnimTestValues.LHNew.Y1.Value),math.rad(AnimTestValues.LHNew.Z1.Value))*angles(math.rad(AnimTestValues.LHNew.X2.Value),math.rad(AnimTestValues.LHNew.Y2.Value - 1 * math.cos(sine / 56)),math.rad(AnimTestValues.LHNew.Z2.Value + 2 * math.cos(sine / 32))),val)
+		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(AnimTestValues.RootJointNew.CF.X.Value,AnimTestValues.RootJointNew.CF.Y.Value + 0.02 * math.cos(sine / 32),AnimTestValues.RootJointNew.CF.Z.Value + 0.05 * math.cos(sine / 32))*angles(math.rad(AnimTestValues.RootJointNew.X.Value - 2 * math.cos(sine / 32)),math.rad(AnimTestValues.RootJointNew.Y.Value),math.rad(AnimTestValues.RootJointNew.Z.Value + 3 * math.cos(sine / 42))),val)
+		Neck.C0=clerp(Neck.C0,necko*angles(math.rad(AnimTestValues.TorsoNew.X.Value - 2 * math.cos(sine / 37)),math.rad(AnimTestValues.TorsoNew.Y.Value + 2 * math.cos(sine / 58)),math.rad(AnimTestValues.TorsoNew.Z.Value + 1 * math.cos(sine / 53))),val)
+		RW.C0=clerp(RW.C0,cf(AnimTestValues.RWNew.CF.X.Value,AnimTestValues.RWNew.CF.Y.Value + 0.025 * math.cos(sine / 45),AnimTestValues.RWNew.CF.Z.Value)*angles(math.rad(AnimTestValues.RWNew.X.Value + 6 * math.cos(sine / 72)),math.rad(AnimTestValues.RWNew.Y.Value - 2 * math.cos(sine / 58)),math.rad(AnimTestValues.RWNew.Z.Value + 2 * math.cos(sine / 45))),val)
+		LW.C0=clerp(LW.C0,cf(AnimTestValues.LWNew.CF.X.Value,AnimTestValues.LWNew.CF.Y.Value + 0.025 * math.cos(sine / 45),AnimTestValues.LWNew.CF.Z.Value)*angles(math.rad(AnimTestValues.LWNew.X.Value - 7 * math.cos(sine / 66)),math.rad(AnimTestValues.LWNew.Y.Value - 3 * math.cos(sine / 59)),math.rad(AnimTestValues.LWNew.Z.Value - 4 * math.cos(sine / 45))),val)
+		
+		AnimTestValues.outputRH.Value = "RH.C0=clerp(RH.C0,cf(" .. AnimTestValues.RHNew.CF.X.Value .. "," .. AnimTestValues.RHNew.CF.Y.Value .. " - 0.05 * math.cos(sine / 32)," .. AnimTestValues.RHNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.RHNew.X1.Value .. "),math.rad(" .. AnimTestValues.RHNew.Y1.Value .. "),math.rad(" .. AnimTestValues.RHNew.Z1.Value .. "))*angles(math.rad(" .. AnimTestValues.RHNew.X2.Value .. "),math.rad(" .. AnimTestValues.RHNew.Y2.Value .. " - 1 * math.cos(sine / 56)),math.rad(" .. AnimTestValues.RHNew.Z2.Value .. " - 2 * math.cos(sine / 32)))," .. val .. ")"
+		AnimTestValues.outputLH.Value = "LH.C0=clerp(LH.C0,cf(" .. AnimTestValues.LHNew.CF.X.Value .. "," .. AnimTestValues.LHNew.CF.Y.Value .. " - 0.05 * math.cos(sine / 32)," .. AnimTestValues.LHNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.LHNew.X1.Value .. "),math.rad(" .. AnimTestValues.LHNew.Y1.Value .. "),math.rad(" .. AnimTestValues.LHNew.Z1.Value .. "))*angles(math.rad(" .. AnimTestValues.LHNew.X2.Value .. "),math.rad(" .. AnimTestValues.LHNew.Y2.Value .. " - 1 * math.cos(sine / 56)),math.rad(" .. AnimTestValues.LHNew.Z2.Value .. " + 2 * math.cos(sine / 32)))," .. val .. ")"
+		AnimTestValues.outputRootJoint.Value = "RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(" .. AnimTestValues.RootJointNew.CF.X.Value .. "," .. AnimTestValues.RootJointNew.CF.Y.Value .. " + 0.02 * math.cos(sine / 32)," .. AnimTestValues.RootJointNew.CF.Z.Value .. " + 0.05 * math.cos(sine / 32))*angles(math.rad(" .. AnimTestValues.RootJointNew.X.Value .. " - 2 * math.cos(sine / 32)),math.rad(" .. AnimTestValues.RootJointNew.Y.Value .. "),math.rad(" .. AnimTestValues.RootJointNew.Z.Value .. " + 3 * math.cos(sine / 42)))," .. val .. ")"
+		AnimTestValues.outputTorso.Value = "Neck.C0=clerp(Neck.C0,necko*angles(math.rad(" .. AnimTestValues.TorsoNew.X.Value .. " - 2 * math.cos(sine / 37)),math.rad(" .. AnimTestValues.TorsoNew.Y.Value .. " + 2 * math.cos(sine / 58)),math.rad(" .. AnimTestValues.TorsoNew.Z.Value .. " + 1 * math.cos(sine / 53)))," .. val .. ")"
+		AnimTestValues.outputRW.Value = "RW.C0=clerp(RW.C0,cf(" .. AnimTestValues.RWNew.CF.X.Value .. "," .. AnimTestValues.RWNew.CF.Y.Value .. " + 0.025 * math.cos(sine / 45)," .. AnimTestValues.RWNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.RWNew.X.Value .. " + 6 * math.cos(sine / 72)),math.rad(" .. AnimTestValues.RWNew.Y.Value .. " - 2 * math.cos(sine / 58)),math.rad(" .. AnimTestValues.RWNew.Z.Value .. " + 2 * math.cos(sine / 45)))," .. val .. ")"
+		AnimTestValues.outputLW.Value = "LW.C0=clerp(LW.C0,cf(" .. AnimTestValues.LWNew.CF.X.Value .. "," .. AnimTestValues.LWNew.CF.Y.Value .. " + 0.025 * math.cos(sine / 45)," .. AnimTestValues.LWNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.LWNew.X.Value .. " - 7 * math.cos(sine / 66)),math.rad(" .. AnimTestValues.LWNew.Y.Value .. " - 3 * math.cos(sine / 59)),math.rad(" .. AnimTestValues.LWNew.Z.Value .. " - 4 * math.cos(sine / 45)))," .. val .. ")"
+	else
+		RH.C0=clerp(RH.C0,cf(AnimTestValues.RHNew.CF.X.Value,AnimTestValues.RHNew.CF.Y.Value,AnimTestValues.RHNew.CF.Z.Value)*angles(math.rad(AnimTestValues.RHNew.X1.Value),math.rad(AnimTestValues.RHNew.Y1.Value),math.rad(AnimTestValues.RHNew.Z1.Value))*angles(math.rad(AnimTestValues.RHNew.X2.Value),math.rad(AnimTestValues.RHNew.Y2.Value),math.rad(AnimTestValues.RHNew.Z2.Value)),val)
+		LH.C0=clerp(LH.C0,cf(AnimTestValues.LHNew.CF.X.Value,AnimTestValues.LHNew.CF.Y.Value,AnimTestValues.LHNew.CF.Z.Value)*angles(math.rad(AnimTestValues.LHNew.X1.Value),math.rad(AnimTestValues.LHNew.Y1.Value),math.rad(AnimTestValues.LHNew.Z1.Value))*angles(math.rad(AnimTestValues.LHNew.X2.Value),math.rad(AnimTestValues.LHNew.Y2.Value),math.rad(AnimTestValues.LHNew.Z2.Value)),val)
+		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(AnimTestValues.RootJointNew.CF.X.Value,AnimTestValues.RootJointNew.CF.Y.Value,AnimTestValues.RootJointNew.CF.Z.Value)*angles(math.rad(AnimTestValues.RootJointNew.X.Value),math.rad(AnimTestValues.RootJointNew.Y.Value),math.rad(AnimTestValues.RootJointNew.Z.Value)),val)
+		Neck.C0=clerp(Neck.C0,necko*angles(math.rad(AnimTestValues.TorsoNew.X.Value),math.rad(AnimTestValues.TorsoNew.Y.Value),math.rad(AnimTestValues.TorsoNew.Z.Value)),val)
+		RW.C0=clerp(RW.C0,cf(AnimTestValues.RWNew.CF.X.Value,AnimTestValues.RWNew.CF.Y.Value,AnimTestValues.RWNew.CF.Z.Value)*angles(math.rad(AnimTestValues.RWNew.X.Value),math.rad(AnimTestValues.RWNew.Y.Value),math.rad(AnimTestValues.RWNew.Z.Value)),val)
+		LW.C0=clerp(LW.C0,cf(AnimTestValues.LWNew.CF.X.Value,AnimTestValues.LWNew.CF.Y.Value,AnimTestValues.LWNew.CF.Z.Value)*angles(math.rad(AnimTestValues.LWNew.X.Value),math.rad(AnimTestValues.LWNew.Y.Value),math.rad(AnimTestValues.LWNew.Z.Value)),val)
+	
+		AnimTestValues.outputRH.Value = "RH.C0=clerp(RH.C0,cf(" .. AnimTestValues.RHNew.CF.X.Value .. "," .. AnimTestValues.RHNew.CF.Y.Value .. "," .. AnimTestValues.RHNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.RHNew.X1.Value .. "),math.rad(" .. AnimTestValues.RHNew.Y1.Value .. "),math.rad(" .. AnimTestValues.RHNew.Z1.Value .. "))*angles(math.rad(" .. AnimTestValues.RHNew.X2.Value .. "),math.rad(" .. AnimTestValues.RHNew.Y2.Value .. "),math.rad(" .. AnimTestValues.RHNew.Z2.Value .. "))," .. val .. ")"
+		AnimTestValues.outputLH.Value = "LH.C0=clerp(LH.C0,cf(" .. AnimTestValues.LHNew.CF.X.Value .. "," .. AnimTestValues.LHNew.CF.Y.Value .. "," .. AnimTestValues.LHNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.LHNew.X1.Value .. "),math.rad(" .. AnimTestValues.LHNew.Y1.Value .. "),math.rad(" .. AnimTestValues.LHNew.Z1.Value .. "))*angles(math.rad(" .. AnimTestValues.LHNew.X2.Value .. "),math.rad(" .. AnimTestValues.LHNew.Y2.Value .. "),math.rad(" .. AnimTestValues.LHNew.Z2.Value .. "))," .. val .. ")"
+		AnimTestValues.outputRootJoint.Value = "RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(" .. AnimTestValues.RootJointNew.CF.X.Value .. "," .. AnimTestValues.RootJointNew.CF.Y.Value .. "," .. AnimTestValues.RootJointNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.RootJointNew.X.Value .. "),math.rad(" .. AnimTestValues.RootJointNew.Y.Value .. "),math.rad(" .. AnimTestValues.RootJointNew.Z.Value .. "))," .. val .. ")"
+		AnimTestValues.outputTorso.Value = "Neck.C0=clerp(Neck.C0,necko*angles(math.rad(" .. AnimTestValues.TorsoNew.X.Value .. "),math.rad(" .. AnimTestValues.TorsoNew.Y.Value .. "),math.rad(" .. AnimTestValues.TorsoNew.Z.Value .. "))," .. val .. ")"
+		AnimTestValues.outputRW.Value = "RW.C0=clerp(RW.C0,cf(" .. AnimTestValues.RWNew.CF.X.Value .. "," .. AnimTestValues.RWNew.CF.Y.Value .. "," .. AnimTestValues.RWNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.RWNew.X.Value .. "),math.rad(" .. AnimTestValues.RWNew.Y.Value .. "),math.rad(" .. AnimTestValues.RWNew.Z.Value .. "))," .. val .. ")"
+		AnimTestValues.outputLW.Value = "LW.C0=clerp(LW.C0,cf(" .. AnimTestValues.LWNew.CF.X.Value .. "," .. AnimTestValues.LWNew.CF.Y.Value .. "," .. AnimTestValues.LWNew.CF.Z.Value .. ")*angles(math.rad(" .. AnimTestValues.LWNew.X.Value .. "),math.rad(" .. AnimTestValues.LWNew.Y.Value .. "),math.rad(" .. AnimTestValues.LWNew.Z.Value .. "))," .. val .. ")"
+	end
+end
+--gui
+local sgu = script.GUIs:WaitForChild("SGU"):Clone()
+sgu.Parent = Player.PlayerGui
+FDless.keepGui(sgu)
+local bgu = script.GUIs:WaitForChild("BGU"):Clone()	
+bgu.Enabled = true
+bgu.Parent = Torso
+-- End of Artificial Heartbeat --
+-- Main Damage Function --
+function DamageFunc(Humanoid,MinDmg,MaxDmg,Type)
+FDless.fling(Humanoid.Parent)
+end
+-- Magic Damage --
+function magidmg(Pos,Range,MinDmg,MaxDmg,Type)
+	for i,v in pairs(game.Workspace:GetDescendants()) do
+		if v.ClassName == "Humanoid" then
+			if v.Parent:FindFirstChild("Torso") and v.Parent ~= script.Parent then
+				local dist = (Pos - v.Parent.Torso.Position).Magnitude
+				if dist <= Range then
+					DamageFunc(v,MinDmg,MaxDmg,Type)	
+				end
+			end
+		end
+	end
+end
+--wing
+local core = script:WaitForChild("Core"):Clone()
+core.Parent = char
+local coreweld = Instance.new("Motor6D",Torso)
+coreweld.Part0 = Torso
+coreweld.Part1 = core.Handle
+core.Handle.Anchored = false
+core.Handle.CanCollide = false
+coreweld.C0 = CFrame.new(0,10000,0)
+local lwing1 = script:WaitForChild("Wing"):Clone()
+lwing1.Parent = char
+local lwing1weld = Instance.new("Motor6D",Torso)
+lwing1weld.Part0 = Torso
+lwing1weld.Part1 = lwing1.Handle
+lwing1.Handle.Anchored = false
+lwing1.Handle.CanCollide = false
+lwing1weld.C0 = CFrame.new(0,10000,0)
+local lwing2 = script:WaitForChild("Wing"):Clone()
+lwing2.Parent = char
+local lwing2weld = Instance.new("Motor6D",Torso)
+lwing2weld.Part0 = Torso
+lwing2weld.Part1 = lwing2.Handle
+lwing2.Handle.Anchored = false
+lwing2.Handle.CanCollide = false
+lwing2weld.C0 = CFrame.new(0,10000,0)
+local lwing3 = script:WaitForChild("Wing"):Clone()
+lwing3.Parent = char
+local lwing3weld = Instance.new("Motor6D",Torso)
+lwing3weld.Part0 = Torso
+lwing3weld.Part1 = lwing3.Handle
+lwing3.Handle.Anchored = false
+lwing3.Handle.CanCollide = false
+lwing3weld.C0 = CFrame.new(0,10000,0)
+local rwing1 = script:WaitForChild("Wing"):Clone()
+rwing1.Parent = char
+local rwing1weld = Instance.new("Motor6D",Torso)
+rwing1weld.Part0 = Torso
+rwing1weld.Part1 = rwing1.Handle
+rwing1.Handle.Anchored = false
+rwing1.Handle.CanCollide = false
+rwing1weld.C0 = CFrame.new(0,10000,0)
+local rwing2 = script:WaitForChild("Wing"):Clone()
+rwing2.Parent = char
+local rwing2weld = Instance.new("Motor6D",Torso)
+rwing2weld.Part0 = Torso
+rwing2weld.Part1 = rwing2.Handle
+rwing2.Handle.Anchored = false
+rwing2.Handle.CanCollide = false
+rwing2weld.C0 = CFrame.new(0,10000,0)
+local rwing3 = script:WaitForChild("Wing"):Clone()
+rwing3.Parent = char
+local rwing3weld = Instance.new("Motor6D",Torso)
+rwing3weld.Part0 = Torso
+rwing3weld.Part1 = rwing3.Handle
+rwing3.Handle.Anchored = false
+rwing3.Handle.CanCollide = false
+rwing3weld.C0 = CFrame.new(0,10000,0)
+--eye lol
+if hed:FindFirstChildOfClass("Decal") then
+	hed:FindFirstChildOfClass("Decal"):Destroy()
+end
+local eye = Instance.new("Part",char)
+eye.Size = Vector3.new(0.1, 0.25, 0.11)
+eye.Material = "Neon"
+eye.BrickColor = BrickColor.new("Royal purple")
+local eyemesh = Instance.new("SpecialMesh",eye)
+eyemesh.MeshType = "Sphere"
+eye.Anchored = false
+eye.CanCollide = false
+local eyeweld = Instance.new("Motor6D",eye)
+eyeweld.Part0 = hed
+eyeweld.Part1 = eye
+eyeweld.C0 = CFrame.new(0.15,0.1,-0.6)
+
+local eye2 = Instance.new("Part",char)
+eye2.Size = Vector3.new(0.1, 0.25, 0.11)
+eye2.Material = "Neon"
+eye2.BrickColor = BrickColor.new("Royal purple")
+local eyemesh2 = Instance.new("SpecialMesh",eye2)
+eyemesh2.MeshType = "Sphere"
+eye2.Anchored = false
+eye2.CanCollide = false
+local eyeweld2 = Instance.new("Motor6D",eye2)
+eyeweld2.Part0 = hed
+eyeweld2.Part1 = eye2
+eyeweld2.C0 = CFrame.new(-0.15,0.1,-0.6)
+--recolor thin
+function recolorandrename(name,info,maincolor,secondcolor,thirdcolor,font)
+	--[[for i,v in pairs(Player.PlayerGui.SGU:GetChildren()) do
+		if v.Name == "glitchername" then
+			v.the.TextColor3 = thirdcolor
+			v.grad.Color = ColorSequence.new(maincolor,secondcolor)
+		elseif v.Name == "mainframe" then
+			v.BackgroundColor3 = thirdcolor
+			v.BorderColor3 = maincolor
+			v.modeinfo.Text = info
+			v.modeinfo.TextColor3 = maincolor
+			v.modeinfo.TextStrokeColor3 = secondcolor
+			v.modeinfo.grad.Color = ColorSequence.new(maincolor,secondcolor)
+			v.modename.Text = name
+			v.modename.TextColor3 = thirdcolor
+			v.modename.TextStrokeColor3 = maincolor
+			v.modename.grad.Color = ColorSequence.new(maincolor,secondcolor)
+			v.songinfo.TextColor3 = maincolor
+			v.songinfo.TextStrokeColor3 = thirdcolor
+			v.songname.TextColor3 = thirdcolor
+			v.songname.TextStrokeColor3 = maincolor
+		elseif v.Name == "visframe" then
+			v.spin1.ImageColor3 = thirdcolor
+			v.spin2.ImageColor3 = secondcolor
+			v.spin3.ImageColor3 = maincolor
+		elseif v.Name == "visframe2" then
+			for i,v in pairs(v:GetChildren()) do
+				v.BackgroundColor3 = thirdcolor
+			end
+		end
+	end]]
+	for i,v in pairs(Player.PlayerGui.SGU.main:GetChildren()) do
+		if v.Name == "visframe2" then
+			v.spin1.ImageColor3 = maincolor
+		elseif v.Name == "ui" then
+			v.zoom1.ImageColor3 = maincolor
+			v.zoom2.ImageColor3 = secondcolor
+			v.zoom1.TextLabel.TextColor3 = thirdcolor
+			v.zoom2.TextLabel.TextColor3 = thirdcolor
+			v.zoom1.TextLabel.TextStrokeColor3 = secondcolor
+			v.zoom2.TextLabel.TextStrokeColor3 = maincolor
+			v.zoom1.TextLabel.grad.Color = ColorSequence.new(secondcolor,thirdcolor)
+			v.zoom2.TextLabel.grad.Color = ColorSequence.new(maincolor,secondcolor)
+			v.zoom2.TextLabel.Text = name
+			v.zoom2.TextLabel.Font = font
+		elseif v.Name == "visframe" then
+			for i,v in pairs(v:GetChildren()) do
+				v.BackgroundColor3 = maincolor
+			end
+		elseif v.Name == "glow" then
+			v.ImageColor3 = thirdcolor
+		elseif v.Name == "musicframe" then
+			v.BackgroundColor3 = thirdcolor
+			v.BorderColor3 = maincolor
+			v.musique.TextStrokeColor3 = maincolor
+		end
+	end
+	for i,v in pairs(Torso.BGU:GetChildren()) do
+		if v.Name == "line" then
+			v.BackgroundColor3 = maincolor
+		elseif v.Name == "spin" then
+			v.spin1.ImageColor3 = maincolor
+			v.spin2.ImageColor3 = secondcolor
+		elseif v.Name == "excel" then
+			v.TextColor3 = thirdcolor
+			v.TextStrokeColor3 = maincolor
+			v.grad.Color = ColorSequence.new(maincolor,secondcolor)
+			v.Font = font
+		elseif v.Name == "mode" then
+			v.TextColor3 = thirdcolor
+			v.TextStrokeColor3 = maincolor
+			v.grad.Color = ColorSequence.new(maincolor,secondcolor)
+			v.Text = name
+			v.Font = font
+		end
+	end
+end
+
+function recolorwing(maincolor,secondcolor,material,secmaterial)
+	for i,v in pairs(char:GetChildren()) do
+		if v:IsA("Model") then
+			if v.Name == "Wing" then
+				v.Color.Color = maincolor
+				v.Frame.Color = secondcolor
+				v.Color.Material = material
+				v.Frame.Material = secmaterial
+				v.Color.Trail.Color = ColorSequence.new(maincolor)
+				v.Color.partic.Color = ColorSequence.new(maincolor)
+				v.Color.partic2.Color = ColorSequence.new(maincolor)
+			elseif v.Name == "Core" then
+				for i,v in pairs(v:GetChildren()) do
+					if v.Name == "Frame" then
+					v.Color = maincolor
+					elseif v.Name == "Color" then
+					v.Color = secondcolor
+					elseif v.Name == "Handle" then
+					v.Color = maincolor
+					v.partic.Color = ColorSequence.new(maincolor)
+					v.partic2.Color = ColorSequence.new(maincolor)
+					end
+				end
+			end
+		end
+	end
+	eye.Color = maincolor
+	eye2.Color = secondcolor
+end
+function Sound(Type,SoundId,parent,vol,pitch,timepos,SCFrame)
+	coroutine.resume(coroutine.create(function()
+		if Type == "Sound" then
+			local sound = Instance.new("Sound",parent)
+			--[[nice]]--
+			sound.SoundId = "rbxassetid://" .. SoundId
+			sound.Volume = vol
+			sound.PlaybackSpeed = pitch
+			sound.TimePosition = timepos
+			sound:Play()
+			wait(5 + sound.TimeLength)
+			if sound.Parent ~= nil then
+				sound:Destroy()
+			end
+		elseif Type == "LongSound" then
+			local SoundPart = Instance.new("Part",char)
+			SoundPart.Anchored = true
+			SoundPart.CanCollide = false
+			SoundPart.Size = Vector3.new(0.05,0.05,0.05)
+			SoundPart.Transparency = 1
+			SoundPart.CFrame = parent.CFrame
+			local sound = Instance.new("Sound",SoundPart)
+			sound.SoundId = "rbxassetid://" .. SoundId
+			sound.Volume = vol
+			sound.PlaybackSpeed = pitch
+			sound.TimePosition = timepos
+			sound:Play()
+			coroutine.resume(coroutine.create(function()
+				repeat  
+					swait(5)
+					SoundPart.CFrame = parent.CFrame
+				until parent.parent == nil or SoundPart.Parent == nil
+			end))
+			wait(30 + sound.TimeLength)
+			if SoundPart.Parent ~= nil then
+				SoundPart:Destroy()
+			end
+		elseif Type == "CFrameSound" then
+			local SoundPart = Instance.new("Part",char)
+			SoundPart.Anchored = true
+			SoundPart.CanCollide = false
+			SoundPart.Size = Vector3.new(0.05,0.05,0.05)
+			SoundPart.Transparency = 1
+			SoundPart.CFrame = SCFrame
+			local sound = Instance.new("Sound",SoundPart)
+			sound.SoundId = "rbxassetid://" .. SoundId
+			sound.Volume = vol
+			sound.PlaybackSpeed = pitch
+			sound.TimePosition = timepos
+			sound:Play()
+			wait(30 + sound.TimeLength)
+			if SoundPart.Parent ~= nil then
+				SoundPart:Destroy()
+			end
+		elseif Type == "per" then
+			local sound = Instance.new("Sound",parent)
+			sound.SoundId = "rbxassetid://" .. SoundId
+			sound.Volume = 1
+			sound.PlaybackSpeed = volume/10
+			sound.TimePosition = timepos
+			sound:Play()
+			wait(volume/100)
+			if sound.Parent ~= nil then
+				sound:Destroy()
+			end
+		end
+	end))
+end
+
+function CamShake(intensity,length,style)
+	for i,v in pairs(workspace:GetChildren()) do
+		if v:FindFirstChildWhichIsA("Humanoid") then
+			--[[local foreach = script.Shakescript:Clone()
+			foreach.Parent = v
+			foreach.Disabled = false
+			foreach.Camshake:FireAllClients(intensity,length,style)
+			game:GetService("Debris"):AddItem(foreach,5)]]
+		end
+	end
+end
+function boom()
+		coroutine.resume(coroutine.create(function()
+		attack = true
+		local emit2 = Instance.new("ParticleEmitter",root)
+		emit2.LightEmission = 9999
+		emit2.LightInfluence = 0
+		emit2.EmissionDirection = "Top"
+		emit2.Enabled = true
+		emit2.Texture = "http://www.roblox.com/asset/?id=2092248396"
+		emit2.Color = ColorSequence.new(MainColor)
+		emit2.Transparency = NumberSequence.new(0,1)
+		emit2.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,15),NumberSequenceKeypoint.new(1,20)}
+		emit2.Acceleration = Vector3.new(0,5,0)
+		emit2.Lifetime = NumberRange.new(2)
+		emit2.Rotation = NumberRange.new(0)
+		emit2.RotSpeed = NumberRange.new(-100,100)
+		emit2.Speed = NumberRange.new(150)
+		emit2.SpreadAngle = Vector2.new(-180, 180)
+		emit2.Rate = 1000000
+		emit2.Drag = 2
+		coroutine.resume(coroutine.create(function()
+		for i=1,50 do
+			local x = math.random(-60,60)
+			local z = math.random(-60,60)
+			tweeneff("Sphere",root.CFrame*CFrame.new(x,-3,z),MainColor,Vector3.new(1,20,1),0,"Neon",0,
+			{
+			Size = Vector3.new(1,70,1),
+			Transparency = 1
+			},2,"Quint","Out",0,false)
+			swait()
+		end
+		end))
+		CamShake(0.5,10)
+		tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(20,20,20),0,"Neon",0,
+		{
+		Size = Vector3.new(70,70,70),
+		Transparency = 1
+		},2,"Quint","Out",0,false)
+		tweeneff("Sphere",Torso.CFrame,SecondColor,Vector3.new(10,10,10),0,"Neon",0,{
+		Size = Vector3.new(50,50,50),
+		Transparency = 1
+		},2,"Quint","Out",0,false)
+		tweeneff("Sphere",Torso.CFrame,ThirdColor,Vector3.new(5,5,5),0,"Neon",0,{
+		Size = Vector3.new(30,30,30),
+		Transparency = 1
+		},2,"Quint","Out",0,false)
+		for i=1,6 do
+		tweenmesh("Slash",Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),MainColor,Vector3.new(25,0.1,25),0,"Neon",0,{Transparency = 1, Size = Vector3.new(75,0.1,75)},2,"Quint","Out",0,false)
+		end
+		Sound("Sound",782353443,Torso,10,1,0)
+		Sound("Sound",824687369,Torso,10,1,0)
+		swait(20)
+		emit2.Enabled = false
+		swait(400)
+		emit2:Destroy()
+		attack = false
+		end))
+end
+--abilities
+function attack_1()
+	attackanim = true
+	attack = true
+	for i=1,5 do
+		local Alpha = .3
+  	TweenAnimate(RootJoint,{C0=cf(0,0,0)*angles(math.rad(2),math.rad(22.5),math.rad(0.6))*RootCF},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LH,{C0=cf(-1,-1.1,0.2)*angles(math.rad(-18.9),math.rad(31.2),math.rad(1.3))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RH,{C0=cf(1,-1.1,-0.1)*angles(math.rad(10.9),math.rad(0.9),math.rad(-1.9))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LW,{C0=cf(-1.5,0.5,-0.1)*angles(math.rad(-31.8),math.rad(5.1),math.rad(-13.8))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RW,{C0=cf(1.5,0.3,-0.2)*angles(math.rad(2.7),math.rad(4.5),math.rad(-0.5))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(Neck,{C0 =cf(0.1,0,0.2)*angles(math.rad(-15.3),math.rad(-19.1),math.rad(6.2))*necko},Alpha,'Back','Out',0,false,0)
+		swait()
+	end
+	coroutine.resume(coroutine.create(function()
+	for i=1,30 do
+		local Alpha = .1
+  	TweenAnimate(RootJoint,{C0=cf(0,0,0)*angles(math.rad(2),math.rad(22.5),math.rad(0.6))*RootCF},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LH,{C0=cf(-1,-1.1,0.2)*angles(math.rad(-18.9),math.rad(31.2),math.rad(1.3))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RH,{C0=cf(1,-1.1,-0.1)*angles(math.rad(10.9),math.rad(0.9),math.rad(-1.9))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LW,{C0=cf(-1.5,0.5,-0.1)*angles(math.rad(-31.8),math.rad(5.1),math.rad(-13.8))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RW,{C0=cf(1.5,0.6,0)*angles(math.rad(98.9),math.rad(-1),math.rad(16.2))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(Neck,{C0 =cf(0.1,0,0.2)*angles(math.rad(-15.3),math.rad(-19.1),math.rad(6.2))*necko},Alpha,'Back','Out',0,false,0)
+		swait()
+	end
+	attackanim = false
+	end))	
+	local x = 0
+	for i=1,5 do
+		x = x - 7
+		tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,x),MainColor,Vector3.new(2.5,2.5,2.5),0,"Neon",1,{Transparency = 0.5, Size = Vector3.new(10,10,10)},0.25,"Quint","Out",0,true)	
+		tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,x),SecondColor,Vector3.new(1,1,1),0,"Neon",1,{Transparency = 0.5, Size = Vector3.new(5,5,5)},0.25,"Quint","Out",0,true)	
+		tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,x),ThirdColor,Vector3.new(0.5,0.5,0.5),0,"Neon",1,{Transparency = 0.5, Size = Vector3.new(2,2,2)},0.25,"Quint","Out",0,true)		
+		tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,x),MainColor,Vector3.new(1,3,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(9,13,9)},0.25,"Quint","Out",0,false)		
+		for i=1,5 do
+		tweenmesh("Slash",root.CFrame*CFrame.new(0,-3,x)*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),MainColor,Vector3.new(5,0.1,5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(20,0.1,20)},1,"Quint","Out",0,false)
+		end	
+		magidmg(root.CFrame*CFrame.new(0,-3,x).p,10,50,100,"Normal")
+		Sound("CFrameSound",2295409845,root,5,1,0,root.CFrame*CFrame.new(0,-3,x))
+		swait(5)	
+	end
+	attack = false
+end
+function attack_2()
+	attackanim = true
+	attack = true
+	for i=1,5 do
+		local Alpha = .3
+  	TweenAnimate(RootJoint,{C0=cf(0,0,0)*angles(math.rad(2.4),math.rad(-24),math.rad(0.6))*RootCF},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LH,{C0=cf(-1,-1.1,0.1)*angles(math.rad(6),math.rad(29.3),math.rad(-11.4))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RH,{C0=cf(1,-1.1,0)*angles(math.rad(-14.5),math.rad(1.6),math.rad(-1.3))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LW,{C0=cf(-1.5,0.5,-0.1)*angles(math.rad(-31.8),math.rad(5.1),math.rad(-13.8))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RW,{C0=cf(1.5,0.3,0)*angles(math.rad(0.9),math.rad(-16),math.rad(-3.1))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(Neck,{C0 =cf(0.1,0,0.2)*angles(math.rad(-19.3),math.rad(18.6),math.rad(6.2))*necko},Alpha,'Back','Out',0,false,0)
+		swait()
+	end
+	coroutine.resume(coroutine.create(function()
+	for i=1,30 do
+		local Alpha = .3
+  	TweenAnimate(RootJoint,{C0=cf(0,0,0)*angles(math.rad(2.4),math.rad(-24),math.rad(0.6))*RootCF},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LH,{C0=cf(-1,-1.1,0.1)*angles(math.rad(6),math.rad(29.3),math.rad(-11.4))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RH,{C0=cf(1,-1.1,0)*angles(math.rad(-14.5),math.rad(1.6),math.rad(-1.3))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LW,{C0=cf(-1.5,0.7,0)*angles(math.rad(69.4),math.rad(-12.2),math.rad(-18))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RW,{C0=cf(1.5,0.3,0)*angles(math.rad(0.9),math.rad(-16),math.rad(-3.1))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(Neck,{C0 =cf(0.1,0,0.2)*angles(math.rad(-19.3),math.rad(18.6),math.rad(6.2))*necko},Alpha,'Back','Out',0,false,0)
+		swait()
+	end
+	attackanim = false
+	end))	
+	local x = 0
+	for i=1,5 do
+		x = x - 7
+		tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,x),MainColor,Vector3.new(2.5,2.5,2.5),0,"Neon",1,{Transparency = 0.5, Size = Vector3.new(10,10,10)},0.25,"Quint","Out",0,true)	
+		tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,x),SecondColor,Vector3.new(1,1,1),0,"Neon",1,{Transparency = 0.5, Size = Vector3.new(5,5,5)},0.25,"Quint","Out",0,true)	
+		tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,x),ThirdColor,Vector3.new(0.5,0.5,0.5),0,"Neon",1,{Transparency = 0.5, Size = Vector3.new(2,2,2)},0.25,"Quint","Out",0,true)		
+		tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,x),MainColor,Vector3.new(1,3,1),0,"Neon",0,{Transparency = 1, Size = Vector3.new(9,13,9)},0.25,"Quint","Out",0,false)		
+		local partic = Instance.new("Part")
+		partic.Anchored = true
+		partic.CanCollide = false
+		partic.Transparency = 1
+		partic.Position = root.CFrame*CFrame.new(0,-3,x).p
+		partic.Size = Vector3.new(10,10,10)
+		local emit2 = Instance.new("ParticleEmitter",partic)
+		emit2.LightEmission = 9999
+		emit2.LightInfluence = 0
+		emit2.EmissionDirection = "Top"
+		emit2.Enabled = true
+		emit2.Texture = "http://www.roblox.com/asset/?id=2092248396"
+		emit2.Color = ColorSequence.new(MainColor)
+		emit2.Transparency = NumberSequence.new(0,1)
+		emit2.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,0.5),NumberSequenceKeypoint.new(1,0)}
+		emit2.Acceleration = Vector3.new(0,1,0)
+		emit2.Lifetime = NumberRange.new(2)
+		emit2.Rotation = NumberRange.new(0)
+		emit2.RotSpeed = NumberRange.new(-100,100)
+		emit2.Speed = NumberRange.new(150)
+		emit2.SpreadAngle = Vector2.new(-180, 180)
+		emit2.Rate = 1000000
+		coroutine.resume(coroutine.create(function()
+			swait(50)
+			partic:Destroy()
+		end))
+		for i=1,5 do
+		tweenmesh("Slash",root.CFrame*CFrame.new(0,-3,x)*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),MainColor,Vector3.new(5,0.1,5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(20,0.1,20)},1,"Quint","Out",0,false)
+		end	
+		emit2.Enabled = false
+		Sound("CFrameSound",2295409845,root,5,1,0,root.CFrame*CFrame.new(0,-3,x))
+		magidmg(root.CFrame*CFrame.new(0,-3,x).p,10,50,100,"Normal")
+		swait(5)
+	end
+	attack = false
+end
+function attack_3()
+	attackanim = true
+	attack = true
+	for i=1,20 do
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,0.1,0)*angles(math.rad(3.5),math.rad(-2.8),math.rad(-2.2))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1,0.1)*angles(math.rad(-3.5),math.rad(-0.2),math.rad(0.2))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(0.8,-0.2,-0.5)*angles(math.rad(21),math.rad(8.4),math.rad(9))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.1,1,-0.2)*angles(math.rad(130.6),math.rad(-28.3),math.rad(55.6))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.1,1,-0.3)*angles(math.rad(129.1),math.rad(38.1),math.rad(-47.2))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0,0.1,0.4)*angles(math.rad(-28.5),math.rad(0.4),math.rad(2.1))*necko},Alpha,'Back','Out',0,false,0)
+		swait()
+	end
+	coroutine.resume(coroutine.create(function()
+	for i=1,20 do
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,0.1,0)*angles(math.rad(-19.6),math.rad(-1.7),math.rad(-3.1))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1,0.1)*angles(math.rad(-3.5),math.rad(-0.2),math.rad(0.2))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(0.9,-0.9,-0.8)*angles(math.rad(21),math.rad(8.4),math.rad(9))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.3,0.8,-0.3)*angles(math.rad(-22.8),math.rad(-14.5),math.rad(-59))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.4,0.8,-0.2)*angles(math.rad(-19.2),math.rad(3.1),math.rad(57.6))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0,0.1,0.4)*angles(math.rad(-28.5),math.rad(0.4),math.rad(2.1))*necko},Alpha,'Back','Out',0,false,0)
+		swait()
+	end
+	end))		
+	tweeneff("Sphere",root.CFrame*CFrame.new(0,-3,0),MainColor,Vector3.new(50,0.1,50),0,"Neon",0,{Transparency = 1, Size = Vector3.new(100,0.1,100)},0.5,"Linear","Out",0,false)
+	magidmg(root.CFrame.p,50,200,400,"Normal")
+	CamShake(0.1,5)
+	for i=1,3 do
+	tweenmesh("Slash",root.CFrame*CFrame.new(0,-2,0)*CFrame.Angles(0,math.rad(math.random(-180,180)),0),SecondColor,Vector3.new(50,0.1,50),0,"Neon",0,{Transparency = 1, Size = Vector3.new(100,0.1,100)},0.5,"Linear","Out",0,false)
+	swait(2)	
+	end
+	Sound("Sound",4196065243,root,10,1,0)
+	Sound("Sound",539294959,root,10,1,0)	
+	--Sound("Sound",1664711478,char,99,1.1,0)
+	--Sound("Sound",239000203,char,99,1.1,0)
+	--Sound("Sound",763717897,char,99,1.1,0)
+	swait(20)
+	attackanim = false
+	attack = false
+end
+--commit startup
+if startup == true then
+attack = true
+Hum.WalkSpeed = 0
+Sound("Sound",2923164079,char,5,1,0)
+newMusic(2482377049,1)
+glitch = 1
+Hum.WalkSpeed = 50
+HoverHight = 8
+MainColor = Color3.fromRGB(255,100,0)
+SecondColor = Color3.fromRGB(255,150,0)
+ThirdColor = Color3.fromRGB(0,0,0)
+recolorwing(MainColor,SecondColor,"Neon","Neon")
+recolorandrename("Conclusion","Here begins the end!",MainColor,SecondColor,ThirdColor,"SourceSansBold")
+local emitstoretrans = emit.Transparency
+local emit2storetrans = emit2.Transparency
+local emit3storetrans = emit3.Transparency
+emit.Transparency = NumberSequence.new(1)
+emit2.Transparency = NumberSequence.new(1)
+emit3.Transparency = NumberSequence.new(1)
+bgu.Enabled = false
+
+swait(400)
+for i=1,5 do
+	tweenmesh("Slash",Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),MainColor,Vector3.new(20,0.1,20),0,"Neon",0,{Transparency = 1, Size = Vector3.new(100,0.1,100)},3,"Quint","Out",0,false)
+end	
+	lwing1weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(5))
+	lwing2weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(40))
+	lwing3weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-30))
+	rwing1weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(5))
+	rwing2weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(40))
+	rwing3weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(-30))
+	
+	lwing1weld.C1 = CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing2weld.C1 = CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing3weld.C1 = CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing1weld.C1 = CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing2weld.C1 = CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing3weld.C1 = CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	coreweld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	coreweld.C1 = CFrame.Angles(math.rad(0),math.rad(90),math.rad(0))
+tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(80,80,80)},2,"Quint","Out",0,false)	
+tweeneff("Sphere",Torso.CFrame,SecondColor,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(40,40,40)},2,"Quint","Out",0,false)	
+tweeneff("Sphere",Torso.CFrame,ThirdColor,Vector3.new(0,0,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(20,20,20)},2,"Quint","Out",0,false)	
+bgu.Enabled = true
+for i,v in pairs(char:GetChildren()) do
+	if v:IsA("BasePart") and v.Name ~= "Partic" and v.Name ~= "HumanoidRootPart" then
+		v.Transparency = 0
+	end
+end
+Sound("Sound",782353443,Torso,10,1,0)
+Sound("Sound",824687369,Torso,10,1,0)
+attackanim = true
+coroutine.resume(coroutine.create(function()
+	for i=1,300 do
+		local Alpha = .1
+  		TweenAnimate(RootJoint,{C0=cf(-0.1,-1.2,0.4)*angles(math.rad(-17.8),math.rad(-1.8),math.rad(-3.1))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-0.3,-0.4)*angles(math.rad(42.5),math.rad(0),math.rad(0.3))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-1.2,-0.6)*angles(math.rad(-74.5),math.rad(-9.8),math.rad(7.4))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.3,0.8,-0.3)*angles(math.rad(-29.3),math.rad(-3.7),math.rad(-60.1))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.4,0.8,-0.3)*angles(math.rad(-15.1),math.rad(9.5),math.rad(57.2))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0,0.1,0.4)*angles(math.rad(-28.5),math.rad(0.4),math.rad(2.1))*necko},Alpha,'Back','Out',0,false,0)
+		swait()
+	end
+end))
+swait()
+
+swait(100)
+emit.Transparency = emitstoretrans
+emit2.Transparency = emit2storetrans
+emit3.Transparency = emit3storetrans
+attackanim = false
+attack = false
+end	
+newMusic(2482377049,1)
+glitch = 1
+Hum.WalkSpeed = 50
+HoverHight = 8
+MainColor = Color3.fromRGB(255,100,0)
+SecondColor = Color3.fromRGB(255,150,0)
+ThirdColor = Color3.fromRGB(0,0,0)
+recolorwing(MainColor,SecondColor,"Neon","Neon")
+recolorandrename("Conclusion","Here begins the end!",MainColor,SecondColor,ThirdColor,"SourceSansBold")
+emit.Enabled = true
+emit2.Enabled = true
+emit3.Enabled = true	
+local click = 1
+--click attack thing
+function ClickAttack()
+	if click == 1 then
+		attack_1()
+		click = 2
+	elseif click == 2 then
+		attack_2()
+		click = 3
+	elseif click == 3 then
+		attack_3()
+		click = 1
+	end
+end
+--more attacks
+function Exhilarate(mouse)
+	attack = true
+	attackanim = true
+	coroutine.resume(coroutine.create(function()
+		for i=1,50 do
+			local Alpha = .1
+			TweenAnimate(RootJoint,{C0=cf(-0.1,HoverHight + 1 * math.cos(sine/32),-0.1)*angles(math.rad(-3.5+ 5 * math.cos(sine / 45),0),math.rad(29.8),math.rad(-0.5))*RootCF},Alpha,'Back','Out',0,false,0)
+  			TweenAnimate(LH,{C0=cf(-1,-1.1 - 0.1 * math.cos(sine/34),0.1)*angles(math.rad(-16.3),math.rad(9.4),math.rad(-2.1- 3 * math.cos(sine / 35),0))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  			TweenAnimate(RH,{C0=cf(1,-0.5 - 0.1 * math.cos(sine/34),-0.5)*angles(math.rad(-21.1),math.rad(-11.9),math.rad(3.6 + 5 * math.cos(sine / 35),0))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)			
+			TweenAnimate(LW,{C0=cf(-1.5,0.6,0.2)*angles(math.rad(-4.4),math.rad(2.7),math.rad(-0.3))},Alpha,'Back','Out',0,false,0)
+  			TweenAnimate(RW,{C0=cf(1.4,0.5,0.3)*angles(math.rad(94.3),math.rad(0.5),math.rad(32.2))},Alpha,'Back','Out',0,false,0)
+  			TweenAnimate(Neck,{C0 =cf(0.1,0,0)*angles(math.rad(-0.7),math.rad(-20.7),math.rad(4.5))*necko},Alpha,'Back','Out',0,false,0)
+			swait()
+		end	
+		attackanim = false
+	end))
+	local partic = Instance.new("Part",char)
+	partic.Transparency = 1
+	partic.Anchored = true
+	partic.CanCollide = false
+	partic.CFrame = mouse
+	partic.Size = Vector3.new(5,5,5)
+		local tword = (root.CFrame.p-mouse.p).Magnitude
+		coroutine.resume(coroutine.create(function()
+			for i=0,2 do
+				tweeneff("Cylinder",CFrame.new(root.CFrame.p,mouse.p)*CFrame.Angles(0,math.rad(90),0)*CFrame.new(tword/2,0,0),MainColor,Vector3.new(tword,0,0),.1,"ForceField",-5,{Size = Vector3.new(tword,3+(i*2),3+(i*2)),Transparency = 1, Color = SecondColor},1,"Quad","Out",0,false)
+			end
+		end))
+	local partecle = Instance.new("ParticleEmitter",partic)
+		partecle.LightEmission = 9999
+		partecle.LightInfluence = 0
+		partecle.EmissionDirection = "Top"
+		partecle.Enabled = true
+		partecle.Texture = "http://www.roblox.com/asset/?id=2092248396"
+		partecle.Color = ColorSequence.new(MainColor)
+		partecle.Transparency = NumberSequence.new(0,1)
+		partecle.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,1),NumberSequenceKeypoint.new(1,0)}
+		partecle.Acceleration = Vector3.new(0,5,0)
+		partecle.Lifetime = NumberRange.new(4)
+		partecle.Rotation = NumberRange.new(0)
+		partecle.RotSpeed = NumberRange.new(-100,100)
+		partecle.Speed = NumberRange.new(150)
+		partecle.SpreadAngle = Vector2.new(-180, 180)
+		partecle.Rate = 1000000
+		partecle.Drag = 7	
+	local partecle2 = Instance.new("ParticleEmitter",partic)
+		partecle2.LightEmission = 9999
+		partecle2.LightInfluence = 0
+		partecle2.EmissionDirection = "Top"
+		partecle2.Enabled = true
+		partecle2.Texture = "http://www.roblox.com/asset/?id=5122583722"
+		partecle2.Color = ColorSequence.new(MainColor)
+		partecle2.Transparency = NumberSequence.new(0,1)
+		partecle2.Size = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(0.1,1),NumberSequenceKeypoint.new(1,0)}
+		partecle2.Acceleration = Vector3.new(0,5,0)
+		partecle2.Lifetime = NumberRange.new(4)
+		partecle2.Rotation = NumberRange.new(0)
+		partecle2.RotSpeed = NumberRange.new(-100,100)
+		partecle2.Speed = NumberRange.new(150)
+		partecle2.SpreadAngle = Vector2.new(-180, 180)
+		partecle2.Rate = 1000000
+		partecle2.Drag = 7
+	local sparkgui = Instance.new("BillboardGui",partic)
+	sparkgui.Size = UDim2.new(50,0,50,0)
+	sparkgui.LightInfluence = 0
+	sparkgui.AlwaysOnTop = true
+	local spark = Instance.new("ImageLabel",sparkgui)
+	spark.Image = "rbxassetid://2092248396"	
+	spark.Size = UDim2.new(1,0,1,0)
+	spark.ImageColor3 = MainColor
+	spark.BackgroundTransparency = 1
+	coroutine.resume(coroutine.create(function()
+		for i=1,100 do
+			sparkgui.Size = UDim2.new(50-i,0,50-i,0)
+			spark.ImageTransparency = i/100
+			spark.Rotation = spark.Rotation + 5
+			swait()
+		end
+		sparkgui:Destroy()
+	end))
+	for i=1,10 do
+		tweenmesh("Slash",mouse*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),MainColor,Vector3.new(0,0.1,0),0,"Neon",0,{Transparency = 1, Size = Vector3.new(50,0.1,50), Color = SecondColor, CFrame = mouse*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))},2,"Quint","Out",0,false)
+		tweeneff("Sphere",mouse,MainColor,Vector3.new(0,0,0),0,"ForceField",-5,{Transparency = 1, Size = Vector3.new(40,40,40), Color = SecondColor},2,"Quint","Out",0,false)	
+	end
+	Sound("CFrameSound",3226828061,char,5,1.1,0.2,mouse)
+	magidmg(mouse.p,20,1000,1000,"Neg")
+	swait(10)
+	partecle.Enabled = false
+	partecle2.Enabled = false
+	attack = false
+	swait(300)
+	partic:Destroy()
+end
+function AeroMad()
+	attackanim = true
+	for i=1,25 do
+		local Alpha = .1
+  		TweenAnimate(RootJoint,{C0=cf(0,0,0)*angles(math.rad(-19.3),math.rad(-3.7),math.rad(-2.2))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1,0.1)*angles(math.rad(-2.9),math.rad(4),math.rad(-3.5))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-1,0)*angles(math.rad(-6.4),math.rad(3.3),math.rad(2.1))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.3,0.4,-0.5)*angles(math.rad(94),math.rad(-10.9),math.rad(71.8))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.1,0.5,-0.5)*angles(math.rad(87.5),math.rad(0.9),math.rad(-76.6))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0.1,0.4,0.8)*angles(math.rad(-58.4),math.rad(0.1),math.rad(5))*necko},Alpha,'Back','Out',0,false,0)
+		swait()
+	end	
+	coroutine.resume(coroutine.create(function()
+	for i=1,100 do
+		local Alpha = .1
+  		TweenAnimate(RootJoint,{C0=cf(0,0,0)*angles(math.rad(19.6),math.rad(-4.2),math.rad(0.6))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1,0.1)*angles(math.rad(-26),math.rad(5),math.rad(-1.7))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-1,0)*angles(math.rad(-38),math.rad(1.7),math.rad(3.5))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.3,0.4,0.5)*angles(math.rad(94),math.rad(-10.9),math.rad(-56.8))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(0.9,0.5,0.5)*angles(math.rad(87.5),math.rad(0.9),math.rad(95))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0,0.1,-0.5)*angles(math.rad(23.3),math.rad(5),math.rad(0.6))*necko},Alpha,'Back','Out',0,false,0)
+		swait()	
+	end	
+	attackanim = false	
+	end))
+	Sound("Sound",1664711478,char,99,1,0)
+	Sound("Sound",239000203,char,99,1,0)
+	Sound("Sound",763717897,char,99,1,0)
+	Sound("Sound",1413550336,char,99,1.1,0) --t h e   s c r e a m
+	local red = Instance.new("ColorCorrectionEffect",game.Lighting)	
+	red.TintColor = Color3.fromRGB(255,0,0)	
+	coroutine.resume(coroutine.create(function()
+		for i=1,255 do
+			red.TintColor = Color3.fromRGB(255,i,i)	
+			swait()
+		end
+		red:Destroy()
+	end))
+	for _,v in pairs(game.Workspace:GetDescendants()) do -- this literally insta kills everyone no matter how much hp or if they have a forcefield
+		if v:FindFirstChildOfClass("Humanoid") and v.Name ~= char.Name then
+			--cum
+		end
+	end
+	CamShake(5,30)
+	tweeneff("Sphere",Torso.CFrame,MainColor,Vector3.new(0,0,0),0,"Neon",1,{Size = Vector3.new(140,140,140),Transparency = 0},1,"Quint","Out",0,true)
+	tweeneff("Sphere",Torso.CFrame,SecondColor,Vector3.new(0,0,0),0,"Neon",1,{Size = Vector3.new(100,100,100),Transparency = 0},1,"Quint","Out",0,true)
+	tweeneff("Sphere",Torso.CFrame,ThirdColor,Vector3.new(0,0,0),0,"Neon",1,{Size = Vector3.new(60,60,60),Transparency = 0},1,"Quint","Out",0,true)
+	--tweenmesh("SpikeBall",Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),ThirdColor,Vector3.new(0,0,0),0,"Neon",1,{Size = Vector3.new(150,150,150),Transparency = 0,CFrame = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))},1,"Quint","Out",0,true)
+	for i=1,6 do
+	tweenmesh("Slash",Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180))),MainColor,Vector3.new(0,0,0),0,"Neon",1,{Transparency = 0, Size = Vector3.new(160,0.1,160), CFrame = Torso.CFrame*CFrame.Angles(math.rad(math.random(-180,180)),math.rad(math.random(-180,180)),math.rad(math.random(-180,180)))},1,"Quint","Out",0,true)
+	end
+end
+function disarraybeam(mouse)
+	tweeneff("Sphere",mouse,MainColor,Vector3.new(5,5,5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(10,10,10)},0.5,"Linear","Out",0,false)
+	tweeneff("Sphere",mouse,MainColor,Vector3.new(10,10,10),0,"ForceField",0,{Transparency = 1, Size = Vector3.new(20,20,20)},0.5,"Linear","Out",0,false)
+	local spin = 0
+	for i=1,10 do
+		tweeneff("Sphere",CFrame.new(mouse.X,mouse.Y,mouse.Z),MainColor,Vector3.new(5,5,5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0)},0.5,"Linear","Out",0,false)
+		tweeneff("Sphere",CFrame.new(mouse.X,mouse.Y,mouse.Z),MainColor,Vector3.new(5,5,5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0)},0.5,"Linear","Out",0,false)
+		tweeneff("Sphere",CFrame.new(mouse.X,mouse.Y,mouse.Z),MainColor,Vector3.new(5,5,5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0)},0.5,"Linear","Out",0,false)
+		tweeneff("Sphere",CFrame.new(mouse.X,mouse.Y,mouse.Z),MainColor,Vector3.new(5,5,5),0,"Neon",0,{Transparency = 1, Size = Vector3.new(0,0,0)},0.5,"Linear","Out",0,false)
+		swait()
+	end
+end
+--remote poo poo
+local colorcor = Instance.new("ColorCorrectionEffect",game.Lighting)
+colorcor.Enabled = false
+local dumb = script.dumb
+local hit = mouse.hit
+mouse.Button1Down:Connect(function(key)
+    if attack == false and attackanim == false then
+		ClickAttack()
+	end
+end)
+mouse.KeyDown:Connect(function(key)
+--dumb.OnServerEvent:connect(function(lol,play,key,hit)
+	if key == "q" and glitch ~= 1 and attack == false then
+		newMusic(2482377049,1)
+		glitch = 1
+		Hum.WalkSpeed = 50
+		HoverHight = 5
+		MainColor = Color3.fromRGB(255,100,0)
+		SecondColor = Color3.fromRGB(255,150,0)
+		ThirdColor = Color3.fromRGB(0,0,0)
+		boom()
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+			recolorandrename("Conclusion","Here begins the end!",MainColor,SecondColor,ThirdColor,"SourceSansSemibold")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "m" and glitch ~= 666 and glitch == 1 and attack == false then
+		newMusic(4521541755,1)
+		glitch = 666
+		Hum.WalkSpeed = 50
+		HoverHight = 8
+		MainColor = Color3.fromRGB(196, 40, 28)
+		SecondColor = Color3.fromRGB(150, 150, 150)
+		ThirdColor = Color3.fromRGB(0,0,0)
+		boom()
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("Vindictive","Actions have consequences...",MainColor,SecondColor,ThirdColor,"Garamond")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "h" and glitch ~= 12 and attack == false then
+		
+	elseif key == "p" and glitch ~= 7 and attack == false then
+		
+	elseif key == "[" and glitch ~= 8 and attack == false then
+		
+	elseif key == "]" and glitch ~= 9 and attack == false then
+		
+	elseif key == "e" and glitch ~= 4 and attack == false then
+		newMusic(510176627,1)
+		glitch = 4
+		Hum.WalkSpeed = 200
+		HoverHight = 5
+		MainColor = Color3.fromRGB(128, 187, 219)
+		SecondColor = Color3.fromRGB(128, 187, 219)
+		ThirdColor = Color3.fromRGB(255,255,255)
+		boom()
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("Exhilaration","We are all creations of another...",MainColor,SecondColor,ThirdColor,"SourceSansLight")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "r" and glitch ~= 13 and attack == false then
+		newMusic(1043583667,1)
+		glitch = 13
+		Hum.WalkSpeed = 200
+		HoverHight = 5
+		MainColor = Color3.fromRGB(255, 0, 0)
+		SecondColor = Color3.fromRGB(0,0,0)
+		ThirdColor = Color3.fromRGB(0,0,0)
+		boom()
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("Defiance","True chaos...",MainColor,SecondColor,ThirdColor,"Garamond")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "t" and glitch ~= 404 and attack == false then
+		newMusic(4615217001,1)
+		glitch = 404
+		Hum.WalkSpeed = 200
+		HoverHight = 5
+		MainColor = Color3.fromRGB(245, 205, 48)
+		SecondColor = Color3.fromRGB(255,255,255)
+		ThirdColor = Color3.fromRGB(0,0,0)
+		boom()
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("Descent","True chaos...",MainColor,SecondColor,ThirdColor,"Arcade")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "m" and glitch == 404 and glitch ~= 0 then
+		newMusic(833792144,1)
+		glitch = 0
+		Hum.WalkSpeed = 2000
+		HoverHight = 5
+		MainColor = Color3.fromRGB(245, 205, 48)
+		SecondColor = Color3.fromRGB(255,255,255)
+		ThirdColor = Color3.fromRGB(0,0,0)
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("DELIRIUM","aAAAaAAAAAAAAAAaAaA",MainColor,SecondColor,ThirdColor,"Arcade")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "y" and glitch ~= 5 and attack == false then
+		newMusic(3244968617,1)
+		glitch = 5
+		Hum.WalkSpeed = 175
+		HoverHight = 6
+		MainColor = Color3.fromRGB(85, 255, 255)
+		SecondColor = Color3.fromRGB(239, 157, 255)
+		ThirdColor = Color3.fromRGB(170, 255, 255)
+		boom()
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("Aspiration","Aim higher! in case you fall short...",MainColor,SecondColor,ThirdColor,"SciFi")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "u" and glitch ~= 6 and attack == false then
+		newMusic(1915823549,1)
+		glitch = 6
+		Hum.WalkSpeed = 200
+		HoverHight = 5
+		MainColor = Color3.fromRGB(100,0,255)
+		SecondColor = Color3.fromRGB(0, 0, 0)
+		ThirdColor = Color3.fromRGB(0,0,70)
+		boom(MainColor,SecondColor,ThirdColor)
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("Disarray","Out of all order...",MainColor,SecondColor,ThirdColor,"Garamond")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "f" and glitch ~= 7 and attack == false then
+		newMusic(4607682464,1)
+		glitch = 7
+		Hum.WalkSpeed = 400
+		HoverHight = 7
+		SecondColor = Color3.fromRGB(255,200,170)
+		MainColor = Color3.fromRGB(255, 120, 0)
+		ThirdColor = Color3.fromRGB(255,255,255)
+		boom(MainColor,SecondColor,ThirdColor)
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("Endurance","I AM THE BEGINNING AND THE END!",MainColor,SecondColor,ThirdColor,"SourceSansSemibold")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "g" and glitch ~= 8 and attack == false then
+		newMusic(5052780602,1)
+		glitch = 8
+		Hum.WalkSpeed = 400
+		HoverHight = 7
+		SecondColor = Color3.fromRGB(128, 200, 219)
+		MainColor = Color3.fromRGB(249, 233, 153)
+		ThirdColor = Color3.fromRGB(255,255,255)
+		boom(MainColor,SecondColor,ThirdColor)
+		recolorwing(MainColor,SecondColor,"Neon","Neon")
+		recolorandrename("Competence","",MainColor,SecondColor,ThirdColor,"SourceSansSemibold")
+		emit.Enabled = true
+		emit2.Enabled = true
+		emit3.Enabled = true
+	elseif key == "g" and glitch ~= 11 and attack == false then	
+	--5138757244
+	elseif key == "b" then
+		if glitch == 1 then
+			boschat("You've gone talking too long...")
+			Sound("Sound",1535995570,char,5,1,0)
+		elseif glitch == 0 then
+			local rnd = math.random(1,3)
+			if rnd == 1 then
+			boschat("YOU THINK YOU CAN ESCAPE?")
+			elseif rnd == 2 then
+			boschat("FATE HAS DECIDED AND YOU CANNOT ESCAPE IT, YOUR LIFE IS NOW MEANINGLESS!")
+			elseif rnd == 3 then
+			boschat("I WILL KNOCK YOU DOWN FURTHER THAN HELL!")	
+			end
+			--Sound("Sound",664832865,char,0.1,0,0) will literally break ur ears
+		end	
+	elseif key == "3" then
+		if colorcor.Enabled == true then
+			colorcor.Enabled = false
+		elseif colorcor.Enabled == false then
+			colorcor.Enabled = true	
+		end
+	elseif key == "1" and AnimationTestActive == false then 
+		--AnimationTestActive = true
+	elseif key == "1" and AnimationTestActive == true then 
+		--AnimationTestActive = false
+	elseif key == "2" and groovy.Volume == 10 then
+		for i=1,10 do
+			groovy.Volume = groovy.Volume - 1
+			swait()
+		end
+	elseif key == "2" and groovy.Volume == 0 then
+		for i=1,10 do
+			groovy.Volume = groovy.Volume + 1
+			swait()
+		end
+	elseif key == "z" and glitch == 4 and attack == false then
+	Exhilarate(hit)
+	elseif key == "z" and glitch == 666 and attack == false then
+	AeroMad()
+	elseif key == "z" and glitch == 6 and attack == false then
+	disarraybeam(hit)
+	end
+end)
+-- Start of Loops --
+spawn(function()
+while true do
+swait()
+sine = sine + change
+end
+end)
+-- End of Loops --
+
+-- Final Functions and variables --
+function rayCast(Pos, Dir, Max, Ignore)  -- Origin Position , Direction, MaxDistance , IgnoreDescendants
+return game:service("Workspace"):FindPartOnRay(Ray.new(Pos, Dir.unit * (Max or 999.999)), Ignore) 
+end 
+local Anim="Idle"
+
+local corerot = 0
+-- Final Functions and variables end --
+local AuraDebounce = false
+-- Final Loop
+
+--lol no
+--while true do
+--swait()
+local blinking = false
+ArtificialHB.Event:Connect(function()
+hit = mouse.hit
+--[[if math.random(1,1000) == 1 then
+	if blinking == false then
+		blinking = true
+		local twen = game:GetService("TweenService"):Create(eye,TweenInfo.new(0.3,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,true,0),{Size = Vector3.new(0.1, 0, 0.11)})
+		local twen2 = game:GetService("TweenService"):Create(eye2,TweenInfo.new(0.3,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,true,0),{Size = Vector3.new(0.1, 0, 0.11)})		
+		--eyeweld.C0 = CFrame.new(0.15,0.1,-0.6)
+		twen:Play()
+		twen2:Play()	
+		--twen3:Play()	
+		--twen4:Play()	
+		blinking = false		
+	end
+end]]
+--spinnnnnnn
+--particle recolor
+	rarm.Transparency = 1
+	hed.Transparency = 1
+	lleg.Transparency = 1
+	rleg.Transparency = 1
+	larm.Transparency = 1
+	rarm.Transparency = 1
+emit.Color = ColorSequence.new(MainColor)
+emit2.Color = ColorSequence.new(SecondColor)
+emit3.Color = ColorSequence.new(SecondColor)
+--gui sping thing
+--Torso.BGU.spin.spin1.Rotation = Torso.BGU.spin.spin1.Rotation + 5
+--Torso.BGU.spin.spin2.Rotation = Torso.BGU.spin.spin2.Rotation - 2.5
+--crazy
+if glitch == 0 then
+	colorcor.TintColor = MainColor
+	else
+	colorcor.TintColor = Color3.new(1,1,1)
+end
+--bgu sine stuff
+if glitch == 404 then
+--Torso.BGU.excel.Position = UDim2.new(0.25 + 0.01 * math.cos(sine/22),0,0.6 + 0.01 * math.sin(sine/22),0)
+--Torso.BGU.excel.Rotation = 0 + 2.5 * math.cos(sine/20)
+Torso.BGU.mode.Position = UDim2.new(0 + 0.01 * math.cos(sine/15),0,0.1 + 0.01 * math.sin(sine/25),0)
+Torso.BGU.mode.Rotation = 0 + 2.5 * math.cos(sine/15)
+--Torso.BGU.spin.Position = UDim2.new(0.4 + 0.01 * math.cos(sine/15),0,0 + 0.01 * math.cos(sine/25),0)		
+elseif glitch == 0 then
+--Torso.BGU.excel.Position = UDim2.new(0.25 + 0.01 * math.cos(sine/2),0,0.6 + 0.01 * math.sin(sine/6),0)
+--Torso.BGU.excel.Rotation = 0 + 2.5 * math.cos(sine/5)
+Torso.BGU.mode.Position = UDim2.new(0 + 0.01 * math.cos(sine/2),0,0.1 + 0.01 * math.sin(sine/1),0)
+Torso.BGU.mode.Rotation = 0 + 1000 * math.cos(sine/7)
+--Torso.BGU.spin.Position = UDim2.new(0.4 + 0.01 * math.cos(sine/15),0,0 + 0.01 * math.cos(sine/6),0)		
+else
+--Torso.BGU.excel.Position = UDim2.new(0.25 + 0.01 * math.cos(sine/44),0,0.6 + 0.01 * math.sin(sine/44),0)
+--Torso.BGU.excel.Rotation = 0 + 2.5 * math.cos(sine/43)
+Torso.BGU.mode.Position = UDim2.new(0 + 0.01 * math.cos(sine/39),0,0.1 + 0.01 * math.sin(sine/56),0)
+Torso.BGU.mode.Rotation = 0 + 2.5 * math.cos(sine/33)
+--Torso.BGU.spin.Position = UDim2.new(0.4 + 0.01 * math.cos(sine/37),0,0 + 0.01 * math.cos(sine/52),0)
+end	
+local x = math.random(-50,50)
+local z = math.random(-50,50)
+coroutine.resume(coroutine.create(function()
+if glitch == 1 then
+tweeneff("Sphere",root.CFrame*CFrame.new(x,-3,z),BrickColor.new("Neon orange").Color,Vector3.new(1,1,1),10,"Neon",0,
+{
+CFrame = root.CFrame*CFrame.new(x,10,z),
+Transparency = 1,
+Size = Vector3.new(0,0,0)
+}
+,0.5,"Linear","Out",0,false)
+end
+end))
+corerot = corerot + 5
+--feet
+local humanoid = char.Humanoid
+local rootpart = char.HumanoidRootPart
+local Walking = humanoid.MoveDirection.magnitude>0
+
+local vt = Vector3.new
+
+local FwdDir = (Walking and humanoid.MoveDirection*rootpart.CFrame.lookVector or vt())
+local RigDir = (Walking and humanoid.MoveDirection*rootpart.CFrame.rightVector or vt())
+
+local Vec = {
+	X=RigDir.X+RigDir.Z,
+	Z=FwdDir.X+FwdDir.Z
+};
+local Divide = 1
+if(Vec.Z<0)then
+	Divide=math.clamp(-(1.25*Vec.Z),1,2)
+end
+Vec.Z = Vec.Z/Divide
+Vec.X = Vec.X/Divide
+--feet end
+if glitch == 0 then
+coroutine.resume(coroutine.create(function()
+if AuraDebounce == false then
+AuraDebounce = true
+tweeneff("Block",root.CFrame*CFrame.new(math.random(-100,100),math.random(-100,100),math.random(-100,100))*CFrame.Angles(math.rad(math.random(-30,30)),math.rad(math.random(-30,30)),math.rad(math.random(-30,30))),Color3.fromRGB(math.random(0,255),math.random(0,255),math.random(0,255)),Vector3.new(0.1,999,0.1),0,"Neon",0,{Transparency = 1, CFrame = root.CFrame*CFrame.new(math.random(-100,100),math.random(-100,100),math.random(-100,100))*CFrame.Angles(math.rad(math.random(-30,30)),math.rad(math.random(-30,30)),math.rad(math.random(-30,30)))},0.5,"Linear","Out",0,false)
+tweeneff("Block",root.CFrame*CFrame.new(math.random(-100,100),math.random(-100,100),math.random(-100,100))*CFrame.Angles(math.rad(math.random(-30,30)),math.rad(math.random(-30,30)),math.rad(math.random(-30,30))),Color3.fromRGB(math.random(0,255),math.random(0,255),math.random(0,255)),Vector3.new(0.1,999,0.1),0,"Neon",0,{Transparency = 1, CFrame = root.CFrame*CFrame.new(math.random(-100,100),math.random(-100,100),math.random(-100,100))*CFrame.Angles(math.rad(math.random(-30,30)),math.rad(math.random(-30,30)),math.rad(math.random(-30,30)))},0.5,"Linear","Out",0,false)			
+tweeneff("Block",root.CFrame*CFrame.new(math.random(-100,100),math.random(-100,100),math.random(-100,100))*CFrame.Angles(math.rad(math.random(-30,30)),math.rad(math.random(-30,30)),math.rad(math.random(-30,30))),Color3.fromRGB(math.random(0,255),math.random(0,255),math.random(0,255)),Vector3.new(0.1,999,0.1),0,"Neon",0,{Transparency = 1, CFrame = root.CFrame*CFrame.new(math.random(-100,100),math.random(-100,100),math.random(-100,100))*CFrame.Angles(math.rad(math.random(-30,30)),math.rad(math.random(-30,30)),math.rad(math.random(-30,30)))},0.5,"Linear","Out",0,false)		
+AuraDebounce = false
+end
+end))
+end
+local torvel=(RootPart.Velocity*Vector3.new(1,0,1)).magnitude
+local velderp=RootPart.Velocity.y
+hitfloor,posfloor=rayCast(RootPart.Position,(CFrame.new(RootPart.Position,RootPart.Position - Vector3.new(0,1,0))).lookVector,4,char)
+--color shift
+if colorshift == true then
+if glitch == 13 then
+	MainColor = Color3.fromRGB(125 + 125 * math.cos(sine/10), 0, 0)
+	SecondColor = Color3.fromRGB(0,0,0)
+	ThirdColor = Color3.fromRGB(0,0,0)
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("Defiance","True chaos...",MainColor,SecondColor,ThirdColor,"Garamond")
+elseif glitch == 4 then		--194, 218, 184
+	MainColor = Color3.fromRGB(128 - 50 * math.cos(sine/32), 187 - 10 * math.cos(sine/32), 219 - 30 * math.cos(sine/32))
+	SecondColor = Color3.fromRGB(128 - 25 * math.cos(sine/32), 187 - 5 * math.cos(sine/32), 219 + 15 * math.cos(sine/32))
+	ThirdColor = Color3.fromRGB(255,255,255)
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("Exhilaration","We are all creations of another...",MainColor,SecondColor,ThirdColor,"SourceSansLight")		
+elseif glitch == 5 then
+	MainColor = Color3.fromRGB(85+85 * math.cos(sine/64), 255, 255)
+	SecondColor = Color3.fromRGB(239+11 * math.cos(sine/64), 157+27 * math.cos(sine/64), 255)
+	ThirdColor = Color3.fromRGB(170+11 * math.cos(sine/64), 244+11 * math.cos(sine/64), 244+11 * math.cos(sine/64))
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("Aspiration","Aim higher! in case you fall short...",MainColor,SecondColor,ThirdColor,"SciFi")
+elseif glitch == 666 then
+	MainColor = Color3.fromRGB(196 + 30 * math.cos(sine/10), 40, 28)
+	SecondColor = Color3.fromRGB(150, 150, 150)
+	ThirdColor = Color3.fromRGB(0,0,0)
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("Vindictive","Actions have consequences...",MainColor,SecondColor,ThirdColor,"Garamond")
+elseif glitch == 404 then
+	local rnd = math.random(1,6)
+	if rnd == 1 then
+		MainColor = Color3.fromRGB(245, 205, 48)
+		SecondColor = Color3.fromRGB(255,255,255)
+		ThirdColor = Color3.fromRGB(0,0,0)	
+	elseif rnd == 2 then
+		MainColor = Color3.fromRGB(245, 205, 48)
+		ThirdColor = Color3.fromRGB(255,255,255)
+		SecondColor = Color3.fromRGB(0,0,0)	
+	elseif rnd == 3 then
+		SecondColor = Color3.fromRGB(245, 205, 48)
+		MainColor = Color3.fromRGB(255,255,255)
+		ThirdColor = Color3.fromRGB(0,0,0)	
+	elseif rnd == 4 then
+		ThirdColor = Color3.fromRGB(245, 205, 48)
+		SecondColor = Color3.fromRGB(255,255,255)
+		MainColor = Color3.fromRGB(0,0,0)		
+	elseif rnd == 5 then
+		ThirdColor = Color3.fromRGB(245, 205, 48)
+		MainColor = Color3.fromRGB(255,255,255)
+		SecondColor = Color3.fromRGB(0,0,0)	
+	elseif rnd == 6 then
+		SecondColor = Color3.fromRGB(245, 205, 48)
+		ThirdColor = Color3.fromRGB(255,255,255)
+		MainColor = Color3.fromRGB(0,0,0)			
+	end
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("Descent","True chaos...",MainColor,SecondColor,ThirdColor,"Arcade")
+elseif glitch == 6 then			
+	MainColor = Color3.fromRGB(0 + visualiser/4,0,155 + visualiser/6)
+	SecondColor = Color3.fromRGB(0, 0, 0)
+	ThirdColor = Color3.fromRGB(0,0, visualiser/8)
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("Disarray","Out of all order...",MainColor,SecondColor,ThirdColor,"Garamond")
+elseif glitch == 7 then
+	SecondColor = Color3.fromRGB(255,200,170 - 30 * math.cos(sine/32))
+	MainColor = Color3.fromRGB(255, 120 - 30 * math.cos(sine/32), 0)
+	ThirdColor = Color3.fromRGB(255,255,255)
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("Endurance","I AM THE BEGINNING AND THE END!",MainColor,SecondColor,ThirdColor,"SourceSansSemibold")
+elseif glitch == 0 then
+	MainColor = Color3.fromRGB(math.random(0,255),math.random(0,255),math.random(0,255))
+	SecondColor = Color3.fromRGB(math.random(0,255),math.random(0,255),math.random(0,255))
+	ThirdColor = Color3.fromRGB(math.random(0,255),math.random(0,255),math.random(0,255))
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("DELIRIUM","aAAAaAAAAAAAAAAaAaA",MainColor,SecondColor,ThirdColor,"Arcade")
+elseif glitch == 8 then
+	SecondColor = Color3.fromRGB(150 + 50 * math.cos(sine/32), 150 - 50 * math.cos(sine/16), 150 - 50 * math.cos(sine/32))
+	MainColor = Color3.fromRGB(249, 200 - 30 * math.cos(sine/32), 180 + 30 * math.cos(sine/32))
+	ThirdColor = Color3.fromRGB(255,255,255)
+	recolorwing(MainColor,SecondColor,"Neon","Neon")
+	recolorandrename("Competence","I AM THE BEGINNING AND THE END!",MainColor,SecondColor,ThirdColor,"SourceSansSemibold")
+end
+end
+--wing animations
+rnd1 = math.random(-5,5)
+rnd2 = math.random(-5,5)
+rnd3 = math.random(-5,5)
+winglerp = 0.1	
+if glitch == 1 or glitch == 13 or glitch == 404 or glitch == 666 or glitch == 6 or glitch == 8 then
+	coreweld.C0 = clerp(coreweld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(corerot)),winglerp)
+	coreweld.C1 = clerp(coreweld.C1,CFrame.Angles(math.rad(0),math.rad(90),math.rad(0)),winglerp)
+	lwing1weld.C0 = clerp(lwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(5 + 30 * math.cos(sine/30))),winglerp)
+	lwing2weld.C0 = clerp(lwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(40 + 30 * math.cos(sine/30))),winglerp)
+	lwing3weld.C0 = clerp(lwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-30 + 30 * math.cos(sine/30))),winglerp)
+	rwing1weld.C0 = clerp(rwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(5 + 30 * math.cos(sine/30))),winglerp)
+	rwing2weld.C0 = clerp(rwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(40 + 30 * math.cos(sine/30))),winglerp)
+	rwing3weld.C0 = clerp(rwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(-30 + 30 * math.cos(sine/30))),winglerp)
+	
+	lwing1weld.C1 = clerp(lwing1weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing2weld.C1 = clerp(lwing2weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing3weld.C1 = clerp(lwing3weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing1weld.C1 = clerp(rwing1weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing2weld.C1 = clerp(rwing2weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing3weld.C1 = clerp(rwing3weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+--[[elseif glitch == 8 then
+	coreweld.C0 = clerp(coreweld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(corerot)),winglerp)
+	coreweld.C1 = clerp(coreweld.C1,CFrame.Angles(math.rad(0),math.rad(90),math.rad(0)),winglerp)
+	lwing1weld.C0 = clerp(lwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(5 + 30 * math.cos(sine/20))),winglerp)
+	lwing2weld.C0 = clerp(lwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(40 + 30 * math.cos(sine/20))),winglerp)
+	lwing3weld.C0 = clerp(lwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-30 + 30 * math.cos(sine/20))),winglerp)
+	rwing1weld.C0 = clerp(rwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(5 + 30 * math.cos(sine/20))),winglerp)
+	rwing2weld.C0 = clerp(rwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(40 + 30 * math.cos(sine/20))),winglerp)
+	rwing3weld.C0 = clerp(rwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(-30 + 30 * math.cos(sine/20))),winglerp)
+	
+	lwing1weld.C1 = clerp(lwing1weld.C1,CFrame.new(-2.5,0 + 1 * math.sin(sine/20),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing2weld.C1 = clerp(lwing2weld.C1,CFrame.new(-2,0 + 1 * math.sin(sine/20),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing3weld.C1 = clerp(lwing3weld.C1,CFrame.new(-2,0 + 1 * math.sin(sine/20),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing1weld.C1 = clerp(rwing1weld.C1,CFrame.new(-2.5,0 + 1 * math.sin(sine/20),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing2weld.C1 = clerp(rwing2weld.C1,CFrame.new(-2,0 + 1 * math.sin(sine/20),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing3weld.C1 = clerp(rwing3weld.C1,CFrame.new(-2,0 + 1 * math.sin(sine/20),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)]]
+elseif glitch == 0 then
+	coreweld.C0 = clerp(coreweld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(corerot)),winglerp)
+	coreweld.C1 = clerp(coreweld.C1,CFrame.Angles(math.rad(0),math.rad(90),math.rad(0)),winglerp)
+	lwing1weld.C0 = clerp(lwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(5 + 40 * math.cos(sine/math.random(5,30))),math.rad(5 + 300 * math.cos(sine/math.random(5,30)))),winglerp)
+	lwing2weld.C0 = clerp(lwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(5 + 40 * math.cos(sine/math.random(5,30))),math.rad(40 + 300 * math.cos(sine/math.random(5,30)))),winglerp)
+	lwing3weld.C0 = clerp(lwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(5 + 40 * math.cos(sine/math.random(5,30))),math.rad(-30 + 300 * math.cos(sine/math.random(5,30)))),winglerp)
+	rwing1weld.C0 = clerp(rwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180 + 40 * math.cos(sine/math.random(5,30))),math.rad(5 + 300 * math.cos(sine/math.random(5,30)))),winglerp)
+	rwing2weld.C0 = clerp(rwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180 + 40 * math.cos(sine/math.random(5,30))),math.rad(40 + 300 * math.cos(sine/math.random(5,30)))),winglerp)
+	rwing3weld.C0 = clerp(rwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180 + 40 * math.cos(sine/math.random(5,30))),math.rad(-30 + 300 * math.cos(sine/math.random(5,30)))),winglerp)
+	
+	lwing1weld.C1 = clerp(lwing1weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing2weld.C1 = clerp(lwing2weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing3weld.C1 = clerp(lwing3weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing1weld.C1 = clerp(rwing1weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing2weld.C1 = clerp(rwing2weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing3weld.C1 = clerp(rwing3weld.C1,CFrame.new(-3 - 1 * math.cos(sine/30),0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+elseif glitch == 3 then
+	coreweld.C0 = CFrame.new(0 + 0.5 * math.cos(sine/34),0 + 0.5 * math.cos(sine/45),2 + 0.5 * math.cos(sine/38))
+	lwing1weld.C0 = CFrame.new(0,0 + 0.5 * math.cos(sine/24),1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 + 2700 * math.cos(sine/360)))
+	lwing2weld.C0 = CFrame.new(0,0 + 0.5 * math.cos(sine/24),1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(60 + 2700 * math.cos(sine/360)))
+	lwing3weld.C0 = CFrame.new(0,0 + 0.5 * math.cos(sine/24),1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(120 + 2700 * math.cos(sine/360)))
+	rwing1weld.C0 = CFrame.new(0,0 + 0.5 * math.cos(sine/24),1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(180 + 2700 * math.cos(sine/360)))
+	rwing2weld.C0 = CFrame.new(0,0 + 0.5 * math.cos(sine/24),1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(240 + 2700 * math.cos(sine/360)))
+	rwing3weld.C0 = CFrame.new(0,0 + 0.5 * math.cos(sine/24),1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(300 + 2700 * math.cos(sine/360)))
+	
+	lwing1weld.C1 = CFrame.new(0 + 5 * math.cos(sine/24),0 + 0.5 * math.cos(sine/30),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 + 15 * math.cos(sine/256)))
+	lwing2weld.C1 = CFrame.new(0 + 5 * math.cos(sine/24),0 + 0.5 * math.cos(sine/30),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 + 15 * math.cos(sine/256)))
+	lwing3weld.C1 = CFrame.new(0 + 5 * math.cos(sine/24),0 + 0.5 * math.cos(sine/30),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 + 15 * math.cos(sine/256)))
+	rwing1weld.C1 = CFrame.new(0 + 5 * math.cos(sine/24),0 + 0.5 * math.cos(sine/30),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 + 15 * math.cos(sine/256)))
+	rwing2weld.C1 = CFrame.new(0 + 5 * math.cos(sine/24),0 + 0.5 * math.cos(sine/30),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 + 15 * math.cos(sine/256)))
+	rwing3weld.C1 = CFrame.new(0 + 5 * math.cos(sine/24),0 + 0.5 * math.cos(sine/30),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 + 15 * math.cos(sine/256)))
+elseif glitch == 6 then
+	coreweld.C0 = CFrame.new(0,0,2)
+	lwing1weld.C0 = CFrame.new(-2 - 2 * math.cos(sine/40),0,1.6)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(225))
+	lwing2weld.C0 = CFrame.new(-2 - 2 * math.cos(sine/40),0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(225))
+	lwing3weld.C0 = CFrame.new(-2 - 2 * math.cos(sine/40),0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(225))
+	rwing1weld.C0 = CFrame.new(2 + 2 * math.cos(sine/40),0,1.6)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-45))
+	rwing2weld.C0 = CFrame.new(2 + 2 * math.cos(sine/40),0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-45))
+	rwing3weld.C0 = CFrame.new(2 + 2 * math.cos(sine/40),0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-45))
+	
+	lwing1weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing2weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(30 + 25 * math.cos(sine/40)))
+	lwing3weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-30 - 25 * math.cos(sine/40)))
+	rwing1weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-90))
+	rwing2weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-60 + 25 * math.cos(sine/40)))
+	rwing3weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-120 - 25 * math.cos(sine/40)))
+elseif glitch == 7 then
+	wingrot = wingrot + 5
+	coreweld.C0 = CFrame.new(0,0,2)
+	lwing1weld.C0 = clerp(lwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 + wingrot)),winglerp)
+	lwing2weld.C0 = clerp(lwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(120 + wingrot)),winglerp)
+	lwing3weld.C0 = clerp(lwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(240 + wingrot)),winglerp)
+	rwing1weld.C0 = clerp(rwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(0 + wingrot)),winglerp)
+	rwing2weld.C0 = clerp(rwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(120 + wingrot)),winglerp)
+	rwing3weld.C0 = clerp(rwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(240 + wingrot)),winglerp)
+	
+	lwing1weld.C1 = clerp(lwing1weld.C1,CFrame.new(0 - 3 * math.cos(sine/32),0 + 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing2weld.C1 = clerp(lwing2weld.C1,CFrame.new(0 - 3 * math.cos(sine/32),0 + 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing3weld.C1 = clerp(lwing3weld.C1,CFrame.new(0 - 3 * math.cos(sine/32),0 + 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing1weld.C1 = clerp(rwing1weld.C1,CFrame.new(0 - 3 * math.cos(sine/32),0 + 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing2weld.C1 = clerp(rwing2weld.C1,CFrame.new(0 - 3 * math.cos(sine/32),0 + 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing3weld.C1 = clerp(rwing3weld.C1,CFrame.new(0 - 3 * math.cos(sine/32),0 + 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+elseif glitch == 9 then
+	wingrot = wingrot + 2.5
+	coreweld.C0 = CFrame.new(0,0,2)
+	lwing1weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 - wingrot))
+	lwing2weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(120 - wingrot))
+	lwing3weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(240 - wingrot))
+	rwing1weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(0 - wingrot))
+	rwing2weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(120 - wingrot))
+	rwing3weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(240 - wingrot))
+	
+	lwing1weld.C1 = CFrame.new(-3 + 3 * math.cos(sine/32),3 - 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing2weld.C1 = CFrame.new(-3 + 3 * math.cos(sine/32),3 - 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing3weld.C1 = CFrame.new(-3 + 3 * math.cos(sine/32),3 - 3 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing1weld.C1 = CFrame.new(0,3,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing2weld.C1 = CFrame.new(0,3,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing3weld.C1 = CFrame.new(0,3,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))	
+elseif glitch == 10 then
+	coreweld.C0 = CFrame.new(0,0,2)
+	lwing1weld.C0 = CFrame.new(2 + 0.5 * math.cos(sine/24),0 + 0.5 * math.cos(sine/30),1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(90 - 30 * math.cos(sine/30)))
+	lwing2weld.C0 = CFrame.new(2 + 0.5 * math.cos(sine/24),3 + 0.5 * math.cos(sine/30),1.4)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(90 - 30 * math.cos(sine/30)))
+	lwing3weld.C0 = CFrame.new(2 + 0.5 * math.cos(sine/24),-3 + 0.5 * math.cos(sine/30),1.6)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(90 - 30 * math.cos(sine/30)))
+	rwing1weld.C0 = CFrame.new(-2 - 0.5 * math.cos(sine/24),0 + 0.5 * math.cos(sine/30),1.5)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(90 - 30 * math.cos(sine/30)))
+	rwing2weld.C0 = CFrame.new(-2 - 0.5 * math.cos(sine/24),3 + 0.5 * math.cos(sine/30),1.4)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(90 - 30 * math.cos(sine/30)))
+	rwing3weld.C0 = CFrame.new(-2 - 0.5 * math.cos(sine/24),-3 + 0.5 * math.cos(sine/30),1.6)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(90 - 30 * math.cos(sine/30)))
+	
+	lwing1weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing2weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing3weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing1weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing2weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing3weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+elseif glitch == 12 then
+	coreweld.C0 = CFrame.new(0,0,2)
+	lwing1weld.C0 = CFrame.new(0,2 + 2 * math.cos(sine/30),1.4)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(180))
+	lwing2weld.C0 = CFrame.new(3,2,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(120 - 25 * math.cos(sine/60)))
+	lwing3weld.C0 = CFrame.new(-3,2,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-120 + 25 * math.cos(sine/60)))
+	
+	rwing1weld.C0 = CFrame.new(3,-2,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(120 - 25 * math.cos(sine/60)))
+	rwing2weld.C0 = CFrame.new(-3,-2,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(-120 + 25 * math.cos(sine/60)))
+	
+	rwing3weld.C0 = CFrame.new(0,-2 - 2 * math.cos(sine/30),1.6)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	
+	lwing1weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(45))
+	lwing2weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(45))
+	lwing3weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(45))
+	rwing1weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(45))
+	rwing2weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(45))
+	rwing3weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(45))
+elseif glitch == 2 then
+	coreweld.C0 = CFrame.new(0,0,2)
+	lwing1weld.C0 = CFrame.new(1,0 + 1 * math.cos(sine/30),1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 20 * math.cos(sine/24)),math.rad(55 + 5 * math.cos(sine/30)))
+	lwing2weld.C0 = CFrame.new(0,1.5 + 1 * math.cos(sine/30),1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 20 * math.cos(sine/24)),math.rad(80 + 5 * math.cos(sine/30)))
+	lwing3weld.C0 = CFrame.new(0,-1.5 + 1 * math.cos(sine/30),1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 20 * math.cos(sine/24)),math.rad(30 + 5 * math.cos(sine/30)))
+	rwing1weld.C0 = CFrame.new(-1,0 + 1 * math.cos(sine/30),1.5)*CFrame.Angles(math.rad(0),math.rad(180 - 20 * math.cos(sine/24)),math.rad(55 + 5 * math.cos(sine/30)))
+	rwing2weld.C0 = CFrame.new(0,1.5 + 1 * math.cos(sine/30),1.5)*CFrame.Angles(math.rad(0),math.rad(180 - 20 * math.cos(sine/24)),math.rad(80 + 5 * math.cos(sine/30)))
+	rwing3weld.C0 = CFrame.new(0,-1.5 + 1 * math.cos(sine/30),1.5)*CFrame.Angles(math.rad(0),math.rad(180 - 20 * math.cos(sine/24)),math.rad(30 + 5 * math.cos(sine/30)))
+	
+	lwing1weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing2weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing3weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing1weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing2weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing3weld.C1 = CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+elseif glitch == 4 then
+	wingrot = wingrot + 5
+	coreweld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(corerot))
+	coreweld.C1 = CFrame.Angles(math.rad(0),math.rad(90),math.rad(0))
+	lwing1weld.C0 = clerp(lwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 10 * math.cos(sine/60)),math.rad(0 + wingrot)),winglerp)
+	lwing2weld.C0 = clerp(lwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 10 * math.cos(sine/60)),math.rad(60 + wingrot)),winglerp)
+	lwing3weld.C0 = clerp(lwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 10 * math.cos(sine/60)),math.rad(120 + wingrot)),winglerp)
+	rwing1weld.C0 = clerp(rwing1weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 10 * math.cos(sine/60)),math.rad(180 + wingrot)),winglerp)
+	rwing2weld.C0 = clerp(rwing2weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 10 * math.cos(sine/60)),math.rad(240 + wingrot)),winglerp)
+	rwing3weld.C0 = clerp(rwing3weld.C0,CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0 + 10 * math.cos(sine/60)),math.rad(300 + wingrot)),winglerp)
+	
+	lwing1weld.C1 = clerp(lwing1weld.C1,CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing2weld.C1 = clerp(lwing2weld.C1,CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	lwing3weld.C1 = clerp(lwing3weld.C1,CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing1weld.C1 = clerp(rwing1weld.C1,CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing2weld.C1 = clerp(rwing2weld.C1,CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+	rwing3weld.C1 = clerp(rwing3weld.C1,CFrame.new(0,0,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0)),winglerp)
+elseif glitch == 5 then
+	wingrot = wingrot + 5
+	coreweld.C0 = CFrame.new(0,0,2)
+	lwing1weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 - wingrot))
+	lwing2weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(120 - wingrot))
+	lwing3weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(240 - wingrot))
+	rwing1weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(0 - wingrot))
+	rwing2weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(120 - wingrot))
+	rwing3weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(180),math.rad(240 - wingrot))
+	
+	lwing1weld.C1 = CFrame.new(4+4*math.cos(sine/64),-1,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing2weld.C1 = CFrame.new(4+4*math.cos(sine/64),-1,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing3weld.C1 = CFrame.new(4+4*math.cos(sine/64),-1,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing1weld.C1 = CFrame.new(4-4*math.cos(sine/64),-1,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing2weld.C1 = CFrame.new(4-4*math.cos(sine/64),-1,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing3weld.C1 = CFrame.new(4-4*math.cos(sine/64),-1,0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+elseif glitch == 11 then
+	wingrot = wingrot + 2
+	coreweld.C0 = CFrame.new(0,0,2)
+	lwing1weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0 - wingrot))
+	lwing2weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(60 + wingrot))
+	lwing3weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(120 - wingrot))
+	rwing1weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(180 + wingrot))
+	rwing2weld.C0 = CFrame.new(0,0,1.5)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(240 - wingrot))
+	rwing3weld.C0 = CFrame.new(0,0,2)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(300 + wingrot))
+	
+	lwing1weld.C1 = CFrame.new(-1 - 1 * math.cos(sine/32),1 + 1 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing2weld.C1 = CFrame.new(-3 + 1 * math.cos(sine/32),3 - 1 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	lwing3weld.C1 = CFrame.new(-1 - 1 * math.cos(sine/32),1 + 1 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing1weld.C1 = CFrame.new(-3 + 1 * math.cos(sine/32),3 - 1 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing2weld.C1 = CFrame.new(-1 - 1 * math.cos(sine/32),1 + 1 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+	rwing3weld.C1 = CFrame.new(-3 + 1 * math.cos(sine/32),3 - 1 * math.cos(sine/32),0)*CFrame.Angles(math.rad(0),math.rad(0),math.rad(0))
+end
+if RootPart.Velocity.y > 1 and hitfloor==nil then
+Anim="Jump"
+  	swait()
+  	local Alpha = .3
+  	RootJoint.C0 = RootJoint.C0:lerp(cf(0,0,0)*angles(math.rad(20),math.rad(0),math.rad(0))*RootCF,Alpha)
+  	LH.C0 = LH.C0:lerp(cf(-1,-1,0)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(-90),math.rad(30)),Alpha)
+  	RH.C0 = RH.C0:lerp(cf(1,-.5,-.35)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(90),math.rad(-30)),Alpha)
+  	LW.C0 = LW.C0:lerp(cf(-1.5,0.7,.5)*angles(math.rad(-15),math.rad(30),math.rad(0)),Alpha)
+  	RW.C0 = RW.C0:lerp(cf(1.5,0.7,.5)*angles(math.rad(-15),math.rad(-30),math.rad(0)),Alpha)
+  	Neck.C0 = Neck.C0:lerp(cf(0,0,0)*angles(math.rad(10),math.rad(0),math.rad(0))*necko,Alpha)
+
+elseif RootPart.Velocity.y < -1 and hitfloor==nil then 
+Anim="Fall"
+coroutine.resume(coroutine.create(function()
+  for i = 0, 1, 0.1 do
+  	swait()
+  	local Alpha = .3
+  	RootJoint.C0 = RootJoint.C0:lerp(cf(0,0,0)*angles(math.rad(-5),math.rad(0),math.rad(0))*RootCF,Alpha)
+  	LH.C0 = LH.C0:lerp(cf(-1,-.5,-.55)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(-90),math.rad(50)),Alpha)
+  	RH.C0 = RH.C0:lerp(cf(1,-1,-.35)*angles(math.rad(0),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(90),math.rad(30)),Alpha)
+  	LW.C0 = LW.C0:lerp(cf(-1.5,0.7,.5)*angles(math.rad(10),math.rad(0),math.rad(-40)),Alpha)
+  	RW.C0 = RW.C0:lerp(cf(1.5,0.7,.5)*angles(math.rad(10),math.rad(0),math.rad(40)),Alpha)
+  	Neck.C0 = Neck.C0:lerp(cf(0,0,.4)*angles(math.rad(-20),math.rad(0),math.rad(0))*necko,Alpha)
+  end
+end))
+elseif torvel<1 and hitfloor~=nil and AnimationTestActive == false and attackanim == false then
+	Anim="Idle"
+	if glitch == 1 then
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,HoverHight + 1 * math.cos(sine/32),0)*angles(math.rad(-18.1),math.rad(-33.1),math.rad(-10.9))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1.1,-0.5,-0.2)*angles(math.rad(-0.9),math.rad(31.9),math.rad(-4.1))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-1,0)*angles(math.rad(-6.4),math.rad(3.3),math.rad(2.1))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.3,0.6,-0.5)*angles(math.rad(152.6),math.rad(34.3),math.rad(40))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.4,0.3,0.3)*angles(math.rad(-39.5),math.rad(-9.3),math.rad(-41.3))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0,0,-0.1)*angles(math.rad(-1.1),math.rad(22.1),math.rad(2.8))*necko},Alpha,'Back','Out',0,false,0)
+	elseif glitch == 3 then
+		RH.C0=clerp(RH.C0,cf(1,-1.1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(-5),math.rad(90),math.rad(0))*angles(math.rad(2),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 - 2 * math.cos(sine / 32))),0.1)
+		LH.C0=clerp(LH.C0,cf(-1,-0.5 - 0.05 * math.cos(sine / 32),-0.5)*angles(math.rad(-15),math.rad(-90),math.rad(0))*angles(math.rad(5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 + 2 * math.cos(sine / 32))),0.1)
+		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0 + 0.02 * math.cos(sine / 32),HoverHight + 2 * math.cos(sine / 32))*angles(math.rad(5 - 2 * math.cos(sine / 32)),math.rad(0),math.rad(-15 + 3 * math.cos(sine / 42))),0.1)
+		Neck.C0=clerp(Neck.C0,necko*angles(math.rad(-15 - 2 * math.cos(sine / 37)),math.rad(0 + 2 * math.cos(sine / 58)),math.rad(15 + 1 * math.cos(sine / 53))),0.1)
+		RW.C0=clerp(RW.C0,cf(1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(-25 + 6 * math.cos(sine / 72)),math.rad(-10 - 2 * math.cos(sine / 58)),math.rad(-15 + 2 * math.cos(sine / 45))),0.1)
+		LW.C0=clerp(LW.C0,cf(-1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(0 - 7 * math.cos(sine / 66)),math.rad(-5 - 3 * math.cos(sine / 59)),math.rad(-28 - 4 * math.cos(sine / 45))),0.1)
+	elseif glitch == 6 then
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,HoverHight + 1 * math.cos(sine/32),0)*angles(math.rad(-19.8),math.rad(-44.8),math.rad(-14.2))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1 + 0.1 * math.cos(sine / 40),0.2)*angles(math.rad(-16.8 - 6 * math.cos(sine / 35),0),math.rad(31.2),math.rad(0.2+ 3 * math.cos(sine / 40),0))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-0.6 + 0.1 * math.cos(sine / 40),-0.5)*angles(math.rad(-14.5 - 4 * math.cos(sine / 35),0),math.rad(1.6),math.rad(-1.3- 5 * math.cos(sine / 40),0))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.5,0.7 + 0.1 * math.cos(sine / 40),-0.1)*angles(math.rad(139.4 + 3 * math.cos(sine / 35),0),math.rad(6.5),math.rad(42.9))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.5,0.6 + 0.1 * math.cos(sine / 40),0)*angles(math.rad(4.2 - 3 * math.cos(sine / 32),0),math.rad(-16.1 + 5 * math.cos(sine / 32),0),math.rad(38))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0.1,0.1,0.5)*angles(math.rad(-36.6 + 2 * math.cos(sine / 35),0),math.rad(35.5),math.rad(12))*necko},Alpha,'Back','Out',0,false,0)
+	elseif glitch == 10 then
+		RH.C0=clerp(RH.C0,cf(1,-0.5 - 0.05 * math.cos(sine / 32),-0.5)*angles(math.rad(-14),math.rad(90),math.rad(0))*angles(math.rad(-1),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 - 2 * math.cos(sine / 32))),0.1)
+		LH.C0=clerp(LH.C0,cf(-1,-1.1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(-14),math.rad(-90),math.rad(0))*angles(math.rad(-5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 + 2 * math.cos(sine / 32))),0.1)
+		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0 + 0.02 * math.cos(sine / 32),HoverHight + 1.5 * math.cos(sine / 32))*angles(math.rad(0 - 2 * math.cos(sine / 32)),math.rad(0),math.rad(15 + 3 * math.cos(sine / 42))),0.1)
+		Neck.C0=clerp(Neck.C0,necko*angles(math.rad(10 - 2 * math.cos(sine / 37)),math.rad(0 + 2 * math.cos(sine / 58)),math.rad(-15 + 1 * math.cos(sine / 53))),0.1)
+		RW.C0=clerp(RW.C0,cf(1.5,0.5 + 0.025 * math.cos(sine / 45),-0.5)*angles(math.rad(86 + 6 * math.cos(sine / 72)),math.rad(0 - 2 * math.cos(sine / 58)),math.rad(-70 + 2 * math.cos(sine / 45))),0.1)
+		LW.C0=clerp(LW.C0,cf(-1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(-8 - 7 * math.cos(sine / 66)),math.rad(18 - 3 * math.cos(sine / 59)),math.rad(-15 - 4 * math.cos(sine / 45))),0.1)
+	elseif glitch == 12 then
+		RH.C0=clerp(RH.C0,cf(1,-1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(-18),math.rad(90),math.rad(0))*angles(math.rad(-19),math.rad(-6 - 1 * math.cos(sine / 56)),math.rad(0 - 2 * math.cos(sine / 32))),0.1)
+		LH.C0=clerp(LH.C0,cf(-1,-1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(-35),math.rad(-90),math.rad(0))*angles(math.rad(14),math.rad(-10 - 1 * math.cos(sine / 56)),math.rad(0 + 2 * math.cos(sine / 32))),0.1)
+		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0 + 0.25 * math.cos(sine / 37),0 + 0.25 * math.cos(sine / 55),HoverHight + 4 * math.cos(sine / 32))*angles(math.rad(-25 - 2 * math.cos(sine / 32)),math.rad(0),math.rad(-36 + 3 * math.cos(sine / 42))),0.1)
+		Neck.C0=clerp(Neck.C0,necko*angles(math.rad(15 - 2 * math.cos(sine / 37)),math.rad(0 + 2 * math.cos(sine / 58)),math.rad(36 + 1 * math.cos(sine / 53))),0.1)
+		RW.C0=clerp(RW.C0,cf(1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(-38 + 6 * math.cos(sine / 72)),math.rad(-16 - 2 * math.cos(sine / 58)),math.rad(36 + 2 * math.cos(sine / 45))),0.1)
+		LW.C0=clerp(LW.C0,cf(-1,0.5 + 0.025 * math.cos(sine / 45),-0.75)*angles(math.rad(87 - 7 * math.cos(sine / 66)),math.rad(0 - 3 * math.cos(sine / 59)),math.rad(64 - 4 * math.cos(sine / 45))),0.1)
+	elseif glitch == 7 then
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,HoverHight + 1 * math.cos(sine/32),0)*angles(math.rad(14.8 + 5 * math.cos(sine / 45),0),math.rad(-31.8),math.rad(-4.3))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1 + 0.1 * math.cos(sine / 32),0.2)*angles(math.rad(-16.8 - 5 * math.cos(sine / 32),0),math.rad(31.2),math.rad(0.2 - 6 * math.cos(sine / 40),0))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(0.9,-0.6 + 0.1 * math.cos(sine / 32),-0.5)*angles(math.rad(-14.5 - 3 * math.cos(sine / 32),0),math.rad(1.6),math.rad(12.2 + 5 * math.cos(sine / 42),0))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.5,0.5 + 0.1 * math.cos(sine / 32),-0.2)*angles(math.rad(175.8- 6 * math.cos(sine / 32),0),math.rad(32.8),math.rad(-5.3+ 7 * math.cos(sine / 42),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.5,0.6 + 0.1 * math.cos(sine / 32),0)*angles(math.rad(4.2 - 5 * math.cos(sine / 32),0),math.rad(-16.1),math.rad(38- 5 * math.cos(sine / 42),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0.1,0,-0.2)*angles(math.rad(1.5 - 2 * math.cos(sine / 40),0),math.rad(27.1),math.rad(11))*necko},Alpha,'Back','Out',0,false,0)
+	elseif glitch == 9 then
+		RH.C0=clerp(RH.C0,cf(1,-0.5 - 0.05 * math.cos(sine / 32),-0.5)*angles(math.rad(0),math.rad(90),math.rad(-20))*angles(math.rad(-5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 - 2 * math.cos(sine / 32))),0.1)
+		LH.C0=clerp(LH.C0,cf(-1,-1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(0),math.rad(-90),math.rad(20))*angles(math.rad(-5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 + 2 * math.cos(sine / 32))),0.1)
+		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0 + 0.02 * math.cos(sine / 32),HoverHight + 5 * math.cos(sine / 32))*angles(math.rad(0 - 2 * math.cos(sine / 32)),math.rad(0),math.rad(0 + 3 * math.cos(sine / 42))),0.1)
+		Neck.C0=clerp(Neck.C0,necko*angles(math.rad(0 - 5 * math.cos(sine / 1)),math.rad(0 + 3 * math.cos(sine / 1)),math.rad(0 + 5 * math.cos(sine / 1))),0.1)
+		RW.C0=clerp(RW.C0,cf(1.25,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(-40 + 6 * math.cos(sine / 72)),math.rad(0 - 2 * math.cos(sine / 58)),math.rad(-30 + 2 * math.cos(sine / 45))),0.1)
+		LW.C0=clerp(LW.C0,cf(-1.25,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(-40 - 7 * math.cos(sine / 66)),math.rad(0 - 3 * math.cos(sine / 59)),math.rad(30 - 4 * math.cos(sine / 45))),0.1)
+	elseif glitch == 8 then
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,HoverHight + 0.5 * math.cos(sine/32),0)*angles(math.rad(17.7),math.rad(-32.6),math.rad(0.5))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-0.5,-0.5)*angles(math.rad(-2.9),math.rad(4),math.rad(-3.5))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-1,0)*angles(math.rad(-6.4),math.rad(3.3),math.rad(2.1))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.3,0.5,-0.5)*angles(math.rad(106.6),math.rad(-1.3),math.rad(65.1))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.4,0.8,0)*angles(math.rad(1.9),math.rad(3.9),math.rad(39.8))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0.1,0,0.2)*angles(math.rad(-19.5),math.rad(31.9),math.rad(12.8))*necko},Alpha,'Back','Out',0,false,0)
+	elseif glitch == 2 then
+		RH.C0=clerp(RH.C0,cf(1,-0.5 - 0.05 * math.cos(sine / 32),-0.5)*angles(math.rad(0),math.rad(90),math.rad(-10))*angles(math.rad(-5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 - 2 * math.cos(sine / 32))),0.1)
+		LH.C0=clerp(LH.C0,cf(-1,-1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(0),math.rad(-90),math.rad(10))*angles(math.rad(-10),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 + 2 * math.cos(sine / 32))),0.1)
+		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0 + 0.02 * math.cos(sine / 32),HoverHight + 3 * math.cos(sine / 30))*angles(math.rad(0 - 2 * math.cos(sine / 32)),math.rad(0),math.rad(20 + 3 * math.cos(sine / 42))),0.1)
+		Neck.C0=clerp(Neck.C0,necko*angles(math.rad(0 - 2 * math.cos(sine / 37)),math.rad(0 + 2 * math.cos(sine / 58)),math.rad(-20 + 1 * math.cos(sine / 53))),0.1)
+		RW.C0=clerp(RW.C0,cf(1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(180 + 6 * math.cos(sine / 72)),math.rad(0 - 2 * math.cos(sine / 58)),math.rad(0 + 2 * math.cos(sine / 45))),0.1)
+		LW.C0=clerp(LW.C0,cf(-1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(0 - 7 * math.cos(sine / 66)),math.rad(0 - 3 * math.cos(sine / 59)),math.rad(-30 - 4 * math.cos(sine / 45))),0.1)
+	elseif glitch == 4 then
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(-0.1,HoverHight + 1 * math.cos(sine/32),-0.1)*angles(math.rad(-3.5+ 5 * math.cos(sine / 45),0),math.rad(29.8),math.rad(-0.5))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1 - 0.1 * math.cos(sine/34),0.1)*angles(math.rad(-16.3),math.rad(9.4),math.rad(-2.1- 3 * math.cos(sine / 35),0))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-0.5 - 0.1 * math.cos(sine/34),-0.5)*angles(math.rad(-21.1),math.rad(-11.9),math.rad(3.6 + 5 * math.cos(sine / 35),0))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.4,0.2 - 0.1 * math.sin(sine/34),0.2)*angles(math.rad(-36.1 + 3 * math.cos(sine / 25),0),math.rad(8.3+ 7 * math.cos(sine / 45),0),math.rad(30.2))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.4,0.2 - 0.1 * math.sin(sine/34),-0.3)*angles(math.rad(177.1),math.rad(-48.9),math.rad(54.5+ 3 * math.cos(sine / 35),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(-0.1,0,0)*angles(math.rad(-8.5+ 3 * math.cos(sine / 30),0),math.rad(-25.9),math.rad(-6))*necko},Alpha,'Back','Out',0,false,0)
+	elseif glitch == 13 then
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,HoverHight + 1 * math.cos(sine/32),-0.3)*angles(math.rad(14.4),math.rad(-1.5),math.rad(0.1+ 2 * math.cos(sine / 45),0))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1  - 0.1 * math.cos(sine/34),0.1)*angles(math.rad(-16.3+ 5 * math.cos(sine / 35),0),math.rad(9.4),math.rad(-2.1- 3 * math.cos(sine / 25),0))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-0.5  - 0.1 * math.cos(sine/34),-0.5)*angles(math.rad(-21.1+ 4 * math.cos(sine / 35),0),math.rad(-11.9),math.rad(3.6+ 4 * math.cos(sine / 25),0))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.2,0.9 - 0.1 * math.sin(sine/34),0.3)*angles(math.rad(-158.7),math.rad(1.3),math.rad(58.8+ 1 * math.cos(sine / 30),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.2,0.9  - 0.1 * math.sin(sine/34),0.3)*angles(math.rad(-157.1),math.rad(-5.9),math.rad(-51.2+ 1 * math.cos(sine / 30),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(-0.1,0.1,0.4)*angles(math.rad(-26.3),math.rad(-3.9+ 5 * math.cos(sine / 45),0),math.rad(-1.1))*necko},Alpha,'Back','Out',0,false,0)
+	elseif glitch == 5 then
+		local Alpha = .3
+  	TweenAnimate(RootJoint,{C0=cf(0.1,HoverHight + 1 * math.cos(sine/32),-0.3)*angles(math.rad(15.6),math.rad(-6.8),math.rad(5.8))*RootCF},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LH,{C0=cf(-1,-1.1 + 0.1 * math.sin(sine/44),0.1)*angles(math.rad(-13.8 + 5 * math.sin(sine/34),0),math.rad(9.3),math.rad(-2.5- 5 * math.sin(sine/25),0))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RH,{C0=cf(1,-0.5 + 0.1 * math.sin(sine/44),-0.5)*angles(math.rad(-21.1 + 4 * math.sin(sine/34),0),math.rad(-11.9),math.rad(3.6+ 3 * math.sin(sine/25),0))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(LW,{C0=cf(-1.3,0.9 + 0.1 * math.sin(sine/44),-0.2)*angles(math.rad(-17.1+ 5 * math.sin(sine/45),0),math.rad(4.1),math.rad(-43+ 5 * math.sin(sine/34),0))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(RW,{C0=cf(1.3,0.2 + 0.1 * math.sin(sine/44),0.1)*angles(math.rad(163+ 4 * math.sin(sine/45),0),math.rad(-10.3+ 5 * math.sin(sine/34),0),math.rad(13.3))},Alpha,'Back','Out',0,false,0)
+  	TweenAnimate(Neck,{C0 =cf(-0.1,0.1,0.4)*angles(math.rad(-29.9 + 3 * math.sin(sine/45),0),math.rad(2.4 + 2 * math.sin(sine/32),0),math.rad(-3))*necko},Alpha,'Back','Out',0,false,0)
+	elseif glitch == 11 then
+		RH.C0=clerp(RH.C0,cf(1,-0.75 - 0.05 * math.cos(sine / 32),-0.25)*angles(math.rad(0),math.rad(90),math.rad(-10))*angles(math.rad(5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 - 2 * math.cos(sine / 32))),0.1)
+		LH.C0=clerp(LH.C0,cf(-1,-1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(0),math.rad(-90),math.rad(0))*angles(math.rad(-5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(20 + 2 * math.cos(sine / 32))),0.1)
+		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0 + 0.02 * math.cos(sine / 32),HoverHight + 1 * math.cos(sine / 32))*angles(math.rad(0 - 2 * math.cos(sine / 32)),math.rad(5),math.rad(0 + 3 * math.cos(sine / 42))),0.1)
+		Neck.C0=clerp(Neck.C0,necko*angles(math.rad(0 - 2 * math.cos(sine / 37)),math.rad(0 + 2 * math.cos(sine / 58)),math.rad(0 + 1 * math.cos(sine / 53))),0.1)
+		RW.C0=clerp(RW.C0,cf(1.25,0.25 + 0.05 * math.cos(sine / 32),-0.25)*angles(math.rad(21.55),0,math.rad(-40)),.1)
+		LW.C0=clerp(LW.C0,cf(-1.25,0.25 + 0.05 * math.cos(sine / 32),-0.25)*angles(math.rad(25.28),0,math.rad(60)),.1)	
+	elseif glitch == 404 then
+		local snap = math.random(1,50)
+		local Alpha = 0.5
+		if snap == 1 then
+			for i=1,100 do
+			Neck.C0=clerp(Neck.C0,necko*angles(math.rad(0 - 2 * math.cos(sine / 37)),math.rad(20 + 2 * math.cos(sine / 58)),math.rad(-45 + 1 * math.cos(sine / 53))),.1)
+			end		
+		elseif snap == 2 then
+			for i=1,100 do
+			Neck.C0=clerp(Neck.C0,necko*angles(math.rad(0 - 2 * math.cos(sine / 37)),math.rad(-20 + 2 * math.cos(sine / 58)),math.rad(-45 + 1 * math.cos(sine / 53))),.1)
+			end		
+		elseif snap == 3 then
+			for i=1,100 do
+			Neck.C0=clerp(Neck.C0,necko*angles(math.rad(20 - 2 * math.cos(sine / 37)),math.rad(0 + 2 * math.cos(sine / 58)),math.rad(-45 + 1 * math.cos(sine / 53))),.1)
+			end			
+		elseif snap == 4 then
+			for i=1,100 do
+			Neck.C0=clerp(Neck.C0,necko*angles(math.rad(-20 - 2 * math.cos(sine / 37)),math.rad(0 + 2 * math.cos(sine / 58)),math.rad(-45 + 1 * math.cos(sine / 53))),.1)
+			end
+		end	
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,HoverHight + 1 * math.cos(sine/32),0)*angles(math.rad(-8.5),math.rad(-8.5),math.rad(2.5))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1 + 0.1 * math.cos(sine/34),0.1)*angles(math.rad(-16.3+ 4 * math.cos(sine / 35),0),math.rad(9.4),math.rad(-2.1 - 4 * math.cos(sine / 25),0))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-0.5 + 0.1 * math.cos(sine/34),-0.5)*angles(math.rad(-21.1+ 5 * math.cos(sine / 35),0),math.rad(-11.9),math.rad(3.6 + 5 * math.cos(sine / 25),0))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1,0.7 + 0.1 * math.sin(sine/34),-0.5)*angles(math.rad(88.6 + 2 * math.cos(sine / 45),0),math.rad(34.7),math.rad(85.6+ 5 * math.cos(sine / 45),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(0.9,0.6 + 0.1 * math.sin(sine/34),-0.5)*angles(math.rad(88.1 + 3 * math.cos(sine / 45),0),math.rad(7.4),math.rad(-80.4+ 5 * math.cos(sine / 45),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(-0.1,0,0)*angles(math.rad(-8.5+ 5 * math.cos(sine / 45),0),math.rad(-25.9),math.rad(-4.5))*necko},Alpha,'Back','Out',0,false,0)	
+	elseif glitch == 666 then	
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,HoverHight + 1 * math.cos(sine/32),-0.1)*angles(math.rad(-8.5),math.rad(-8.5),math.rad(2.5))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1+ 0.1 * math.sin(sine/32),0.1)*angles(math.rad(-16.3+ 5 * math.sin(sine/45),0),math.rad(9.4),math.rad(-2.1+ 5 * math.sin(sine/25),0))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(1,-0.5+ 0.1 * math.sin(sine/32),-0.5)*angles(math.rad(-21.1+ 7 * math.sin(sine/45),0),math.rad(-11.9),math.rad(3.6- 3 * math.sin(sine/25),0))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.4,0.8+ 0.1 * math.sin(sine/32),0.1)*angles(math.rad(152.4- 3 * math.sin(sine/34),0),math.rad(-13.5),math.rad(41.4+ 1 * math.sin(sine/34),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.5,0.5+ 0.1 * math.sin(sine/32),0)*angles(math.rad(-31.2),math.rad(-12.2+ 5 * math.sin(sine/34),0),math.rad(-33.8+ 5 * math.sin(sine/34),0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(-0.1,0.1,0.4)*angles(math.rad(-29.9+ 5 * math.sin(sine/34),0),math.rad(3.4- 5 * math.sin(sine/34),0),math.rad(-3))*necko},Alpha,'Back','Out',0,false,0)
+	elseif glitch == 0 then
+		local Alpha = .3
+  		TweenAnimate(RootJoint,{C0=cf(0,HoverHight + 1 * math.cos(sine/math.random(10,32)),-0.1)*angles(math.rad(-56.5),math.rad(0.5),math.rad(-3.6))*RootCF},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LH,{C0=cf(-1,-1.1,0.1)*angles(math.rad(-3.5),math.rad(-0.2),math.rad(0.2))*angles(math.rad(0),math.rad(-90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RH,{C0=cf(0.9,-0.6,-0.7)*angles(math.rad(-16.3),math.rad(1.2),math.rad(12.2))*angles(math.rad(0),math.rad(90),math.rad(0))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(LW,{C0=cf(-1.2,0.8,-0.4)*angles(math.rad(-1.1),math.rad(-41.3),math.rad(-48.5))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(RW,{C0=cf(1.3,0.8,-0.3)*angles(math.rad(7.1),math.rad(36.8),math.rad(48.1))},Alpha,'Back','Out',0,false,0)
+  		TweenAnimate(Neck,{C0 =cf(0,0.1,0.4)*angles(math.rad(-28.5),math.rad(0.4),math.rad(2.1))*necko},Alpha,'Back','Out',0,false,0)
+	end
+elseif torvel<1 and hitfloor~=nil and AnimationTestActive == true then
+Anim="Idle"
+animationTest(glitch .. "_Idle",true,0.1)
+elseif torvel>2 and torvel<22 and hitfloor~=nil  and attackanim == false then
+if glitch == 9 then
+Anim="Walk"
+RH.C0=clerp(RH.C0,cf(1,-0.5 - 0.05 * math.cos(sine / 32),-0.5)*angles(math.rad(-15),math.rad(90),0)*angles(math.rad(-5),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 - 2 * math.cos(sine / 32))),.1)
+LH.C0=clerp(LH.C0,cf(-1,-1 - 0.05 * math.cos(sine / 32),0)*angles(math.rad(-15),math.rad(-90),0)*angles(math.rad(-2),math.rad(0 - 1 * math.cos(sine / 56)),math.rad(0 + 2 * math.cos(sine / 32))),.1)
+RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0 + 0.02 * math.cos(sine / 32),4 + 1 * math.cos(sine / 45))*angles(math.rad(90 - 2 * math.cos(sine / 32)),0,math.rad(0 + 0 * math.cos(sine / 42))),.1)
+Neck.C0=clerp(Neck.C0,necko*angles(math.rad(-25 - 2 * math.cos(sine / 37)),math.rad(0 + 2 * math.cos(sine / 58)),math.rad(0 + 1 * math.cos(sine / 53))),.1)
+RW.C0=clerp(RW.C0,cf(1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(0 + 6 * math.cos(sine / 72)),math.rad(0 - 2 * math.cos(sine / 58)),math.rad((30-torvel) + 4 * math.cos(sine / 45))),.1)
+LW.C0=clerp(LW.C0,cf(-1.5,0.5 + 0.025 * math.cos(sine / 45),0)*angles(math.rad(0 - 7 * math.cos(sine / 66)),math.rad(0 - 3 * math.cos(sine / 59)),math.rad((-30+torvel) - 4 * math.cos(sine / 45))),.1)
+end
+elseif torvel>22 and hitfloor~=nil and Hum.WalkSpeed > 16  and attackanim == false then
+Anim="Run"
+local Alpha = .1
+TweenAnimate(RootJoint,{C0=RootCF*cf(0 - 0.15 * math.cos(sine / 47),0,HoverHight + 1 * math.cos(sine / 45))*angles(math.rad(55*Vec.Z),math.rad(-16*Vec.X - root.RotVelocity.Y),math.rad(2*Vec.X - root.RotVelocity.Y *4.5 + 3 * math.cos(sine / 47)))},Alpha,'Linear','Out',0,false,0)
+TweenAnimate(LH,{C0=cf(-1,-1,0)*angles(math.rad(-20 - 8 * math.sin(sine/37)*Vec.Z),math.rad(0),math.rad(0))*angles(math.rad(0 - 4 * math.cos(sine/46)*Vec.Z),math.rad(-90),math.rad(6*Vec.X))},Alpha,'Linear','Out',0,false,0)
+TweenAnimate(RH,{C0=cf(1,-0.3,-0.7)*angles(math.rad(-20 - 7 * math.cos(sine/46)*Vec.Z),math.rad(0),math.rad(0))*angles(math.rad(0),math.rad(90),math.rad(5*Vec.X))},Alpha,'Linear','Out',0,false,0)
+TweenAnimate(LW,{C0=cf(-1.5,0.7,0.1)*angles(math.rad(-16.1*Vec.Z),math.rad(8.5),math.rad(-23.5- 5 * math.cos(sine/42)))},Alpha,'Linear','Out',0,false,0)
+TweenAnimate(RW,{C0=cf(1.5,0.7,0)*angles(math.rad(-16.1*Vec.Z),math.rad(-11.1),math.rad(17.2- 6 * math.cos(sine/45)))},Alpha,'Linear','Out',0,false,0)
+TweenAnimate(Neck,{C0 =necko*cf(0,0,0)*angles(math.rad(-55*Vec.Z),math.rad(5*Vec.X),math.rad(2*Vec.X))},Alpha,'Linear','Out',0,false,0)
+end
+end)
+end)
