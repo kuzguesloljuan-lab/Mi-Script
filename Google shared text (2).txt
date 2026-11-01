@@ -1,0 +1,338 @@
+--// Script Local Completo: AK-47 Posicionada al Estilo de la Imagen de Referencia
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local Player = Players.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+local Humanoid = Character:WaitForChild("Humanoid")
+local RootPart = Character:WaitForChild("HumanoidRootPart")
+local Torso = Character:FindFirstChild("Torso") or Character:WaitForChild("UpperTorso")
+local Head = Character:WaitForChild("Head")
+local RightArm = Character:FindFirstChild("Right Arm") or Character:WaitForChild("RightHand")
+local LeftArm = Character:FindFirstChild("Left Arm") or Character:WaitForChild("LeftHand")
+local RightLeg = Character:FindFirstChild("Right Leg") or Character:WaitForChild("RightLowerLeg")
+local LeftLeg = Character:FindFirstChild("Left Leg") or Character:WaitForChild("LeftLowerLeg")
+local Mouse = Player:GetMouse()
+
+--// Joints de Animación
+local RootJoint = RootPart:FindFirstChild("RootJoint")
+local Neck = Torso:FindFirstChild("Neck")
+local RightShoulder = Torso:FindFirstChild("Right Shoulder")
+local LeftShoulder = Torso:FindFirstChild("Left Shoulder")
+local RightHip = Torso:FindFirstChild("Right Hip")
+local LeftHip = Torso:FindFirstChild("Left Hip")
+
+local IT = Instance.new
+local CF = CFrame.new
+local VT = Vector3.new
+local RAD = math.rad
+local ANGLES = CFrame.Angles
+local SIN = math.sin
+local COS = math.cos
+local C3 = Color3.new
+local MRANDOM = math.random
+
+local Animation_Speed = 3
+local Speed = 16
+local SINE = 0
+local ATTACK = false
+local Rooted = false
+local KEYHOLD = false
+local Player_Size = 1
+
+local ROOTC0 = CF(0, 0, 0) * ANGLES(RAD(-90), RAD(0), RAD(180))
+local NECKC0 = CF(0, 1, 0) * ANGLES(RAD(-90), RAD(0), RAD(180))
+local RIGHTSHOULDERC0 = CF(-0.5, 0, 0) * ANGLES(RAD(0), RAD(90), RAD(0))
+local LEFTSHOULDERC0 = CF(0.5, 0, 0) * ANGLES(RAD(0), RAD(-90), RAD(0))
+
+function Clerp(a, b, t)
+	return a:lerp(b, t)
+end
+
+function Swait(number)
+	if number == 0 or number == nil then
+		RunService.Heartbeat:Wait()
+	else
+		for i = 1, number do
+			RunService.Heartbeat:Wait()
+		end
+	end
+end
+
+--// --- MÚSICA DE FONDO ---
+local MusicSound = Instance.new("Sound", Torso)
+MusicSound.Name = "BackgroundMusic"
+MusicSound.SoundId = "rbxassetid://77846869925885"
+MusicSound.Volume = 5
+MusicSound.PlaybackSpeed = 1
+MusicSound.Looped = true
+MusicSound:Play()
+
+--// Cartel Flotante "A D D I C T"
+local NAMEBILL = Instance.new("BillboardGui", Character)
+NAMEBILL.AlwaysOnTop = true
+NAMEBILL.Size = UDim2.new(7, 35, 3, 15)
+NAMEBILL.StudsOffset = Vector3.new(0, 2, 0)
+NAMEBILL.Adornee = Head
+
+local NAMEMODE = Instance.new("TextLabel", NAMEBILL)
+NAMEMODE.BackgroundTransparency = 1
+NAMEMODE.Size = UDim2.new(1, 0, 0.5, 0)
+NAMEMODE.Text = "A D D I C T"
+NAMEMODE.Font = Enum.Font.Antique
+NAMEMODE.TextSize = 30
+NAMEMODE.TextColor3 = Color3.fromRGB(255, 0, 0)
+NAMEMODE.TextStrokeTransparency = 0
+
+--// --- CUERNOS MÚLTIPLES CON DEGRADADO ---
+for p = 1, 2 do
+	local lastL = Head
+	local lastR = Head
+	for i = 1, 20 do
+		local mathSize = 1 - (i / 30)
+		
+		local hornL = IT("Part", Character)
+		hornL.Size = VT(0.25 * mathSize, 0.25, 0.25 * mathSize)
+		hornL.Color = C3((i * 11 - 3) / 255, 0, 0)
+		hornL.Material = Enum.Material.Neon
+		hornL.CanCollide = false
+		hornL:BreakJoints()
+		
+		local wL = IT("Weld", lastL)
+		wL.Part0 = lastL
+		wL.Part1 = hornL
+		if lastL == Head then
+			wL.C0 = CF(0.3, 0.7, -0.35) * ANGLES(RAD(-55), RAD(15), RAD(-15))
+		else
+			wL.C0 = CF(0, hornL.Size.Y / 1.8, 0) * ANGLES(RAD(6), RAD(-0.3), RAD(0))
+		end
+		lastL = hornL
+		
+		local hornR = IT("Part", Character)
+		hornR.Size = VT(0.25 * mathSize, 0.25, 0.25 * mathSize)
+		hornR.Color = C3((i * 11 - 3) / 255, 0, 0)
+		hornR.Material = Enum.Material.Neon
+		hornR.CanCollide = false
+		hornR:BreakJoints()
+		
+		local wR = IT("Weld", lastR)
+		wR.Part0 = lastR
+		wR.Part1 = hornR
+		if lastR == Head then
+			wR.C0 = CF(-0.3, 0.7, -0.35) * ANGLES(RAD(-55), RAD(-15), RAD(15))
+		else
+			wR.C0 = CF(0, hornR.Size.Y / 1.8, 0) * ANGLES(RAD(6), RAD(0.3), RAD(0))
+		end
+		lastR = hornR
+	end
+end
+
+--// --- COLA PROCEDURAL ---
+local TAIL = {}
+local lastTail = Torso
+for i = 1, 45 do
+	local mathSize = 1 - (i / 60)
+	local tailPart = IT("Part", Character)
+	tailPart.Size = VT(0.25 * mathSize, 0.25, 0.25 * mathSize)
+	tailPart.Color = C3((i * 5 - 3) / 255, 0, 0)
+	tailPart.Material = Enum.Material.Neon
+	tailPart.CanCollide = false
+	tailPart:BreakJoints()
+	
+	local w = IT("Weld", lastTail)
+	w.Part0 = lastTail
+	w.Part1 = tailPart
+	if lastTail == Torso then
+		w.C0 = CF(0, -0.75, 0.5) * ANGLES(RAD(90), RAD(0), RAD(0))
+	else
+		w.C0 = CF(0, tailPart.Size.Y / 2, 0) * ANGLES(RAD(-1.2), RAD(0), RAD(0))
+	end
+	lastTail = tailPart
+	table.insert(TAIL, w)
+end
+
+--// --- CARGA Y POSICIONAMIENTO DE LA AK-47 ---
+local AKModel
+pcall(function()
+	local objects = game:GetObjects("rbxassetid://")
+	if objects and objects[1] then
+		AKModel = objects[1]
+	end
+end)
+
+if not AKModel then
+	AKModel = Instance.new("Model")
+	local fallbackPart = IT("Part", AKModel)
+	fallbackPart.Size = VT(0.5, 0.5, 2)
+	fallbackPart.BrickColor = BrickColor.new("Really black")
+end
+
+AKModel.Parent = Character
+
+local PrimaryPart = AKModel:FindFirstChildWhichIsA("BasePart", true)
+local AKHole = AKModel:FindFirstChild("Hole", true) or PrimaryPart
+
+if PrimaryPart then
+	for _, part in pairs(AKModel:GetDescendants()) do
+		if part:IsA("BasePart") and part ~= PrimaryPart then
+			local weld = IT("WeldConstraint")
+			weld.Part0 = PrimaryPart
+			weld.Part1 = part
+			weld.Parent = PrimaryPart
+		end
+	end
+	
+	for _, part in pairs(AKModel:GetDescendants()) do
+		if part:IsA("BasePart") then
+			part.Anchored = false
+			part.CanCollide = false
+		end
+	end
+	
+	-- WELD DE REFERENCIA: Coloca el rifle al costado del brazo tal como en la imagen
+	local handWeld = IT("Weld", RightArm)
+	handWeld.Part0 = RightArm
+	handWeld.Part1 = PrimaryPart
+	handWeld.C0 = CF(0, -1, 0) * ANGLES(RAD(-90), RAD(0), RAD(0))
+end
+
+--// EFECTOS Y DISPARO
+function SpawnTrail(FROM, TO)
+	local TRAIL = IT("Part", Character)
+	TRAIL.Material = Enum.Material.Neon
+	TRAIL.Transparency = 0.2
+	TRAIL.BrickColor = BrickColor.new("Really red")
+	TRAIL.CanCollide = false
+	TRAIL.Anchored = true
+	
+	local DIST = (FROM - TO).Magnitude
+	TRAIL.Size = VT(0.2, DIST, 0.2)
+	TRAIL.CFrame = CF(FROM, TO) * CF(0, 0, -DIST/2) * ANGLES(RAD(90), RAD(0), RAD(0))
+	
+	coroutine.wrap(function()
+		for i = 1, 5 do
+			Swait()
+			TRAIL.Transparency = TRAIL.Transparency + 0.16
+		end
+		TRAIL:Destroy()
+	end)()
+end
+
+function turnto(position)
+	if RootPart then
+		RootPart.CFrame = CFrame.new(RootPart.Position, VT(position.X, RootPart.Position.Y, position.Z))
+	end
+end
+
+function AKShot()
+	if not AKHole then return end
+	ATTACK = true
+	Rooted = false
+	
+	for i = 0, 0.4, 0.1 / Animation_Speed do
+		Swait()
+		turnto(Mouse.Hit.p)
+		RootJoint.C0 = Clerp(RootJoint.C0, ROOTC0 * CF(0, 0, 0) * ANGLES(RAD(0), RAD(0), RAD(45)), 0.5 / Animation_Speed)
+		Neck.C0 = Clerp(Neck.C0, NECKC0 * CF(0, 0, 0) * ANGLES(RAD(0), RAD(0), RAD(-45)), 0.5 / Animation_Speed)
+		RightShoulder.C0 = Clerp(RightShoulder.C0, CF(1.5, 0.5, 0) * ANGLES(RAD(90), RAD(0), RAD(45)) * RIGHTSHOULDERC0, 0.5 / Animation_Speed)
+		LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.5, 0.5, 0) * ANGLES(RAD(0), RAD(20), RAD(-20)) * LEFTSHOULDERC0, 0.5 / Animation_Speed)
+		RightHip.C0 = Clerp(RightHip.C0, CF(1, -1, 0) * ANGLES(RAD(0), RAD(75), RAD(0)) * ANGLES(RAD(-8), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+		LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1, 0) * ANGLES(RAD(0), RAD(-50), RAD(0)) * ANGLES(RAD(-8), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+	end
+	
+	repeat
+		for i = 0, 0.2, 0.3 / Animation_Speed do
+			Swait()
+			turnto(Mouse.Hit.p)
+			RootJoint.C0 = Clerp(RootJoint.C0, ROOTC0 * CF(0, 0, 0) * ANGLES(RAD(0), RAD(0), RAD(45)), 0.5 / Animation_Speed)
+			Neck.C0 = Clerp(Neck.C0, NECKC0 * CF(0, 0, 0) * ANGLES(RAD(0), RAD(0), RAD(-45)), 0.5 / Animation_Speed)
+			RightShoulder.C0 = Clerp(RightShoulder.C0, CF(1.5, 0.5, 0) * ANGLES(RAD(90), RAD(0), RAD(45)) * RIGHTSHOULDERC0, 0.5 / Animation_Speed)
+			LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.5, 0.5, 0) * ANGLES(RAD(0), RAD(20), RAD(-20)) * LEFTSHOULDERC0, 0.5 / Animation_Speed)
+		end
+		
+		local POS = Mouse.Hit.p
+		SpawnTrail(AKHole.Position, POS)
+		
+		for i = 0, 0.3, 0.3 / Animation_Speed do
+			Swait()
+			RightShoulder.C0 = Clerp(RightShoulder.C0, CF(0.5, 0.5, 2) * ANGLES(RAD(110), RAD(0), RAD(45)) * RIGHTSHOULDERC0, 0.5 / Animation_Speed)
+		end
+	until KEYHOLD == false
+	
+	ATTACK = false
+	Rooted = false
+end
+
+Mouse.KeyDown:Connect(function(Key)
+	KEYHOLD = true
+	if Key == "z" and not ATTACK then
+		AKShot()
+	end
+end)
+
+Mouse.KeyUp:Connect(function(Key)
+	KEYHOLD = false
+end)
+
+--// BUCLE PRINCIPAL
+RunService.Heartbeat:Connect(function()
+	if not Character or not Humanoid or Humanoid.Health <= 0 then return end
+	
+	local Animate = Character:FindFirstChild("Animate")
+	if Animate then
+		Animate.Disabled = true
+		Animate:Destroy()
+	end
+	for _, track in pairs(Humanoid:GetPlayingAnimationTracks()) do
+		track:Stop()
+	end
+
+	SINE = SINE + (2 / Animation_Speed)
+	local TORSOVELOCITY = (RootPart.Velocity * VT(1, 0, 1)).magnitude
+	local HITFLOOR = workspace:FindPartOnRay(Ray.new(RootPart.Position, VT(0, -4, 0)), Character)
+
+	NAMEMODE.Rotation = 0 + 5 * math.cos(SINE / 32)
+	if MusicSound and MusicSound.IsPlaying then
+		NAMEMODE.TextColor3 = Color3.new(MusicSound.PlaybackLoudness / 500, 0, 0)
+	end
+
+	for T = 1, #TAIL do
+		if TAIL[T] ~= nil then
+			TAIL[T].C1 = Clerp(TAIL[T].C1, CF(0, 0, 0) * ANGLES(RAD(0), RAD(0), RAD(3.5 * SIN(SINE / 12))), 1 / Animation_Speed)
+		end
+	end
+
+	local WALKSPEEDVALUE = 6 / (Humanoid.WalkSpeed / 16)
+
+	if TORSOVELOCITY > 1 and HITFLOOR ~= nil then
+		RootJoint.C1 = Clerp(RootJoint.C1, ROOTC0 * CF(0, 0, -0.15 * COS(SINE / (WALKSPEEDVALUE / 2)) * Player_Size) * ANGLES(RAD(0), RAD(0) - RootPart.RotVelocity.Y / 75, RAD(0)), 2 * (Humanoid.WalkSpeed / 16) / Animation_Speed)
+		Neck.C1 = Clerp(Neck.C1, CF(0 * Player_Size, -0.5 * Player_Size, 0 * Player_Size) * ANGLES(RAD(-90), RAD(0), RAD(180)) * ANGLES(RAD(2.5 * SIN(SINE / (WALKSPEEDVALUE / 2))), RAD(0), RAD(0) - Head.RotVelocity.Y / 30), 0.2 * (Humanoid.WalkSpeed / 16) / Animation_Speed)
+		RightHip.C1 = Clerp(RightHip.C1, CF(0.5 * Player_Size, 0.875 * Player_Size - 0.125 * SIN(SINE / WALKSPEEDVALUE) * Player_Size, -0.125 * COS(SINE / WALKSPEEDVALUE) * Player_Size) * ANGLES(RAD(0), RAD(90), RAD(0)) * ANGLES(RAD(0) - RightLeg.RotVelocity.Y / 75, RAD(0), RAD(25 * COS(SINE / WALKSPEEDVALUE))), 0.2 * (Humanoid.WalkSpeed / 16) / Animation_Speed)
+		LeftHip.C1 = Clerp(LeftHip.C1, CF(-0.5 * Player_Size, 0.875 * Player_Size + 0.125 * SIN(SINE / WALKSPEEDVALUE) * Player_Size, 0.125 * COS(SINE / WALKSPEEDVALUE) * Player_Size) * ANGLES(RAD(0), RAD(-90), RAD(0)) * ANGLES(RAD(0) + LeftLeg.RotVelocity.Y / 75, RAD(0), RAD(25 * COS(SINE / WALKSPEEDVALUE))), 0.2 * (Humanoid.WalkSpeed / 16) / Animation_Speed)
+	else
+		RootJoint.C1 = Clerp(RootJoint.C1, ROOTC0 * CF(0, 0, 0) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.2 / Animation_Speed)
+		Neck.C1 = Clerp(Neck.C1, CF(0, -0.5, 0) * ANGLES(RAD(-90), RAD(0), RAD(180)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.2 / Animation_Speed)
+		RightHip.C1 = Clerp(RightHip.C1, CF(0.5, 1, 0) * ANGLES(RAD(0), RAD(90), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.2 / Animation_Speed)
+		LeftHip.C1 = Clerp(LeftHip.C1, CF(-0.5, 1, 0) * ANGLES(RAD(0), RAD(-90), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(0)), 0.2 / Animation_Speed)
+	end
+
+	if not ATTACK then
+		if TORSOVELOCITY < 1 and HITFLOOR then
+			Neck.C0 = Clerp(Neck.C0, NECKC0 * CF(0, 0, 0) * ANGLES(RAD(2 + 6.0 * SIN(SINE / 15)), RAD(0), RAD(-25)), 3 / Animation_Speed)
+			RootJoint.C0 = Clerp(RootJoint.C0, ROOTC0 * CF(0, 0 - 0.1 * COS(SINE / 30), 0 + 0.1 * COS(SINE / 15)) * ANGLES(RAD(0 + 5 * COS(SINE / 30)), RAD(0), RAD(25)), 1 / Animation_Speed)
+			RightShoulder.C0 = Clerp(RightShoulder.C0, CF(1.5, 0.5, 0) * ANGLES(RAD(0 + 6.0 * COS(SINE / 30)), RAD(0), RAD(12)) * RIGHTSHOULDERC0, 0.15 / Animation_Speed)
+			LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.5, 0.5, 0) * ANGLES(RAD(0 + 6.0 * COS(SINE / 30)), RAD(0), RAD(-12)) * LEFTSHOULDERC0, 0.15 / Animation_Speed)
+			RightHip.C0 = Clerp(RightHip.C0, CF(1, -1 - 0.1 * COS(SINE / 15), -0.01) * ANGLES(RAD(0), RAD(75), RAD(0)) * ANGLES(RAD(-6 - 2.5 * COS(SINE / 30)), RAD(0), RAD(0 + 5 * COS(SINE / 30))), 1 / Animation_Speed)
+			LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1 - 0.1 * COS(SINE / 15), -0.01) * ANGLES(RAD(0), RAD(-75), RAD(0)) * ANGLES(RAD(-6 + 2.5 * COS(SINE / 30)), RAD(0), RAD(0 - 5 * COS(SINE / 30))), 1 / Animation_Speed)
+		elseif TORSOVELOCITY >= 1 and HITFLOOR then
+			RootJoint.C0 = Clerp(RootJoint.C0, ROOTC0 * CF(0, 0, -0.1) * ANGLES(RAD(5), RAD(0), RAD(0)), 0.15 / Animation_Speed)
+			Neck.C0 = Clerp(Neck.C0, NECKC0 * CF(0, 0, 0) * ANGLES(RAD(MRANDOM(-15, 25) - 2.5 * SIN(SINE / 12)), RAD(MRANDOM(-15, 25)), RAD(MRANDOM(-15, 25))), 1 / Animation_Speed)
+			RightShoulder.C0 = Clerp(RightShoulder.C0, CF(1.5, 0.5, 0) * ANGLES(RAD(35 * COS(SINE / WALKSPEEDVALUE)), RAD(0), RAD(5)) * RIGHTSHOULDERC0, 0.35 / Animation_Speed)
+			LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.5, 0.5, 0) * ANGLES(RAD(-35 * COS(SINE / WALKSPEEDVALUE)), RAD(0), RAD(-5)) * LEFTSHOULDERC0, 0.35 / Animation_Speed)
+			RightHip.C0 = Clerp(RightHip.C0, CF(1, -1 - 0.15 * COS(SINE / WALKSPEEDVALUE * 2), -0.2 + 0.2 * COS(SINE / WALKSPEEDVALUE)) * ANGLES(RAD(0), RAD(90), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(-15)), 2 / Animation_Speed)
+			LeftHip.C0 = Clerp(LeftHip.C0, CF(-1, -1 - 0.15 * COS(SINE / WALKSPEEDVALUE * 2), -0.2 + -0.2 * COS(SINE / WALKSPEEDVALUE)) * ANGLES(RAD(0), RAD(-90), RAD(0)) * ANGLES(RAD(0), RAD(0), RAD(15)), 2 / Animation_Speed)
+		end
+	end
+
+	Humanoid.WalkSpeed = Speed
+end)
