@@ -1,0 +1,1162 @@
+-- ============================================================================
+-- GATE HUB X V1.2 // VERSIÓN FINAL CON AUDIO PERSONALIZADO EN BOTONES
+-- ============================================================================
+
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local Lighting = game:GetService("Lighting")
+local Workspace = game:GetService("Workspace")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local COLOR_NARANJA = Color3.fromRGB(230, 130, 40)
+local COLOR_FONDO_OSCURO = Color3.fromRGB(18, 18, 22)
+local COLOR_TARJETA = Color3.fromRGB(24, 24, 28)
+
+-- ============================================================================
+-- 🔊 FUNCIÓN DE REPRODUCCIÓN DE AUDIO (CON TU ID DE BOTÓN 18441519088)
+-- ============================================================================
+local function reproducirSonidoBoton()
+	task.spawn(function()
+		pcall(function()
+			local sound = Instance.new("Sound")
+			sound.SoundId = "rbxassetid://18441519088"
+			sound.Volume = 0.6
+			sound.Parent = Workspace
+			sound:Play()
+			sound.Ended:Connect(function()
+				sound:Destroy()
+			end)
+			task.delay(3, function()
+				if sound and sound.Parent then
+					sound:Destroy()
+				end
+			end)
+		end)
+	end)
+end
+
+-- Sonido de bienvenida al cargar el Hub
+reproducirSonidoBoton()
+
+-- ============================================================================
+-- 📁 TUS SCRIPTS
+-- ============================================================================
+local misArchivosDeScripts = {
+	{
+		nombreArchivo = "Nullwre hub v3",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			loadstring(game:HttpGet("https://rawscripts.net/raw/Just-a-baseplate.-Nullwre-hub-V3-16778"))()
+		end
+	},
+	{
+		nombreArchivo = "UTG gui Script",
+		descripcion = "fe universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-UTG-mobile-227665"))()
+		end
+	},
+	{
+		nombreArchivo = "Uhhhhhh reanimate hub",
+		descripcion = "fe universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/mxsynry/Uhhhhhh/main/source/reanim.lua"))()
+		end
+	},
+	{
+		nombreArchivo = "Gelatekhub",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Gelatek-hub-26438"))()
+		end
+	},
+	{
+		nombreArchivo = "Bytex hub",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/matheusmunay2-lang/Testhun/refs/heads/main/Hubtest"))()
+		end
+	},
+	{
+		nombreArchivo = "FE 1x1x1x1 Forsaken",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/MelonsStuff/FEVerse/refs/heads/main/OpenSource/1x1x1x1.luau"))()
+		end
+	},
+	{
+		nombreArchivo = "bsstHUB",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://gist.githubusercontent.com/pepfre12/31f7b7f5eb373d072ea1fd54f5933e9e/raw/f2ee1583de69bbac978c911f20bb81492439d77c/bsstHUB"))()
+		end
+	},
+	{
+		nombreArchivo = "Laststar FE R6",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/MANASMCPE/Laststar/refs/heads/main/LastStar.txt"))()
+		end
+	},
+	{
+		nombreArchivo = "R6 Star lol 👀",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://pastefy.app/FebcDLCB/raw?t=" .. tick()))()
+		end
+	},
+	{
+		nombreArchivo = "[FE] COMMANDER V2 NEED",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mreyesxd/refs/heads/main/%5BFE%5D%20COMMANDER%20V2%20NEED"))()
+		end
+	},
+	{
+		nombreArchivo = "Pursuer 🦴",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/franciscomilguel1802-ui/Pursuer-limb/refs/heads/main/Limb"))()
+		end
+	},
+	{
+		nombreArchivo = "Dummy estudio",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			local args = {"cmd", '-gh 2309346267 3443038622 3656493304 4819740796 9867487176 9867481700 10775031176'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(3)  
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/Dummy%20estudio"))()
+		end
+	},
+	{
+		nombreArchivo = "Maddox LC",
+		descripcion = "Script UP Just a Baseplate / Warning: GelatekReanimate executes first",
+		codigo = function()
+			local args = {"cmd", '-gh 117311153426168,116940095199813,5593848751,5505301521,14763456943'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(3)  
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/matheusmunay2-lang/Maddox-Lightning-Cannon/refs/heads/main/Maddox%20LC%20(%20Updated%20)(1)(Copy)"))()
+		end
+	},		
+	{
+		nombreArchivo = "lightning cannon",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			local args = {"cmd", '-gh 4623059912'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(3)  
+			loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-lightning-cannon-1745"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Soldier AI NPC ",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			local args = {"cmd", '-gh 617605556 6470135113 48474313 4391384843 48474294 62724852 451220849 63690008 62234425'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(5)  
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FE%20Soldier%20AI"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Samurai",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			local args = {"cmd", '-gh 5870508493'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(5)  
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FE%20Samurai"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Nullion",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			local args = {"cmd", '-gh 4391384843 48474313 48474294 62724852 451220849 63690008  62234425'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(5)  
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FE%20Nullion"))()
+		end
+	},
+	{
+		nombreArchivo = "horizon LC v1",
+		descripcion = "Fe universal",
+		codigo = function()
+			local args = {"cmd", '-gh 3033910400 3409612660 9867481700 9867487176 4819740796'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(5)  
+			loadstring(game:HttpGet("https://gist.githubusercontent.com/MelonsStuff/d022e498559cc0568d71487241159531/raw/c4e3d0ba4c958b136693c31a73adabef9ac7858c/LightningCannon.txt"))()
+		end
+	},
+	{
+		nombreArchivo = "fe rainbow king",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/fe%20rainbow%20king"))()
+		end
+	},
+	{
+		nombreArchivo = "lightning cannon Fe local",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/Lightning%20cannon%20use%20reanim%20(1)"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Roblox Hammer",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			local args = {"cmd", '-gh 48474313,4739580137'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(5)  
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/Roblox%20Hammer"))()
+		end
+	},
+	{
+		nombreArchivo = "FE rainbow red king",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			local args = {"cmd", '-gh 451220849, 62724852, 48474294, 2309346267, 253151806, 48474313, 10775031176, 9350274205'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(5)  
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/V7R0KEvZ%20(1).txt"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Aureate",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			local args = {"cmd", '-gh 4794315940'}
+			game:GetService("ReplicatedStorage"):WaitForChild("01_server"):FireServer(unpack(args))
+			task.wait(5)  
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FeAureateScript"))()
+		end
+	},
+	{
+		nombreArchivo = "FE DaWarden",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FEDeadEyeByMelonNetlessNeeded"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Dead Eye",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FEDaWardenByMelonNetlessNeeded"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Demon",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FEDemonMelonNetlessNeeded"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Galacta",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FEGalactaByMelonNetlessNeeded"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Star Glitcher",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FEScriptLea"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Star Glitcher 2",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FEScriptLeaklol"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Star Glitcher 3",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/message%20(27).txt"))()
+		end
+	},
+	{
+		nombreArchivo = "FE ArmodoneGlitcher",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/ArmodoneGlitcher"))()
+		end
+	},
+	{
+		nombreArchivo = "FE HexGlitcher local",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/HexG"))()
+		end
+	},
+	{
+		nombreArchivo = "UTG gui",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukezz/UTG-V4/main/Script.lua"))()
+		end
+	},
+	{
+		nombreArchivo = "Star Glitcher 4",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/message%20(6).txt"))()
+		end
+	},
+	{
+		nombreArchivo = "AchromoonicV7",
+		descripcion = "Script UP Just Grass",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/AchromoonicV7Script"))()
+		end
+	},
+	{
+		nombreArchivo = "Achromatic Glitcher",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/Achromatic%20Glitcher"))()
+		end
+	},
+	{
+		nombreArchivo = "AchromaticFedora Glitcher",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/FE%20Hat%20AchromaticFedora"))()
+		end
+	},
+	{
+		nombreArchivo = "[FE] Hotline",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://pastebin.com/raw/YaB2h8BH"))()
+		end
+	},
+	{
+		nombreArchivo = "Syntax hub",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/SyntaxReborn.txt"))()
+		end
+	},
+	{
+		nombreArchivo = "Ruin Emphasis",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://gist.githubusercontent.com/pepfre12/c74df8cf218c3116f9e2e3dccc06b860/raw/45f28675339e7a757cbb6e4d91bb51b3468c29c5/RuinEmphasisFE",true))()
+		end
+	},
+	{
+		nombreArchivo = "Star Glitcher 5",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/pepfre12/leaks/refs/heads/main/FEScriptLeak3"))()
+		end
+	},
+	{
+				nombreArchivo = "Gentleman",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/Gentleman_KillBot_Converted_and_Not_FE__FIXED_.txt"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Theos Dancezzzz gui Yuni",
+		descripcion = "universal fe Script Made by Yuni :3",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/laiciaffo-Suirixa/Yunis-Scritps/refs/heads/main/Random/Stuff/Scripts/Yuni's%20Dances.lua"))()
+		end
+	},
+	{
+			nombreArchivo = "artfully show",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-an-artfully-marvelous-show-205617"))()
+		end
+	},
+	{
+			nombreArchivo = "Star Glitcher",
+		descripcion = "FE universal Génesis Script",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Star%20Glitcher"))()
+		end
+	},
+	{
+			nombreArchivo = "FE Dual Solaris v2",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Dual-Solaris-v2-by-White-Hat-244572"))()
+		end
+	},
+	{
+			nombreArchivo = "Guest666",
+		descripcion = "FE universal Made by melon",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/MelonsStuff/FEVerse/refs/heads/main/PublicTests/Guest666.luau"))()
+		end
+	},
+	{
+					nombreArchivo = "maddoxlc local",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://github.com/normalguy-v1/Lightning_Cannons/raw/refs/heads/main/lightning-cannons/Maddox/maddoxlc_FIX.lua"))()
+		end
+	},
+	{
+		nombreArchivo = "hlcv1 local",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://github.com/normalguy-v1/Lightning_Cannons/raw/refs/heads/main/lightning-cannons/horizon-lightning-cannon/hlcv1.lua"))()
+		end
+	},
+	{
+		nombreArchivo = "lcv1 local",
+		descripcion = "FE universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://github.com/normalguy-v1/Lightning_Cannons/raw/refs/heads/main/lightning-cannons/lcv1_lc_model.lua"))()
+		end
+	},
+	{
+			nombreArchivo = "TakeOver hub",
+		descripcion = "FE universal made by Tsuyiko",
+		codigo = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/kuzguesloljuan-lab/Mi-Script/refs/heads/main/%5BFREE%5D%20TakeOver%20FEVERSE%20v1.%20hub"))()
+		end
+	},
+	{
+		nombreArchivo = "FE Traveller v2",
+		descripcion = "Script UP Just a Baseplate",
+		codigo = function() 
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/matheusmunay2-lang/Traveller-v2-leak/refs/heads/main/Traveller%20V2.txt"))()
+		end
+	},
+	{
+		nombreArchivo = "GIX HUB",
+		descripcion = "fe universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://rawscripts.net/raw/UP-Just-a-baseplate.-GIX-HUB-BY-SCRIPTERBLABLA-228976"))()
+		end
+	},
+	{
+		nombreArchivo = "Domain Hub",
+		descripcion = "Fe universal",
+		codigo = function()
+			loadstring(game:HttpGet("https://rawscripts.net/raw/Domain-Hub-V2-Open-Sourced_355"))()
+		end
+	}
+}
+
+-- ============================================================================
+-- INTERFAZ GRÁFICA PRINCIPAL
+-- ============================================================================
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "GateHubPanel"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+-- ============================================================================
+-- 🔘 BOTÓN FLOTANTE "MENU"
+-- ============================================================================
+local toggleHubBtn = Instance.new("TextButton")
+toggleHubBtn.Size = UDim2.new(0, 56, 0, 34)
+toggleHubBtn.Position = UDim2.new(1, -74, 0.2, 0)
+toggleHubBtn.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+toggleHubBtn.BorderSizePixel = 0
+toggleHubBtn.Text = "MENU"
+toggleHubBtn.TextColor3 = Color3.fromRGB(230, 230, 245)
+toggleHubBtn.Font = Enum.Font.GothamBold
+toggleHubBtn.TextSize = 11
+toggleHubBtn.Active = true
+toggleHubBtn.Draggable = false
+toggleHubBtn.Parent = screenGui
+
+local toggleHubCorner = Instance.new("UICorner")
+toggleHubCorner.CornerRadius = UDim.new(0, 8)
+toggleHubCorner.Parent = toggleHubBtn
+
+local toggleHubStroke = Instance.new("UIStroke")
+toggleHubStroke.Color = COLOR_NARANJA
+toggleHubStroke.Thickness = 1.5
+toggleHubStroke.Transparency = 0.3
+toggleHubStroke.Parent = toggleHubBtn
+
+local dragging, dragStart, startPos, moved = false, nil, nil, false
+
+toggleHubBtn.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		moved = false
+		dragStart = input.Position
+		startPos = toggleHubBtn.Position
+		
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+	if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+		local delta = input.Position - dragStart
+		if delta.Magnitude > 6 then
+			moved = true
+		end
+		toggleHubBtn.Position = UDim2.new(
+			startPos.X.Scale, 
+			startPos.X.Offset + delta.X, 
+			startPos.Y.Scale, 
+			startPos.Y.Offset + delta.Y
+		)
+	end
+end)
+
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 0, 0, 0)
+mainFrame.Position = UDim2.new(0.5, -240, 0.5, -150)
+mainFrame.BackgroundColor3 = COLOR_FONDO_OSCURO
+mainFrame.BorderSizePixel = 0
+mainFrame.Active = true
+mainFrame.Draggable = true
+mainFrame.ClipsDescendants = true
+mainFrame.Parent = screenGui
+
+TweenService:Create(mainFrame, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+	Size = UDim2.new(0, 480, 0, 300)
+}):Play()
+
+local function cerrarHubAnimado()
+	reproducirSonidoBoton()
+	local tw = TweenService:Create(mainFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+		Size = UDim2.new(0, 0, 0, 0)
+	})
+	tw:Play()
+	tw.Completed:Connect(function()
+		screenGui:Destroy()
+	end)
+end
+
+local hubVisible = true
+
+toggleHubBtn.Activated:Connect(function()
+	if moved then return end
+	
+	hubVisible = not hubVisible
+	reproducirSonidoBoton()
+	
+	TweenService:Create(toggleHubBtn, TweenInfo.new(0.12, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+		Size = UDim2.new(0, 46, 0, 26)
+	}):Play()
+	task.delay(0.12, function()
+		if toggleHubBtn and toggleHubBtn.Parent then
+			TweenService:Create(toggleHubBtn, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+				Size = UDim2.new(0, 56, 0, 34)
+			}):Play()
+		end
+	end)
+	
+	if hubVisible then
+		mainFrame.Visible = true
+		TweenService:Create(mainFrame, TweenInfo.new(0.35, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.new(0, 480, 0, 300)}):Play()
+	else
+		local tw = TweenService:Create(mainFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 0)})
+		tw:Play()
+		tw.Completed:Connect(function()
+			if not hubVisible then mainFrame.Visible = false end
+		end)
+	end
+end)
+
+-- ============================================================================
+-- BARRA SUPERIOR
+-- ============================================================================
+local topBar = Instance.new("Frame")
+topBar.Size = UDim2.new(1, 0, 0, 32)
+topBar.BackgroundColor3 = Color3.fromRGB(25, 25, 31)
+topBar.BorderSizePixel = 0
+topBar.Parent = mainFrame
+
+local toggleSidebarBtn = Instance.new("TextButton")
+toggleSidebarBtn.Size = UDim2.new(0, 30, 0, 32)
+toggleSidebarBtn.Position = UDim2.new(0, 6, 0, 0)
+toggleSidebarBtn.BackgroundTransparency = 1
+toggleSidebarBtn.Text = "" 
+toggleSidebarBtn.Parent = topBar
+
+local linesHolder = Instance.new("Frame")
+linesHolder.Size = UDim2.new(1, 0, 1, 0)
+linesHolder.BackgroundTransparency = 1
+linesHolder.AnchorPoint = Vector2.new(0.5, 0.5)
+linesHolder.Position = UDim2.new(0.5, 0, 0.5, 0)
+linesHolder.Parent = toggleSidebarBtn
+
+local line1 = Instance.new("Frame")
+line1.Size = UDim2.new(0, 16, 0, 2)
+line1.Position = UDim2.new(0.5, -8, 0, 9)
+line1.BackgroundColor3 = Color3.fromRGB(210, 210, 225)
+line1.BorderSizePixel = 0
+line1.Parent = linesHolder
+
+local line2 = Instance.new("Frame")
+line2.Size = UDim2.new(0, 16, 0, 2)
+line2.Position = UDim2.new(0.5, -8, 0, 15)
+line2.BackgroundColor3 = Color3.fromRGB(210, 210, 225)
+line2.BorderSizePixel = 0
+line2.Parent = linesHolder
+
+local line3 = Instance.new("Frame")
+line3.Size = UDim2.new(0, 16, 0, 2)
+line3.Position = UDim2.new(0.5, -8, 0, 21)
+line3.BackgroundColor3 = Color3.fromRGB(210, 210, 225)
+line3.BorderSizePixel = 0
+line3.Parent = linesHolder
+
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0, 250, 1, 0)
+titleLabel.Position = UDim2.new(0, 40, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "Gate hub x V1.2"
+titleLabel.TextColor3 = Color3.fromRGB(220, 220, 235)
+titleLabel.Font = Enum.Font.GothamBold
+titleLabel.TextSize = 12
+titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+titleLabel.Parent = topBar
+
+local closeBtn = Instance.new("TextButton")
+closeBtn.Size = UDim2.new(0, 26, 0, 26)
+closeBtn.Position = UDim2.new(1, -30, 0.5, -13)
+closeBtn.BackgroundTransparency = 1
+closeBtn.Text = "×"
+closeBtn.TextColor3 = Color3.fromRGB(170, 170, 185)
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 18
+closeBtn.Parent = topBar
+
+closeBtn.Activated:Connect(function()
+	cerrarHubAnimado()
+end)
+
+-- ============================================================================
+-- MENÚ LATERAL IZQUIERDO Y ANIMACIÓN CLÁSICA
+-- ============================================================================
+local sidebar = Instance.new("Frame")
+sidebar.Size = UDim2.new(0, 0, 1, -32)
+sidebar.Position = UDim2.new(0, 0, 0, 32)
+sidebar.BackgroundColor3 = Color3.fromRGB(21, 21, 27)
+sidebar.BorderSizePixel = 0
+sidebar.ClipsDescendants = true
+sidebar.Parent = mainFrame
+
+local sidebarLayout = Instance.new("UIListLayout")
+sidebarLayout.SortOrder = Enum.SortOrder.LayoutOrder
+sidebarLayout.Padding = UDim.new(0, 3)
+sidebarLayout.Parent = sidebar
+
+local container = Instance.new("Frame")
+container.Size = UDim2.new(1, 0, 1, -32)
+container.Position = UDim2.new(0, 0, 0, 32)
+container.BackgroundTransparency = 1
+container.Parent = mainFrame
+
+local sidebarAbierto = false
+toggleSidebarBtn.Activated:Connect(function()
+	sidebarAbierto = not sidebarAbierto
+	reproducirSonidoBoton()
+	
+	if sidebarAbierto then
+		TweenService:Create(line1, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, -8, 0, 15), Rotation = 45}):Play()
+		TweenService:Create(line2, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 1}):Play()
+		TweenService:Create(line3, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, -8, 0, 15), Rotation = -45}):Play()
+	else
+		TweenService:Create(line1, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, -8, 0, 9), Rotation = 0}):Play()
+		TweenService:Create(line2, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Transparency = 0}):Play()
+		TweenService:Create(line3, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, -8, 0, 21), Rotation = 0}):Play()
+	end
+	
+	local objetivoAncho = sidebarAbierto and 115 or 0
+	local objetivoContenedorX = sidebarAbierto and 115 or 0
+	local objetivoContenedorAncho = sidebarAbierto and -115 or 0
+	
+	TweenService:Create(sidebar, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+		Size = UDim2.new(0, objetivoAncho, 1, -32)
+	}):Play()
+	TweenService:Create(container, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+		Position = UDim2.new(0, objetivoContenedorX, 0, 32),
+		Size = UDim2.new(1, objetivoContenedorAncho, 1, -32)
+	}):Play()
+end)
+
+local secciones = {}
+local lineasSeccion = {}
+local botonActualSeleccionado = nil
+
+local function crearSeccion(nombre)
+	local sec = Instance.new("ScrollingFrame")
+	sec.Name = nombre .. "Sec"
+	sec.Size = UDim2.new(1, 0, 1, 0)
+	sec.BackgroundTransparency = 1
+	sec.BorderSizePixel = 0
+	sec.Visible = false
+	sec.CanvasSize = UDim2.new(0, 0, 0, 0)
+	sec.AutomaticCanvasSize = Enum.AutomaticSize.Y
+	sec.ScrollBarThickness = 3
+	sec.Parent = container
+	
+	local layout = Instance.new("UIListLayout")
+	layout.SortOrder = Enum.SortOrder.LayoutOrder
+	layout.Padding = UDim.new(0, 8)
+	layout.Parent = sec
+	
+	local padding = Instance.new("UIPadding")
+	padding.PaddingTop = UDim.new(0, 16)
+	padding.PaddingLeft = UDim.new(0, 16)
+	padding.PaddingRight = UDim.new(0, 16)
+	padding.Parent = sec
+	
+	local headerContainer = Instance.new("Frame")
+	headerContainer.Size = UDim2.new(1, 0, 0, 42)
+	headerContainer.BackgroundTransparency = 1
+	headerContainer.LayoutOrder = -1
+	headerContainer.Parent = sec
+	
+	local headerTitle = Instance.new("TextLabel")
+	headerTitle.Size = UDim2.new(1, nombre == "Home" and -28 or 0, 0, 20)
+	headerTitle.Position = UDim2.new(0, nombre == "Home" and 28 or 0, 0, 0)
+	headerTitle.BackgroundTransparency = 1
+	headerTitle.Text = string.upper(nombre)
+	headerTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	headerTitle.Font = Enum.Font.GothamBold
+	headerTitle.TextSize = 13
+	headerTitle.TextXAlignment = Enum.TextXAlignment.Left
+	headerTitle.Parent = headerContainer
+	
+	if nombre == "Home" then
+		local iconFrame = Instance.new("ImageLabel")
+		iconFrame.Size = UDim2.new(0, 20, 0, 20)
+		iconFrame.Position = UDim2.new(0, 0, 0, 0)
+		iconFrame.BackgroundTransparency = 1
+		iconFrame.Image = "rbxassetid://6023426915"
+		iconFrame.ImageColor3 = Color3.fromRGB(255, 255, 255)
+		iconFrame.Parent = headerContainer
+	end
+	
+	local headerLine = Instance.new("Frame")
+	headerLine.Size = UDim2.new(0, 0, 0, 1)
+	headerLine.Position = UDim2.new(0.5, 0, 0, 30)
+	headerLine.AnchorPoint = Vector2.new(0.5, 0)
+	headerLine.BackgroundColor3 = Color3.fromRGB(200, 200, 210)
+	headerLine.BorderSizePixel = 0
+	headerLine.Parent = headerContainer
+	
+	lineasSeccion[nombre] = headerLine
+	secciones[nombre] = sec
+	return sec
+end
+
+local function cambiarSeccion(nombre, boton)
+	reproducirSonidoBoton()
+	for _, sec in pairs(secciones) do
+		sec.Visible = false
+	end
+	if secciones[nombre] then
+		secciones[nombre].Visible = true
+		local linea = lineasSeccion[nombre]
+		if linea then
+			linea.Size = UDim2.new(0, 0, 0, 1)
+			TweenService:Create(linea, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				Size = UDim2.new(1, 0, 0, 1)
+			}):Play()
+		end
+	end
+	if botonActualSeleccionado then
+		TweenService:Create(botonActualSeleccionado, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(21, 21, 27)}):Play()
+	end
+	botonActualSeleccionado = boton
+	TweenService:Create(boton, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = COLOR_NARANJA}):Play()
+end
+
+local function crearBotonSidebar(nombre, orden)
+	local btn = Instance.new("TextButton")
+	btn.Size = UDim2.new(1, 0, 0, 34)
+	btn.BackgroundColor3 = Color3.fromRGB(21, 21, 27)
+	btn.BorderSizePixel = 0
+	btn.Text = "   " .. nombre
+	btn.TextColor3 = Color3.fromRGB(215, 215, 230)
+	btn.Font = Enum.Font.GothamMedium
+	btn.TextSize = 12
+	btn.TextXAlignment = Enum.TextXAlignment.Left
+	btn.LayoutOrder = orden
+	btn.Parent = sidebar
+	
+	btn.Activated:Connect(function()
+		cambiarSeccion(nombre, btn)
+	end)
+	return btn
+end
+
+-- ============================================================================
+-- SECCIÓN: HOME
+-- ============================================================================
+local homeSec = crearSeccion("Home")
+
+local welcomeWrapper = Instance.new("Frame")
+welcomeWrapper.Size = UDim2.new(1, 0, 0, 70)
+welcomeWrapper.BackgroundTransparency = 1
+welcomeWrapper.LayoutOrder = 1
+welcomeWrapper.Parent = homeSec
+
+local welcomeMain = Instance.new("TextLabel")
+welcomeMain.Size = UDim2.new(1, 0, 0, 24)
+welcomeMain.Position = UDim2.new(0, 0, 0, 5)
+welcomeMain.BackgroundTransparency = 1
+welcomeMain.Text = "Gate Hub X V1.2"
+welcomeMain.TextColor3 = Color3.fromRGB(255, 255, 255)
+welcomeMain.Font = Enum.Font.GothamBold
+welcomeMain.TextSize = 15
+welcomeMain.TextXAlignment = Enum.TextXAlignment.Center
+welcomeMain.Parent = welcomeWrapper
+
+local welcomeSub = Instance.new("TextLabel")
+welcomeSub.Size = UDim2.new(1, 0, 0, 36)
+welcomeSub.Position = UDim2.new(0, 0, 0, 30)
+welcomeSub.BackgroundTransparency = 1
+welcomeSub.Text = "Gatehub welcome scripts FE :D"
+welcomeSub.TextColor3 = Color3.fromRGB(160, 160, 175)
+welcomeSub.Font = Enum.Font.Gotham
+welcomeSub.TextSize = 11
+welcomeSub.TextXAlignment = Enum.TextXAlignment.Center
+welcomeSub.TextYAlignment = Enum.TextYAlignment.Top
+welcomeSub.TextWrapped = true
+welcomeSub.Parent = welcomeWrapper
+
+local centerImageWrapper = Instance.new("Frame")
+centerImageWrapper.Size = UDim2.new(1, 0, 0, 64)
+centerImageWrapper.BackgroundTransparency = 1
+centerImageWrapper.LayoutOrder = 3
+centerImageWrapper.Parent = homeSec
+
+local centerImage = Instance.new("ImageLabel")
+centerImage.Size = UDim2.new(0, 50, 0, 50)
+centerImage.AnchorPoint = Vector2.new(0.5, 0.5)
+centerImage.Position = UDim2.new(0.5, 0, 0.5, 0)
+centerImage.BackgroundTransparency = 1
+centerImage.Image = "rbxassetid://128946976819086"
+centerImage.Parent = centerImageWrapper
+
+local imgCorner = Instance.new("UICorner")
+imgCorner.CornerRadius = UDim.new(0, 10)
+imgCorner.Parent = centerImage
+
+local rotacionActual = 0
+local conexionGiro
+conexionGiro = RunService.RenderStepped:Connect(function(dt)
+	if centerImage and centerImage.Parent then
+		rotacionActual = (rotacionActual + dt * 45) % 360
+		centerImage.Rotation = rotacionActual
+	else
+		if conexionGiro then conexionGiro:Disconnect() end
+	end
+end)
+
+local gridContainer = Instance.new("Frame")
+gridContainer.Size = UDim2.new(1, 0, 0, 140)
+gridContainer.BackgroundTransparency = 1
+gridContainer.LayoutOrder = 2
+gridContainer.Parent = homeSec
+
+local gridLayout = Instance.new("UIGridLayout")
+gridLayout.CellSize = UDim2.new(0.5, -6, 0, 64)
+gridLayout.CellPadding = UDim2.new(0, 12, 0, 12)
+gridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+gridLayout.Parent = gridContainer
+
+local function crearTarjetaHome(titulo, iconoId, orden)
+	local card = Instance.new("Frame")
+	card.Size = UDim2.new(0, 0, 0, 0)
+	card.BackgroundColor3 = Color3.fromRGB(18, 18, 22)
+	card.BorderSizePixel = 0
+	card.LayoutOrder = orden
+	card.Parent = gridContainer
+	
+	local cardCorner = Instance.new("UICorner")
+	cardCorner.CornerRadius = UDim.new(0, 8)
+	cardCorner.Parent = card
+	
+	local icon = Instance.new("ImageLabel")
+	icon.Size = UDim2.new(0, 22, 0, 22)
+	icon.Position = UDim2.new(0, 14, 0.5, -11)
+	icon.BackgroundTransparency = 1
+	icon.Image = iconoId
+	icon.ImageColor3 = COLOR_NARANJA
+	icon.Parent = card
+	
+	local lbl = Instance.new("TextLabel")
+	lbl.Size = UDim2.new(1, -44, 1, 0)
+	lbl.Position = UDim2.new(0, 42, 0, 0)
+	lbl.BackgroundTransparency = 1
+	lbl.Text = titulo
+	lbl.TextColor3 = Color3.fromRGB(230, 230, 240)
+	lbl.Font = Enum.Font.GothamMedium
+	lbl.TextSize = 11
+	lbl.TextXAlignment = Enum.TextXAlignment.Left
+	lbl.Parent = card
+end
+
+crearTarjetaHome("Scripts FE :3", "rbxassetid://6023426915", 1)
+crearTarjetaHome("idk", "rbxassetid://6031094678", 2)
+
+local cardAudio = Instance.new("Frame")
+cardAudio.Size = UDim2.new(0, 0, 0, 0)
+cardAudio.BackgroundColor3 = Color3.fromRGB(18, 18, 22)
+cardAudio.BorderSizePixel = 0
+cardAudio.LayoutOrder = 3
+cardAudio.Parent = gridContainer
+
+local cardAudioCorner = Instance.new("UICorner")
+cardAudioCorner.CornerRadius = UDim.new(0, 8)
+cardAudioCorner.Parent = cardAudio
+
+local audioIconImage = Instance.new("ImageLabel")
+audioIconImage.Size = UDim2.new(0, 22, 0, 22)
+audioIconImage.Position = UDim2.new(0, 14, 0.5, -11)
+audioIconImage.BackgroundTransparency = 0
+audioIconImage.Image = "rbxassetid://80028569506821"
+audioIconImage.Parent = cardAudio
+
+local audioLbl = Instance.new("TextLabel")
+audioLbl.Size = UDim2.new(1, -44, 1, 0)
+audioLbl.Position = UDim2.new(0, 42, 0, 0)
+audioLbl.BackgroundTransparency = 1
+audioLbl.Text = "sound staff XD"
+audioLbl.TextColor3 = Color3.fromRGB(230, 230, 240)
+audioLbl.Font = Enum.Font.GothamMedium
+audioLbl.TextSize = 11
+audioLbl.TextXAlignment = Enum.TextXAlignment.Left
+audioLbl.Parent = cardAudio
+
+crearTarjetaHome("update Gate hub v1.2 👀", "rbxassetid://6023426915", 4)
+
+-- Avatar lateral
+local avatarImage = Instance.new("ImageLabel")
+avatarImage.Size = UDim2.new(0, 42, 0, 42)
+avatarImage.AnchorPoint = Vector2.new(0.5, 0)
+avatarImage.Position = UDim2.new(0.5, 0, 0, 14)
+avatarImage.BackgroundTransparency = 1
+avatarImage.Image = "rbxassetid://111943307163968"
+avatarImage.Parent = sidebar
+
+local avatarCorner = Instance.new("UICorner")
+avatarCorner.CornerRadius = UDim.new(1, 0)
+avatarCorner.Parent = avatarImage
+
+local avatarStroke = Instance.new("UIStroke")
+avatarStroke.Color = COLOR_NARANJA
+avatarStroke.Thickness = 1.5
+avatarStroke.Transparency = 0.3
+avatarStroke.Parent = avatarImage
+
+-- ============================================================================
+-- SECCIÓN: SCRIPTS
+-- ============================================================================
+local scriptsSec = crearSeccion("Scripts")
+
+for _, archivo in ipairs(misArchivosDeScripts) do
+	local itemContainer = Instance.new("Frame")
+	itemContainer.Size = UDim2.new(1, 0, 0, 58)
+	itemContainer.BackgroundTransparency = 1
+	itemContainer.Parent = scriptsSec
+	
+	local infoBox = Instance.new("Frame")
+	infoBox.Size = UDim2.new(1, -90, 1, 0)
+	infoBox.Position = UDim2.new(0, 0, 0, 0)
+	infoBox.BackgroundColor3 = COLOR_TARJETA
+	infoBox.BorderSizePixel = 0
+	infoBox.Parent = itemContainer
+	
+	local boxCorner = Instance.new("UICorner")
+	boxCorner.CornerRadius = UDim.new(0, 6)
+	boxCorner.Parent = infoBox
+	
+	local titleLabel = Instance.new("TextLabel")
+	titleLabel.Size = UDim2.new(1, -16, 0, 22)
+	titleLabel.Position = UDim2.new(0, 8, 0, 3)
+	titleLabel.BackgroundTransparency = 1
+	titleLabel.Text = archivo.nombreArchivo
+	titleLabel.TextColor3 = Color3.fromRGB(240, 240, 245)
+	titleLabel.Font = Enum.Font.GothamBold
+	titleLabel.TextSize = 12
+	titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+	titleLabel.Parent = infoBox
+	
+	local orangeLine = Instance.new("Frame")
+	orangeLine.Size = UDim2.new(1, 0, 0, 1)
+	orangeLine.Position = UDim2.new(0, 0, 0, 26)
+	orangeLine.BackgroundColor3 = COLOR_NARANJA
+	orangeLine.BorderSizePixel = 0
+	orangeLine.Parent = infoBox
+	
+	local descLabel = Instance.new("TextLabel")
+	descLabel.Size = UDim2.new(1, -16, 0, 26)
+	descLabel.Position = UDim2.new(0, 8, 0, 28)
+	descLabel.BackgroundTransparency = 1
+	descLabel.Text = archivo.descripcion
+	descLabel.TextColor3 = Color3.fromRGB(170, 170, 180)
+	descLabel.Font = Enum.Font.Gotham
+	descLabel.TextSize = 10
+	descLabel.TextXAlignment = Enum.TextXAlignment.Left
+	descLabel.TextYAlignment = Enum.TextYAlignment.Top
+	descLabel.TextWrapped = true
+	descLabel.Parent = infoBox
+	
+	local execBox = Instance.new("Frame")
+	execBox.Size = UDim2.new(0, 82, 1, 0)
+	execBox.Position = UDim2.new(1, -82, 0, 0)
+	execBox.BackgroundColor3 = COLOR_TARJETA
+	execBox.BorderSizePixel = 0
+	execBox.Parent = itemContainer
+
+	local auraGlow = Instance.new("Frame")
+	auraGlow.Size = UDim2.new(1, 2, 0, 34)
+	auraGlow.Position = UDim2.new(0, -1, 0.5, -17)
+	auraGlow.BackgroundTransparency = 1
+	auraGlow.Parent = execBox
+
+	local auraCorner = Instance.new("UICorner")
+	auraCorner.CornerRadius = UDim.new(0, 10)
+	auraCorner.Parent = auraGlow
+
+	local auraStroke = Instance.new("UIStroke")
+	auraStroke.Color = COLOR_NARANJA
+	auraStroke.Thickness = 1.8
+	auraStroke.Transparency = 1
+	auraStroke.Parent = auraGlow
+	
+	local execBtn = Instance.new("TextButton")
+	execBtn.Size = UDim2.new(1, -12, 0, 28)
+	execBtn.Position = UDim2.new(0, 6, 0.5, -14)
+	execBtn.BackgroundColor3 = COLOR_NARANJA
+	execBtn.BorderSizePixel = 0
+	execBtn.Text = "▶"
+	execBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	execBtn.Font = Enum.Font.GothamBold
+	execBtn.TextSize = 12
+	execBtn.ZIndex = 2
+	execBtn.Parent = execBox
+	
+	local btnCorner = Instance.new("UICorner")
+	btnCorner.CornerRadius = UDim.new(0, 8)
+	btnCorner.Parent = execBtn
+
+	execBtn.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			TweenService:Create(execBtn, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(255, 160, 60)}):Play()
+			TweenService:Create(auraStroke, TweenInfo.new(0.1), {Transparency = 0.2}):Play()
+		end
+	end)
+
+	execBtn.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			TweenService:Create(execBtn, TweenInfo.new(0.2), {BackgroundColor3 = COLOR_NARANJA}):Play()
+			TweenService:Create(auraStroke, TweenInfo.new(0.2), {Transparency = 1}):Play()
+		end
+	end)
+
+	execBtn.Activated:Connect(function()
+		reproducirSonidoBoton()
+		if archivo.codigo then
+			pcall(archivo.codigo)
+		end
+	end)
+end
+
+-- ============================================================================
+-- SECCIÓN: SETTINGS
+-- ============================================================================
+local settingsSec = crearSeccion("Settings")
+
+local settingFrame = Instance.new("Frame")
+settingFrame.Size = UDim2.new(1, 0, 0, 46)
+settingFrame.BackgroundColor3 = Color3.fromRGB(23, 23, 29)
+settingFrame.BorderSizePixel = 0
+settingFrame.Parent = settingsSec
+
+local setCorner = Instance.new("UICorner")
+setCorner.CornerRadius = UDim.new(0, 8)
+setCorner.Parent = settingFrame
+
+local setLabel = Instance.new("TextLabel")
+setLabel.Size = UDim2.new(0.7, 0, 1, 0)
+setLabel.Position = UDim2.new(0, 14, 0, 0)
+setLabel.BackgroundTransparency = 1
+setLabel.Text = "Blur"
+setLabel.TextColor3 = Color3.fromRGB(245, 245, 255)
+setLabel.Font = Enum.Font.GothamMedium
+setLabel.TextSize = 12
+setLabel.TextXAlignment = Enum.TextXAlignment.Left
+setLabel.Parent = settingFrame
+
+local toggleBtn = Instance.new("TextButton")
+toggleBtn.Size = UDim2.new(0, 44, 0, 22)
+toggleBtn.Position = UDim2.new(1, -54, 0.5, -11)
+toggleBtn.BackgroundColor3 = Color3.fromRGB(45, 45, 55)
+toggleBtn.BorderSizePixel = 0
+toggleBtn.Text = ""
+toggleBtn.Parent = settingFrame
+
+local toggleCorner = Instance.new("UICorner")
+toggleCorner.CornerRadius = UDim.new(1, 0)
+toggleCorner.Parent = toggleBtn
+
+local circle = Instance.new("Frame")
+circle.Size = UDim2.new(0, 18, 0, 18)
+circle.Position = UDim2.new(0, 2, 0.5, -9)
+circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+circle.BorderSizePixel = 0
+circle.Parent = toggleBtn
+
+local circleCorner = Instance.new("UICorner")
+circleCorner.CornerRadius = UDim.new(1, 0)
+circleCorner.Parent = circle
+
+local blurEfecto = Lighting:FindFirstChild("GateBlurEffect")
+local blurActivado = false
+
+toggleBtn.Activated:Connect(function()
+	reproducirSonidoBoton()
+	blurActivado = not blurActivado
+	if blurActivado then
+		TweenService:Create(toggleBtn, TweenInfo.new(0.2), {BackgroundColor3 = COLOR_NARANJA}):Play()
+		TweenService:Create(circle, TweenInfo.new(0.2), {Position = UDim2.new(1, -20, 0.5, -9)}):Play()
+		if not blurEfecto then
+			blurEfecto = Instance.new("BlurEffect")
+			blurEfecto.Name = "GateBlurEffect"
+			blurEfecto.Size = 15
+			blurEfecto.Parent = Lighting
+		end
+	else
+		TweenService:Create(toggleBtn, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(45, 45, 55)}):Play()
+		TweenService:Create(circle, TweenInfo.new(0.2), {Position = UDim2.new(0, 2, 0.5, -9)}):Play()
+		if blurEfecto then
+			blurEfecto:Destroy()
+			blurEfecto = nil
+		end
+	end
+end)
+
+-- Inicializar pestañas
+local btnHome = crearBotonSidebar("Home", 1)
+crearBotonSidebar("Scripts", 2)
+crearBotonSidebar("Settings", 3)
+
+cambiarSeccion("Home", btnHome)
